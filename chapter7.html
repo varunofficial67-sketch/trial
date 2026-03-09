@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Chapter 7: Cognitive Manipulation | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Theme Variables */
+        :root {
+            /* Dark theme (default) */
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+            --cognitive-color: #339af0;
+            --cognitive-glow: rgba(51, 154, 240, 0.3);
+        }
+
+        /* Light theme */
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+            --cognitive-color: #1c7ed6;
+            --cognitive-glow: rgba(28, 126, 214, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Settings Bar */
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        .chapter-progress {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chapter-progress span {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: var(--border-color);
+            position: fixed;
+            top: 73px;
+            left: 0;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.2s;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Chapter Header */
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .chapter-number {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .chapter-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        /* Content Sections */
+        .section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .section h2 i {
+            color: var(--accent-primary);
+            margin-right: 1rem;
+            font-style: normal;
+        }
+
+        .section h3 {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Cognitive Box */
+        .cognitive-box {
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-card));
+            border: 2px solid var(--cognitive-color);
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cognitive-box::before {
+            content: '🧠';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(10deg);
+        }
+
+        .cognitive-box h4 {
+            color: var(--cognitive-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bias Grid */
+        .bias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .bias-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--cognitive-color);
+        }
+
+        .bias-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--cognitive-color);
+            box-shadow: 0 10px 20px var(--cognitive-glow);
+        }
+
+        .bias-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .bias-card h4 {
+            color: var(--cognitive-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .bias-example {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        /* Framing Examples */
+        .framing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .framing-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .framing-negative {
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .framing-positive {
+            border-left: 4px solid var(--success-color);
+        }
+
+        .framing-label {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Anchoring Examples */
+        .anchoring-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .anchor-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .anchor-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cognitive-color);
+        }
+
+        .anchor-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Cognitive Distortions */
+        .distortion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .distortion-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--warning-color);
+        }
+
+        .distortion-card h5 {
+            color: var(--warning-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Chapter Navigation */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .nav-btn.next:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .chapter-title {
+                font-size: 2.5rem;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo-area {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Settings Bar -->
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">
+                        <span>🌙</span> Dark
+                    </button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">
+                        <span>☀️</span> Light
+                    </button>
+                </div>
+            </div>
+            <div class="chapter-progress">
+                Chapter <span>7</span> of <span>20</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Chapter Header -->
+        <div class="chapter-header">
+            <div class="chapter-badge">MANIPULATION TECHNIQUES · CHAPTER 7</div>
+            <div class="chapter-number">THE THOUGHT POLICE</div>
+            <h1 class="chapter-title">
+                <span class="gradient-text">Cognitive</span><br>
+                Manipulation
+            </h1>
+            <div class="chapter-subtitle">
+                How manipulators exploit your thinking patterns, distort your perception, and control your decisions without you knowing
+            </div>
+        </div>
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <div class="section">
+            <h2><i>🧠</i> 7.1 The Architecture of Thought</h2>
+            <p>Your brain takes shortcuts. It has to - processing 11 million bits of information per second is impossible otherwise. These shortcuts, called heuristics, are predictable patterns that manipulators exploit.</p>
+            
+            <p>Cognitive manipulation doesn't make you feel - it makes you think in ways that benefit the manipulator. It's the most insidious form of control because you believe you're making rational decisions when you're actually being led.</p>
+
+            <div class="cognitive-box">
+                <h4>🎯 System 1 vs System 2 Thinking (Kahneman)</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <h5 style="color: var(--warning-color);">System 1 (Fast)</h5>
+                        <p>Automatic, intuitive, emotional. 95% of decisions. Easily manipulated.</p>
+                    </div>
+                    <div>
+                        <h5 style="color: var(--cognitive-color);">System 2 (Slow)</h5>
+                        <p>Deliberate, logical, analytical. 5% of decisions. Requires effort.</p>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem;"><em>Manipulators target System 1 - they want you thinking fast, not slow.</em></p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: 25 COGNITIVE BIASES EXPLOITED -->
+        <div class="section">
+            <h2><i>🎯</i> 7.2 25 Cognitive Biases Manipulators Use</h2>
+            
+            <div class="bias-grid">
+                <div class="bias-card">
+                    <div class="bias-icon">⚓</div>
+                    <h4>1. Anchoring Bias</h4>
+                    <p>First information influences all subsequent judgments.</p>
+                    <div class="bias-example">Example: "$1000 original price, now $500!" The $1000 anchor makes $500 seem cheap.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">✅</div>
+                    <h4>2. Confirmation Bias</h4>
+                    <p>Seeking information that confirms existing beliefs.</p>
+                    <div class="bias-example">Example: Feeding you information that matches what you already want to believe.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">📊</div>
+                    <h4>3. Availability Heuristic</h4>
+                    <p>Overestimating importance of readily available information.</p>
+                    <div class="bias-example">Example: Recent plane crash makes flying seem more dangerous than driving.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">👥</div>
+                    <h4>4. Bandwagon Effect</h4>
+                    <p>Doing things because others do them.</p>
+                    <div class="bias-example">Example: "Everyone is buying this. 10,000 customers can't be wrong."</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">👑</div>
+                    <h4>5. Authority Bias</h4>
+                    <p>Trusting authority figures excessively.</p>
+                    <div class="bias-example">Example: "Doctors recommend..." (even when they're paid actors).</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🏃</div>
+                    <h4>6. Sunk Cost Fallacy</h4>
+                    <p>Continuing investment because of past investment.</p>
+                    <div class="bias-example">Example: Staying in bad relationships because of time invested.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">✨</div>
+                    <h4>7. Halo Effect</h4>
+                    <p>One positive trait influences perception of other traits.</p>
+                    <div class="bias-example">Example: Attractive people seem more trustworthy, smarter.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">😨</div>
+                    <h4>8. Negativity Bias</h4>
+                    <p>Negative events have more impact than positive.</p>
+                    <div class="bias-example">Example: One criticism outweighs ten compliments.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">📈</div>
+                    <h4>9. Optimism Bias</h4>
+                    <p>Overestimating probability of positive outcomes.</p>
+                    <div class="bias-example">Example: "It won't happen to me" thinking.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🔄</div>
+                    <h4>10. Status Quo Bias</h4>
+                    <p>Preferring things to stay the same.</p>
+                    <div class="bias-example">Example: Staying in bad situations because change is scary.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🏅</div>
+                    <h4>11. Dunning-Kruger Effect</h4>
+                    <p>Incompetent people overestimate ability; experts underestimate.</p>
+                    <div class="bias-example">Example: Manipulators target overconfident novices.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🤝</div>
+                    <h4>12. Reciprocity Bias</h4>
+                    <p>Feeling obligated to return favors.</p>
+                    <div class="bias-example">Example: Free samples lead to purchases. Small favors lead to large compliance.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🕰️</div>
+                    <h4>13. Present Bias</h4>
+                    <p>Overvaluing immediate rewards over future benefits.</p>
+                    <div class="bias-example">Example: "Buy now, pay later" schemes.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🔢</div>
+                    <h4>14. Framing Effect</h4>
+                    <p>Decisions influenced by how information is presented.</p>
+                    <div class="bias-example">Example: "90% survival rate" vs "10% death rate" - same statistic, different reaction.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">📝</div>
+                    <h4>15. Zeigarnik Effect</h4>
+                    <p>Remember uncompleted tasks better than completed ones.</p>
+                    <div class="bias-example">Example: Cliffhangers keep you watching. Open loops keep you thinking.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🎭</div>
+                    <h4>16. Spotlight Effect</h4>
+                    <p>Overestimating how much others notice us.</p>
+                    <div class="bias-example">Example: Fear of embarrassment used to control behavior.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🔮</div>
+                    <h4>17. Hindsight Bias</h4>
+                    <p>"I knew it all along" phenomenon.</p>
+                    <div class="bias-example">Example: Manipulator claims they predicted outcomes after the fact.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🎲</div>
+                    <h4>18. Gambler's Fallacy</h4>
+                    <p>Believing past events affect independent probabilities.</p>
+                    <div class="bias-example">Example: "It's due to happen" thinking exploited in gambling.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">👁️</div>
+                    <h4>19. Blind Spot Bias</h4>
+                    <p>Recognizing biases in others but not yourself.</p>
+                    <div class="bias-example">Example: "I'm objective, but everyone else is biased."</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🏠</div>
+                    <h4>20. Endowment Effect</h4>
+                    <p>Valuing what we own more than what we don't.</p>
+                    <div class="bias-example">Example: "Once you own it, it's worth more to you." Used in trial offers.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🔒</div>
+                    <h4>21. Commitment Consistency</h4>
+                    <p>Desire to be consistent with past commitments.</p>
+                    <div class="bias-example">Example: Small yes leads to bigger yes. Foot-in-the-door technique.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🦸</div>
+                    <h4>22. Just-World Hypothesis</h4>
+                    <p>Believing the world is fair, people get what they deserve.</p>
+                    <div class="bias-example">Example: Blaming victims for their misfortune.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">📉</div>
+                    <h4>23. Loss Aversion</h4>
+                    <p>Fear of loss is twice as powerful as desire for gain.</p>
+                    <div class="bias-example">Example: "Don't miss out!" "Limited time offer!"</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">📋</div>
+                    <h4>24. Information Bias</h4>
+                    <p>Believing more information leads to better decisions.</p>
+                    <div class="bias-example">Example: Overwhelming with data to confuse.</div>
+                </div>
+                <div class="bias-card">
+                    <div class="bias-icon">🔄</div>
+                    <h4>25. Omission Bias</h4>
+                    <p>Judging harmful actions worse than harmful inactions.</p>
+                    <div class="bias-example">Example: "I didn't do anything wrong" when failing to act caused harm.</div>
+                </div>
+            </div>
+
+            <p style="margin-top: 1rem;"><strong>⚠️ Note:</strong> These 25 are the most commonly exploited in manipulation. There are over 200 documented cognitive biases.</p>
+        </div>
+
+        <!-- SECTION 3: FRAMING -->
+        <div class="section">
+            <h2><i>🖼️</i> 7.3 Framing: The Art of Perspective</h2>
+            
+            <p>How you say something matters more than what you say. Framing is choosing the perspective that benefits the manipulator.</p>
+
+            <div class="framing-grid">
+                <div class="framing-card framing-negative">
+                    <div class="framing-label" style="color: var(--danger-color);">❌ Negative Frame</div>
+                    <p>"If you don't do this, you'll regret it."</p>
+                    <p>"You'll lose everything."</p>
+                    <p>"This is your last chance."</p>
+                </div>
+                <div class="framing-card framing-positive">
+                    <div class="framing-label" style="color: var(--success-color);">✅ Positive Frame</div>
+                    <p>"If you do this, you'll gain so much."</p>
+                    <p>"This opportunity won't last."</p>
+                    <p>"Imagine what this could do for you."</p>
+                </div>
+                <div class="framing-card">
+                    <div class="framing-label" style="color: var(--cognitive-color);">⚖️ Comparative Frame</div>
+                    <p>"Compared to others, you're doing well."</p>
+                    <p>"Most people would have given up."</p>
+                    <p>"You're better than most."</p>
+                </div>
+                <div class="framing-card">
+                    <div class="framing-label" style="color: var(--warning-color);">🎯 Loss Frame</div>
+                    <p>"Don't miss out."</p>
+                    <p>"While supplies last."</p>
+                    <p>"Limited availability."</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    The difference between a problem and an opportunity is just the way you look at it. Manipulators control how you look.
+                </div>
+                <div class="quote-author">— Unknown</div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: ANCHORING -->
+        <div class="section">
+            <h2><i>⚓</i> 7.4 Anchoring: Setting the Reference Point</h2>
+            
+            <p>Anchoring sets a mental reference point that influences all subsequent judgments. Once an anchor is set, everything is compared to it.</p>
+
+            <div class="anchoring-examples">
+                <div class="anchor-card">
+                    <div class="anchor-price">$1000</div>
+                    <div class="anchor-desc">Original Price (Anchor)</div>
+                </div>
+                <div class="anchor-card">
+                    <div class="anchor-price" style="color: var(--success-color);">$500</div>
+                    <div class="anchor-desc">Sale Price (Seems cheap)</div>
+                </div>
+            </div>
+
+            <div class="cognitive-box">
+                <h4>📊 Real-World Anchoring Examples:</h4>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Negotiation:</strong> The first number mentioned becomes the anchor. Ask high, settle higher.</li>
+                    <li><strong>Real Estate:</strong> Show overpriced house first, then "reasonable" house seems like a deal.</li>
+                    <li><strong>Salary:</strong> First offer anchors entire negotiation.</li>
+                    <li><strong>Dating:</strong> Love bombing sets anchor for how relationships "should" start.</li>
+                    <li><strong>Guilt:</strong> "After all I've done" anchors debt you can never repay.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 5: SCARCITY -->
+        <div class="section">
+            <h2><i>⏳</i> 7.5 Scarcity: The Fear of Missing Out</h2>
+            
+            <p>Things seem more valuable when they're rare or limited. Scarcity creates urgency and bypasses rational thought.</p>
+
+            <div class="bias-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="bias-card">
+                    <h4>Limited Time</h4>
+                    <p>"Offer ends tonight!"</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Limited Quantity</h4>
+                    <p>"Only 3 left in stock!"</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Limited Access</h4>
+                    <p>"By invitation only."</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Limited Edition</h4>
+                    <p>"Collector's item."</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Exclusive Access</h4>
+                    <p>"You're one of the few."</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Waiting List</h4>
+                    <p>"Join the waitlist."</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    The way to make people want something is to make it difficult to obtain. Scarcity creates value where none exists.
+                </div>
+                <div class="quote-author">— Robert Cialdini, "Influence"</div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: SOCIAL PROOF -->
+        <div class="section">
+            <h2><i>👥</i> 7.6 Social Proof: Following the Crowd</h2>
+            
+            <p>When uncertain, humans look to others for guidance. Manipulators create the illusion of consensus to influence decisions.</p>
+
+            <div class="bias-grid">
+                <div class="bias-card">
+                    <h4>Testimonials</h4>
+                    <p>Fake or selective reviews create trust.</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Expert Endorsements</h4>
+                    <p>Paid experts create authority.</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Crowd Manipulation</h4>
+                    <p>Plant actors, create lines, fake popularity.</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Celebrity Endorsements</h4>
+                    <p>Famous faces create trust transfer.</p>
+                </div>
+                <div class="bias-card">
+                    <h4>"Best-Selling" Labels</h4>
+                    <p>Implies others chose it, so it must be good.</p>
+                </div>
+                <div class="bias-card">
+                    <h4>User Numbers</h4>
+                    <p>"10,000 customers can't be wrong."</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: COGNITIVE DISSONANCE EXPLOITATION -->
+        <div class="section">
+            <h2><i>🔄</i> 7.7 Cognitive Dissonance</h2>
+            
+            <p>Cognitive dissonance is the mental discomfort of holding contradictory beliefs. Manipulators use this to change your beliefs or behaviors.</p>
+
+            <div class="cognitive-box">
+                <h4>🎭 How Manipulators Exploit Dissonance:</h4>
+                <p><strong>1. Create Contradiction:</strong> Make you act against your values (small request, then escalate).</p>
+                <p><strong>2. Justification Pressure:</strong> Your brain will change beliefs to justify actions.</p>
+                <p><strong>3. Belief Change:</strong> "I did this voluntarily, so I must believe in it."</p>
+                <p><strong>Example:</strong> Hazing rituals - if you suffer to join a group, you'll value the group more to justify suffering.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 8: PRIMING -->
+        <div class="section">
+            <h2><i>🌱</i> 7.8 Priming: Planting Seeds</h2>
+            
+            <p>Priming exposes you to stimuli that influence later behavior without conscious awareness.</p>
+
+            <div class="bias-grid">
+                <div class="bias-card">
+                    <h4>Word Priming</h4>
+                    <p>Certain words activate related concepts. "Warm" makes you more generous. "Cold" makes you more distant.</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Image Priming</h4>
+                    <p>Luxury images make you spend more. Nature images make you calmer.</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Environmental Priming</h4>
+                    <p>Scents, music, colors influence decisions unconsciously.</p>
+                </div>
+                <div class="bias-card">
+                    <h4>Emotional Priming</h4>
+                    <p>Happy stories make you more receptive. Fear makes you seek safety.</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    The most powerful manipulations are the ones you never notice. Priming works because you think you're deciding freely when you're actually being led.
+                </div>
+                <div class="quote-author">— John Bargh, Priming Researcher</div>
+            </div>
+        </div>
+
+        <!-- SECTION 9: 10 COGNITIVE DISTORTIONS MANIPULATORS INDUCE -->
+        <div class="section">
+            <h2><i>🧩</i> 7.9 Cognitive Distortions</h2>
+            
+            <p>Manipulators don't just exploit existing biases - they actively create distorted thinking patterns in their targets.</p>
+
+            <div class="distortion-grid">
+                <div class="distortion-card">
+                    <h5>1. All-or-Nothing Thinking</h5>
+                    <p>"If I'm not perfect, I'm a failure." Manipulator creates impossible standards.</p>
+                </div>
+                <div class="distortion-card">
+                    <h5>2. Overgeneralization</h5>
+                    <p>"You always..." "You never..." - One mistake defines everything.</p>
+                </div>
+                <div class="distortion-card">
+                    <h5>3. Mental Filter</h5>
+                    <p>Focusing on one negative detail while ignoring all positives.</p>
+                </div>
+                <div class="distortion-card">
+                    <h5>4. Disqualifying Positive</h5>
+                    <p>"That doesn't count because..." - Dismissing compliments, successes.</p>
+                </div>
+                <div class="distortion-card">
+                    <h5>5. Jumping to Conclusions</h5>
+                    <p>Mind reading: "You think I'm stupid." Fortune telling: "You'll fail."</p>
+                </div>
+                <div class="distortion-card">
+                    <h5>6. Magnification/Catastrophizing</h5>
+                    <p>Making small problems huge. "This is the end."</p>
+                </div>
+                <div class="distortion-card">
+                    <h5>7. Emotional Reasoning</h5>
+                    <p>"I feel it, so it must be true." Feelings become facts.</p>
+                </div>
+                <div class="distortion-card">
+                    <h5>8. Should Statements</h5>
+                    <p>"You should..." "You must..." - Rigid rules create guilt.</p>
+                </div>
+                <div class="distortion-card">
+                    <h5>9. Labeling</h5>
+                    <p>"I'm stupid." "You're selfish." - Identity attacks.</p>
+                </div>
+                <div class="distortion-card">
+                    <h5>10. Personalization</h5>
+                    <p>Taking responsibility for things outside your control.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 10: CASE STUDY - TIMESHARE SCAM -->
+        <div class="section">
+            <h2><i>📋</i> 7.10 Case Study: The Timeshare Presentation</h2>
+            
+            <div class="case-study">
+                <h4>🎯 How Multiple Biases Were Used Sequentially</h4>
+                <div class="case-study-meta">
+                    <span>📍 Setting: Vacation Resort</span>
+                    <span>📅 Duration: 90 Minutes</span>
+                </div>
+                <div class="case-study-content">
+                    <p><strong>The Setup:</strong> Free vacation for attending a 90-minute timeshare presentation. What followed was a masterclass in cognitive manipulation.</p>
+                    
+                    <p><strong>1. Reciprocity:</strong> "Free gift just for attending." You feel obligated to listen.</p>
+                    
+                    <p><strong>2. Anchoring:</strong> "$50,000 for this package!" Sets a high anchor.</p>
+                    
+                    <p><strong>3. Social Proof:</strong> "Look at all these happy owners." Planted actors share success stories.</p>
+                    
+                    <p><strong>4. Authority:</strong> "Industry expert" (paid actor) explains why this is a great investment.</p>
+                    
+                    <p><strong>5. Scarcity:</strong> "Only 3 units left at this price. This offer expires today."</p>
+                    
+                    <p><strong>6. Commitment Consistency:</strong> "Would you like the premium package or the standard?" Assumes purchase, asks small questions.</p>
+                    
+                    <p><strong>7. Loss Aversion:</strong> "You'll lose this opportunity forever. Don't miss out."</p>
+                    
+                    <p><strong>8. Framing:</strong> "Think of the memories you'll create with your family." (Positive frame)</p>
+                    
+                    <p><strong>9. Sunk Cost:</strong> "You've already invested 90 minutes. Don't waste that."</p>
+                    
+                    <p><strong>The Result:</strong> 30% of attendees purchased on the spot. 70% regretted within 30 days. Many couldn't afford it.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 11: DEFENSE STRATEGIES -->
+        <div class="section">
+            <h2><i>🛡️</i> 7.11 Protecting Your Mind</h2>
+            
+            <h3>Cognitive Self-Defense:</h3>
+            <div class="bias-grid">
+                <div class="bias-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">⏸️ The Pause</h4>
+                    <p>Never decide under pressure. "I need time to think about this."</p>
+                </div>
+                <div class="bias-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">🔍 Question Anchors</h4>
+                    <p>Is this reference point real? Who set it? Why?</p>
+                </div>
+                <div class="bias-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">📊 Reframe the Frame</h4>
+                    <p>How else could this be presented? What's the opposite frame?</p>
+                </div>
+                <div class="bias-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">👥 Seek Outside Opinion</h4>
+                    <p>Run decisions by someone not emotionally invested.</p>
+                </div>
+                <div class="bias-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">📝 Write It Down</h4>
+                    <p>Writing activates System 2 thinking.</p>
+                </div>
+                <div class="bias-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">🧠 Know Your Biases</h4>
+                    <p>You can't defend against what you don't know.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">🚫 What NOT to Do:</h3>
+            <div class="key-points" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Decide Under Pressure</h4>
+                    <p>Urgency is a manipulation tactic.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Trust First Numbers</h4>
+                    <p>They're anchors, not facts.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Follow Crowds</h4>
+                    <p>Crowds can be faked or wrong.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Ignore Your Doubts</h4>
+                    <p>That feeling is your System 2 trying to engage.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 12: CHAPTER SUMMARY -->
+        <div class="section">
+            <h2><i>📌</i> 7.12 Chapter Summary</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <p><strong>🧠 Key Takeaways:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-secondary); line-height: 2;">
+                    <li><strong>System 1 (fast) vs System 2 (slow):</strong> Manipulators target fast thinking</li>
+                    <li><strong>25 Cognitive Biases</strong> commonly exploited in manipulation</li>
+                    <li><strong>Framing:</strong> How information is presented changes decisions</li>
+                    <li><strong>Anchoring:</strong> First information sets reference point for all judgments</li>
+                    <li><strong>Scarcity:</strong> Limited availability creates artificial value</li>
+                    <li><strong>Social Proof:</strong> Following the crowd bypasses individual judgment</li>
+                    <li><strong>Cognitive Dissonance:</strong> Mental discomfort exploited to change beliefs</li>
+                    <li><strong>Priming:</strong> Subtle cues influence behavior unconsciously</li>
+                    <li><strong>10 Cognitive Distortions</strong> manipulators induce</li>
+                </ul>
+                
+                <p style="margin-top: 2rem;"><strong>📝 Key Terms:</strong> System 1/2 Thinking, Anchoring, Framing, Scarcity, Social Proof, Cognitive Dissonance, Priming, Loss Aversion, Sunk Cost Fallacy, Confirmation Bias, Authority Bias, Reciprocity, Commitment Consistency, Availability Heuristic, Dunning-Kruger Effect</p>
+            </div>
+        </div>
+
+        <!-- SECTION 13: SELF-ASSESSMENT -->
+        <div class="section">
+            <h2><i>📝</i> 7.13 Self-Assessment Questions</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <ol style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 2;">
+                    <li>Which of the 25 biases do you notice most in your own decision-making?</li>
+                    <li>Recall a purchase you later regretted. Which biases were at play?</li>
+                    <li>How has anchoring affected your perception of "fair prices"?</li>
+                    <li>Have you experienced scarcity tactics? How did they make you feel?</li>
+                    <li>Why does social proof work even when we know crowds can be wrong?</li>
+                    <li>Practice reframing: Take a problem and frame it as an opportunity.</li>
+                    <li>How can you build "the pause" into your decision-making?</li>
+                    <li>What's the difference between System 1 and System 2 thinking? Which do you use more?</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+            <a href="chapter6.html" class="nav-btn">
+                <span>←</span> Chapter 6: Emotional Manipulation
+            </a>
+            <a href="index.html" class="nav-btn">
+                <span>◈</span> Index
+            </a>
+            <a href="chapter8.html" class="nav-btn next">
+                Chapter 8: Neuro-Linguistic Programming <span>→</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="index.html" class="back-home">
+                <span>◈</span> Return to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Save reading position
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            localStorage.setItem('chapter7_scroll', scrollPos);
+        });
+
+        // Restore reading position
+        window.addEventListener('load', () => {
+            const savedPos = localStorage.getItem('chapter7_scroll');
+            if (savedPos) {
+                setTimeout(() => {
+                    window.scrollTo(0, parseInt(savedPos));
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

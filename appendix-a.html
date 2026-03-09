@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Appendix A: Glossary | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+        }
+
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-primary); border-radius: 5px; }
+
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .search-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-icon { color: var(--text-muted); font-size: 1.2rem; }
+        .search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .alphabet-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        .alphabet-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .alphabet-link:hover {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .glossary-section {
+            margin: 3rem 0;
+            scroll-margin-top: 100px;
+        }
+
+        .letter-header {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .term-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .term-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 20px var(--accent-glow);
+        }
+
+        .term {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .definition {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .term-category {
+            display: inline-block;
+            background: var(--bg-primary);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            margin-top: 1rem;
+        }
+
+        .letter-separator {
+            height: 1px;
+            background: var(--border-color);
+            margin: 3rem 0;
+        }
+
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; }
+            .page-title { font-size: 2.5rem; }
+            .alphabet-nav { border-radius: 20px; }
+            .alphabet-link { width: 35px; height: 35px; }
+            .chapter-nav { flex-direction: column; gap: 1rem; }
+            .nav-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">🌙 Dark</button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">☀️ Light</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <div class="page-badge">REFERENCE · APPENDIX A</div>
+            <h1 class="page-title">Glossary of Terms</h1>
+            <div class="page-subtitle">Complete dictionary of dark psychology terminology</div>
+        </div>
+
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="searchInput" placeholder="Search terms..." onkeyup="searchGlossary()">
+        </div>
+
+        <div class="alphabet-nav" id="alphabetNav">
+            <a href="#A" class="alphabet-link">A</a>
+            <a href="#B" class="alphabet-link">B</a>
+            <a href="#C" class="alphabet-link">C</a>
+            <a href="#D" class="alphabet-link">D</a>
+            <a href="#E" class="alphabet-link">E</a>
+            <a href="#F" class="alphabet-link">F</a>
+            <a href="#G" class="alphabet-link">G</a>
+            <a href="#H" class="alphabet-link">H</a>
+            <a href="#I" class="alphabet-link">I</a>
+            <a href="#J" class="alphabet-link">J</a>
+            <a href="#K" class="alphabet-link">K</a>
+            <a href="#L" class="alphabet-link">L</a>
+            <a href="#M" class="alphabet-link">M</a>
+            <a href="#N" class="alphabet-link">N</a>
+            <a href="#O" class="alphabet-link">O</a>
+            <a href="#P" class="alphabet-link">P</a>
+            <a href="#Q" class="alphabet-link">Q</a>
+            <a href="#R" class="alphabet-link">R</a>
+            <a href="#S" class="alphabet-link">S</a>
+            <a href="#T" class="alphabet-link">T</a>
+            <a href="#U" class="alphabet-link">U</a>
+            <a href="#V" class="alphabet-link">V</a>
+            <a href="#W" class="alphabet-link">W</a>
+            <a href="#X" class="alphabet-link">X</a>
+            <a href="#Y" class="alphabet-link">Y</a>
+            <a href="#Z" class="alphabet-link">Z</a>
+        </div>
+
+        <div id="glossaryContainer">
+            <!-- A -->
+            <div class="glossary-section" id="A">
+                <h2 class="letter-header">A</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Age Regression</div>
+                        <div class="definition">A hypnotic phenomenon where an individual re-experiences past events as if they're happening in the present.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Agenda Setting</div>
+                        <div class="definition">Media manipulation technique where outlets don't tell you what to think, but what to think about.</div>
+                        <span class="term-category">Media Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Amygdala Hijack</div>
+                        <div class="definition">When emotions overwhelm rational thinking, causing the amygdala to take over from the prefrontal cortex.</div>
+                        <span class="term-category">Neuroscience</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Anchoring</div>
+                        <div class="definition">A cognitive bias where the first piece of information influences all subsequent judgments.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Anchoring (NLP)</div>
+                        <div class="definition">Associating a specific stimulus with an emotional state to trigger that state on demand.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Astroturfing</div>
+                        <div class="definition">Fake grassroots movements that appear organic but are actually funded by corporations or governments.</div>
+                        <span class="term-category">Political Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Authority Bias</div>
+                        <div class="definition">The tendency to trust and follow authority figures even when they're wrong.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Availability Heuristic</div>
+                        <div class="definition">Overestimating the importance of information that's readily available.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- B -->
+            <div class="glossary-section" id="B">
+                <h2 class="letter-header">B</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Bandwagon Effect</div>
+                        <div class="definition">The tendency to do things because others are doing them.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">BITE Model</div>
+                        <div class="definition">Behavior, Information, Thought, Emotional control - a framework for understanding cult manipulation.</div>
+                        <span class="term-category">Cults</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Blame Shifting</div>
+                        <div class="definition">Making everything the target's fault to avoid accountability.</div>
+                        <span class="term-category">Manipulation Tactic</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Blind Spot Bias</div>
+                        <div class="definition">Recognizing biases in others but not in yourself.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Body Mirroring</div>
+                        <div class="definition">Subtly copying someone's body language to build rapport.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Boundary Violations</div>
+                        <div class="definition">Gradually pushing past a person's limits to normalize disrespect.</div>
+                        <span class="term-category">Relationship Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Box Breathing</div>
+                        <div class="definition">A breathing technique (4-4-4-4) that calms the nervous system.</div>
+                        <span class="term-category">Defense</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Brainwashing</div>
+                        <div class="definition">Systematic control aimed at overriding an individual's free will.</div>
+                        <span class="term-category">Extreme Manipulation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- C -->
+            <div class="glossary-section" id="C">
+                <h2 class="letter-header">C</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Card Stacking</div>
+                        <div class="definition">Presenting only one side of an issue while ignoring the other.</div>
+                        <span class="term-category">Propaganda</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Catalepsy</div>
+                        <div class="definition">A hypnotic state where limbs remain in position when moved.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Charm Pricing</div>
+                        <div class="definition">Prices ending in .99 or .97 that feel significantly cheaper.</div>
+                        <span class="term-category">Marketing</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Cherry-Picking</div>
+                        <div class="definition">Selecting only data that supports your position.</div>
+                        <span class="term-category">Political Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Circular Arguments</div>
+                        <div class="definition">Arguments that go in circles, never reaching resolution.</div>
+                        <span class="term-category">Verbal Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Cognitive Dissonance</div>
+                        <div class="definition">Mental discomfort from holding contradictory beliefs.</div>
+                        <span class="term-category">Psychology</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Commitment Consistency</div>
+                        <div class="definition">The desire to be consistent with past commitments.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Complex Equivalence</div>
+                        <div class="definition">Equating two unrelated things in NLP language patterns.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Concern Trolling</div>
+                        <div class="definition">Pretending to be concerned about something to undermine it.</div>
+                        <span class="term-category">Online Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Confirmation Bias</div>
+                        <div class="definition">Seeking information that confirms existing beliefs.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Confirmshaming</div>
+                        <div class="definition">Shaming users into accepting options.</div>
+                        <span class="term-category">Dark Patterns</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Constructive Discharge</div>
+                        <div class="definition">Making work conditions intolerable so employees quit.</div>
+                        <span class="term-category">Workplace</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Conversational Hypnosis</div>
+                        <div class="definition">Inducing trance through normal conversation without the target's awareness.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Credit Theft</div>
+                        <div class="definition">Taking credit for someone else's work or ideas.</div>
+                        <span class="term-category">Workplace</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Cycle of Abuse</div>
+                        <div class="definition">Tension → Incident → Reconciliation → Calm pattern in abusive relationships.</div>
+                        <span class="term-category">Relationship Abuse</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- D -->
+            <div class="glossary-section" id="D">
+                <h2 class="letter-header">D</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Dark Patterns</div>
+                        <div class="definition">Interface designs that trick users into doing things they didn't intend.</div>
+                        <span class="term-category">Digital Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Dark Psychology</div>
+                        <div class="definition">The study of human tendency to prey upon others through manipulation and control.</div>
+                        <span class="term-category">Core Concept</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Dark Tetrad</div>
+                        <div class="definition">Dark Triad plus Sadism (pleasure from others' pain).</div>
+                        <span class="term-category">Personality</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Dark Triad</div>
+                        <div class="definition">Three personality types: Narcissism, Machiavellianism, Psychopathy.</div>
+                        <span class="term-category">Personality</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Decoy Effect</div>
+                        <div class="definition">Adding a third option to make one option seem more attractive.</div>
+                        <span class="term-category">Marketing</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Devaluation</div>
+                        <div class="definition">The phase where a narcissist begins criticizing and devaluing their target.</div>
+                        <span class="term-category">Narcissism</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Discard</div>
+                        <div class="definition">The phase where a narcissist abruptly ends the relationship.</div>
+                        <span class="term-category">Narcissism</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Disinformation</div>
+                        <div class="definition">Deliberately spreading false information.</div>
+                        <span class="term-category">Information Warfare</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Dog Whistle</div>
+                        <div class="definition">Messages with hidden meanings understood by target audiences.</div>
+                        <span class="term-category">Political Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Dunning-Kruger Effect</div>
+                        <div class="definition">Incompetent people overestimate ability; experts underestimate.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E -->
+            <div class="glossary-section" id="E">
+                <h2 class="letter-header">E</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Echo Chamber</div>
+                        <div class="definition">Only being exposed to views you already agree with.</div>
+                        <span class="term-category">Media</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Embedded Commands</div>
+                        <div class="definition">Hidden commands within normal speech using subtle voice changes.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">EMDR</div>
+                        <div class="definition">Eye Movement Desensitization and Reprocessing - trauma therapy.</div>
+                        <span class="term-category">Healing</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Emotional Blackmail</div>
+                        <div class="definition">Using fear, obligation, and guilt to control others.</div>
+                        <span class="term-category">Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Emotional Boundaries</div>
+                        <div class="definition">Your feelings are yours; others' feelings are theirs.</div>
+                        <span class="term-category">Defense</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Emotional Reasoning</div>
+                        <div class="definition">"I feel it, so it must be true."</div>
+                        <span class="term-category">Cognitive Distortion</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Endowment Effect</div>
+                        <div class="definition">Valuing what we own more than what we don't.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- F -->
+            <div class="glossary-section" id="F">
+                <h2 class="letter-header">F</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">False Balance</div>
+                        <div class="definition">Giving equal weight to both sides when one side has no scientific basis.</div>
+                        <span class="term-category">Media Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Fear Appeals</div>
+                        <div class="definition">Scare you, then offer the solution.</div>
+                        <span class="term-category">Marketing</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Filter Bubble</div>
+                        <div class="definition">Algorithmic isolation from opposing views.</div>
+                        <span class="term-category">Social Media</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Fractionation</div>
+                        <div class="definition">Bringing in and out of trance rapidly to deepen hypnosis.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Framing</div>
+                        <div class="definition">How information is presented changes how it's perceived.</div>
+                        <span class="term-category">Cognitive Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Future Faking</div>
+                        <div class="definition">Promising a future they won't deliver to maintain compliance.</div>
+                        <span class="term-category">Relationship Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Future Pacing</div>
+                        <div class="definition">Having someone imagine a future where they've already complied.</div>
+                        <span class="term-category">NLP/Hypnosis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- G -->
+            <div class="glossary-section" id="G">
+                <h2 class="letter-header">G</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Gambler's Fallacy</div>
+                        <div class="definition">Believing past events affect independent probabilities.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Gaslighting</div>
+                        <div class="definition">Making someone question their reality, memory, and sanity.</div>
+                        <span class="term-category">Verbal Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Gish Gallop</div>
+                        <div class="definition">Overwhelming with so many false claims they can't be refuted.</div>
+                        <span class="term-category">Debate Tactic</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Glittering Generalities</div>
+                        <div class="definition">Virtuous words that feel good but mean little.</div>
+                        <span class="term-category">Propaganda</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Grandiose Narcissism</div>
+                        <div class="definition">Overt, arrogant, attention-seeking narcissism.</div>
+                        <span class="term-category">Narcissism</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Gray Rock Method</div>
+                        <div class="definition">Becoming as boring as a gray rock to discourage manipulators.</div>
+                        <span class="term-category">Defense</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Guilt Tripping</div>
+                        <div class="definition">Making others responsible for the manipulator's feelings.</div>
+                        <span class="term-category">Emotional Manipulation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- H -->
+            <div class="glossary-section" id="H">
+                <h2 class="letter-header">H</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Halo Effect</div>
+                        <div class="definition">One positive trait influences perception of other traits.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Handshake Interrupt</div>
+                        <div class="definition">A rapid induction technique using unexpected handshake patterns.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Hindsight Bias</div>
+                        <div class="definition">"I knew it all along" phenomenon.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Hoovering</div>
+                        <div class="definition">When a narcissist tries to pull an ex back into the relationship.</div>
+                        <span class="term-category">Narcissism</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Horse Race Coverage</div>
+                        <div class="definition">Treating politics like sports - polls, not issues.</div>
+                        <span class="term-category">Media</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Hypervigilance</div>
+                        <div class="definition">Constant state of alert, watching for danger.</div>
+                        <span class="term-category">Trauma Response</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Hypnoidal State</div>
+                        <div class="definition">Lightest level of trance, relaxation, heavy eyelids.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- I -->
+            <div class="glossary-section" id="I">
+                <h2 class="letter-header">I</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Idealization</div>
+                        <div class="definition">The phase where a narcissist puts their target on a pedestal.</div>
+                        <span class="term-category">Narcissism</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Information Diet</div>
+                        <div class="definition">Sharing nothing personal to prevent manipulation.</div>
+                        <span class="term-category">Defense</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Information Gap</div>
+                        <div class="definition">Creating curiosity by revealing there's something you don't know.</div>
+                        <span class="term-category">Marketing</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Intermittent Reinforcement</div>
+                        <div class="definition">Unpredictable rewards and punishments that create addiction.</div>
+                        <span class="term-category">Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Isolation</div>
+                        <div class="definition">Cutting the target off from friends, family, and support.</div>
+                        <span class="term-category">Manipulation Tactic</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- J -->
+            <div class="glossary-section" id="J">
+                <h2 class="letter-header">J</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">JADE</div>
+                        <div class="definition">Don't Justify, Argue, Defend, or Explain when setting boundaries.</div>
+                        <span class="term-category">Defense</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Just-World Hypothesis</div>
+                        <div class="definition">Believing the world is fair, people get what they deserve.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- K -->
+            <div class="glossary-section" id="K">
+                <h2 class="letter-header">K</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Kinesthetic</div>
+                        <div class="definition">Related to touch and feeling - one of the representational systems.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- L -->
+            <div class="glossary-section" id="L">
+                <h2 class="letter-header">L</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Left-Digit Effect</div>
+                        <div class="definition">$4.99 feels significantly cheaper than $5.00.</div>
+                        <span class="term-category">Pricing Psychology</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Limbic System</div>
+                        <div class="definition">The emotional center of the brain.</div>
+                        <span class="term-category">Neuroscience</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Loss Aversion</div>
+                        <div class="definition">Fear of loss is twice as powerful as desire for gain.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Love Bombing</div>
+                        <div class="definition">Overwhelming affection early in relationships to create dependency.</div>
+                        <span class="term-category">Relationship Manipulation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- M -->
+            <div class="glossary-section" id="M">
+                <h2 class="letter-header">M</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Machiavellianism</div>
+                        <div class="definition">Cunning, strategic manipulation, cynical worldview.</div>
+                        <span class="term-category">Dark Triad</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Mental Boundaries</div>
+                        <div class="definition">Your thoughts, opinions, and beliefs are yours.</div>
+                        <span class="term-category">Defense</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Meta Model</div>
+                        <div class="definition">Precision questions to challenge distortions in language.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Metaprograms</div>
+                        <div class="definition">Unconscious filters that determine how people process information.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Micro-expressions</div>
+                        <div class="definition">Facial expressions lasting 1/15 to 1/25 of a second revealing true emotion.</div>
+                        <span class="term-category">Non-Verbal</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Microtargeting</div>
+                        <div class="definition">Using personal data to show tailored political ads.</div>
+                        <span class="term-category">Political Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Milton Model</div>
+                        <div class="definition">Artfully vague language that bypasses conscious resistance.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Mirroring</div>
+                        <div class="definition">Copying someone's body language, voice, or behavior to build rapport.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Mobbing</div>
+                        <div class="definition">When multiple people in the workplace gang up on a target.</div>
+                        <span class="term-category">Workplace</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Moving Goalposts</div>
+                        <div class="definition">Constantly changing expectations so you can never win.</div>
+                        <span class="term-category">Manipulation Tactic</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- N -->
+            <div class="glossary-section" id="N">
+                <h2 class="letter-header">N</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Name-Calling</div>
+                        <div class="definition">Attaching negative labels to create rejection without examination.</div>
+                        <span class="term-category">Propaganda</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Narcissism</div>
+                        <div class="definition">Grandiosity, entitlement, need for admiration, lack of empathy.</div>
+                        <span class="term-category">Dark Triad</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Negative Commands</div>
+                        <div class="definition">"Don't think of a pink elephant" - brain doesn't process negatives well.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Negativity Bias</div>
+                        <div class="definition">Negative events have more impact than positive ones.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Neocortex</div>
+                        <div class="definition">The "thinking brain" - logic, reasoning, planning.</div>
+                        <span class="term-category">Neuroscience</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Neuromarketing</div>
+                        <div class="definition">Using brain scans to measure unconscious responses to ads.</div>
+                        <span class="term-category">Marketing</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">NLP</div>
+                        <div class="definition">Neuro-Linguistic Programming - study of mind, language, and behavior patterns.</div>
+                        <span class="term-category">Psychology</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">No Contact</div>
+                        <div class="definition">Cutting all communication with a manipulator to heal.</div>
+                        <span class="term-category">Recovery</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Nominalizations</div>
+                        <div class="definition">Turning verbs into abstract nouns in language patterns.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- O -->
+            <div class="glossary-section" id="O">
+                <h2 class="letter-header">O</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Omission Bias</div>
+                        <div class="definition">Judging harmful actions worse than harmful inactions.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Optimism Bias</div>
+                        <div class="definition">Overestimating probability of positive outcomes.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- P -->
+            <div class="glossary-section" id="P">
+                <h2 class="letter-header">P</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Pacing and Leading</div>
+                        <div class="definition">Matching someone's state, then guiding them to a desired state.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Pathological Lying</div>
+                        <div class="definition">Compulsive lying even when truth would work.</div>
+                        <span class="term-category">Psychopathy</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Pattern Interrupt</div>
+                        <div class="definition">Breaking an automatic pattern to create an open moment.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Performance Improvement Plan (PIP)</div>
+                        <div class="definition">Often used to push employees out with impossible goals.</div>
+                        <span class="term-category">Workplace</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Plain Folks</div>
+                        <div class="definition">"I'm just like you" appeal in propaganda.</div>
+                        <span class="term-category">Propaganda</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Post-Hypnotic Suggestion</div>
+                        <div class="definition">Commands given during trance carried out after trance ends.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Post-Traumatic Growth</div>
+                        <div class="definition">Becoming stronger after trauma, not just recovering.</div>
+                        <span class="term-category">Healing</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Prefrontal Cortex</div>
+                        <div class="definition">Brain's decision-making and impulse control center.</div>
+                        <span class="term-category">Neuroscience</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Present Bias</div>
+                        <div class="definition">Overvaluing immediate rewards over future benefits.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Presuppositions</div>
+                        <div class="definition">Assuming something is true in language patterns.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Primary Psychopathy</div>
+                        <div class="definition">Born with emotional deficits - cold, calculating.</div>
+                        <span class="term-category">Psychopathy</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Priming</div>
+                        <div class="definition">Exposing to stimuli that influence later behavior unconsciously.</div>
+                        <span class="term-category">Cognitive Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Projection</div>
+                        <div class="definition">Accusing others of one's own bad behaviors.</div>
+                        <span class="term-category">Defense Mechanism</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Propaganda</div>
+                        <div class="definition">Systematic communication to shape beliefs and manipulate opinions.</div>
+                        <span class="term-category">Media</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Proxemics</div>
+                        <div class="definition">Study of personal space and territorial behavior.</div>
+                        <span class="term-category">Non-Verbal</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Psychopathy</div>
+                        <div class="definition">Lack of empathy, shallow emotions, impulsivity, antisocial behavior.</div>
+                        <span class="term-category">Dark Triad</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">PSYWAR</div>
+                        <div class="definition">Psychological warfare - systematic use of tactics to break down resistance.</div>
+                        <span class="term-category">Military</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q -->
+            <div class="glossary-section" id="Q">
+                <h2 class="letter-header">Q</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Whataboutism</div>
+                        <div class="definition">Deflecting criticism by pointing to opponent's flaws.</div>
+                        <span class="term-category">Political Tactic</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- R -->
+            <div class="glossary-section" id="R">
+                <h2 class="letter-header">R</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Rapport</div>
+                        <div class="definition">State of mutual trust and responsiveness.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Reciprocity</div>
+                        <div class="definition">Feeling obligated to return favors.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Red Flags</div>
+                        <div class="definition">Warning signs of manipulation or abuse.</div>
+                        <span class="term-category">Awareness</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Reframing</div>
+                        <div class="definition">Changing the meaning of an experience by changing context.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Reid Technique</div>
+                        <div class="definition">9-step interrogation method designed to break resistance.</div>
+                        <span class="term-category">Interrogation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Reptilian Brain</div>
+                        <div class="definition">Oldest part of brain - survival instincts, fight/flight.</div>
+                        <span class="term-category">Neuroscience</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Representational Systems</div>
+                        <div class="definition">VAKOG - Visual, Auditory, Kinesthetic, Olfactory, Gustatory.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- S -->
+            <div class="glossary-section" id="S">
+                <h2 class="letter-header">S</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Sadism</div>
+                        <div class="definition">Deriving pleasure from others' pain.</div>
+                        <span class="term-category">Dark Tetrad</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Scapegoating</div>
+                        <div class="definition">Blaming a group for problems to deflect from real causes.</div>
+                        <span class="term-category">Propaganda</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Scarcity</div>
+                        <div class="definition">Limited availability creates artificial value.</div>
+                        <span class="term-category">Marketing</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Sea-Lioning</div>
+                        <div class="definition">Repeatedly asking "just questions" to exhaust and harass.</div>
+                        <span class="term-category">Online Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Secondary Psychopathy</div>
+                        <div class="definition">Developed through trauma - more impulsive, reactive.</div>
+                        <span class="term-category">Psychopathy</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Selection Bias</div>
+                        <div class="definition">What's reported and ignored shapes your view of what matters.</div>
+                        <span class="term-category">News</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Sensory Deprivation</div>
+                        <div class="definition">Cutting off sensory input - can cause hallucinations and breakdown.</div>
+                        <span class="term-category">Psychological Warfare</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Sensory Overload</div>
+                        <div class="definition">Overwhelming the nervous system with too much input.</div>
+                        <span class="term-category">Psychological Warfare</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Silent Treatment</div>
+                        <div class="definition">Withholding communication as punishment.</div>
+                        <span class="term-category">Emotional Manipulation</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Social Proof</div>
+                        <div class="definition">Following the crowd - if others do it, it must be right.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Somnambulism</div>
+                        <div class="definition">Deep trance state where eyes can open without coming out of trance.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Spotlight Effect</div>
+                        <div class="definition">Overestimating how much others notice us.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Status Quo Bias</div>
+                        <div class="definition">Preferring things to stay the same.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Steepling</div>
+                        <div class="definition">Fingertips touching - signals confidence and superiority.</div>
+                        <span class="term-category">Body Language</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Stockholm Syndrome</div>
+                        <div class="definition">Bonding with captors as a survival mechanism.</div>
+                        <span class="term-category">Trauma Response</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Subliminal Messaging</div>
+                        <div class="definition">Messages below conscious awareness.</div>
+                        <span class="term-category">Marketing</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Sunk Cost Fallacy</div>
+                        <div class="definition">Continuing investment because of past investment.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Superficial Charm</div>
+                        <div class="definition">Charisma that feels "too perfect" - common in psychopaths.</div>
+                        <span class="term-category">Psychopathy</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Swish Pattern</div>
+                        <div class="definition">NLP technique to replace unwanted thoughts with desired ones.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">System 1 Thinking</div>
+                        <div class="definition">Fast, automatic, intuitive thinking - 95% of decisions.</div>
+                        <span class="term-category">Cognitive Science</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">System 2 Thinking</div>
+                        <div class="definition">Slow, deliberate, logical thinking - requires effort.</div>
+                        <span class="term-category">Cognitive Science</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- T -->
+            <div class="glossary-section" id="T">
+                <h2 class="letter-header">T</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Testimonial</div>
+                        <div class="definition">Having respected people endorse a position.</div>
+                        <span class="term-category">Propaganda</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">The Pause</div>
+                        <div class="definition">Pausing before responding to engage conscious thought.</div>
+                        <span class="term-category">Defense</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Thought Stopping</div>
+                        <div class="definition">Saying "stop" out loud to disrupt intrusive thoughts.</div>
+                        <span class="term-category">Defense</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Transfer</div>
+                        <div class="definition">Carrying authority of something respected to something else.</div>
+                        <span class="term-category">Propaganda</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Trauma Bond</div>
+                        <div class="definition">Powerful attachment formed through cycles of abuse and reward.</div>
+                        <span class="term-category">Relationship Abuse</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Triangulation</div>
+                        <div class="definition">Bringing third parties into conflicts to manipulate.</div>
+                        <span class="term-category">Manipulation Tactic</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Triune Brain</div>
+                        <div class="definition">Model of brain with three layers: Reptilian, Limbic, Neocortex.</div>
+                        <span class="term-category">Neuroscience</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- U -->
+            <div class="glossary-section" id="U">
+                <h2 class="letter-header">U</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Unsent Letter</div>
+                        <div class="definition">Healing exercise - write everything you never got to say.</div>
+                        <span class="term-category">Recovery</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- V -->
+            <div class="glossary-section" id="V">
+                <h2 class="letter-header">V</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">VAKOG</div>
+                        <div class="definition">Visual, Auditory, Kinesthetic, Olfactory, Gustatory - representational systems.</div>
+                        <span class="term-category">NLP</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Victim Playing</div>
+                        <div class="definition">Always the victim, never accountable.</div>
+                        <span class="term-category">Manipulation Tactic</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Virtue Signaling</div>
+                        <div class="definition">Expressing opinions to signal moral superiority.</div>
+                        <span class="term-category">Social Media</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Voice Marking</div>
+                        <div class="definition">Slight voice changes for embedded commands in hypnosis.</div>
+                        <span class="term-category">Hypnosis</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Vulnerable Narcissism</div>
+                        <div class="definition">Insecure, defensive, hypersensitive to criticism.</div>
+                        <span class="term-category">Narcissism</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- W -->
+            <div class="glossary-section" id="W">
+                <h2 class="letter-header">W</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Whataboutism</div>
+                        <div class="definition">Deflecting criticism by pointing to opponent's flaws.</div>
+                        <span class="term-category">Political Tactic</span>
+                    </div>
+                    <div class="term-card">
+                        <div class="term">Word Salad</div>
+                        <div class="definition">Confusing language to avoid accountability.</div>
+                        <span class="term-category">Verbal Manipulation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- X -->
+            <div class="glossary-section" id="X">
+                <h2 class="letter-header">X</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Xenophobia Exploitation</div>
+                        <div class="definition">Using fear of outsiders for political gain.</div>
+                        <span class="term-category">Political Manipulation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Y -->
+            <div class="glossary-section" id="Y">
+                <h2 class="letter-header">Y</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Yes Set</div>
+                        <div class="definition">Series of questions that get "yes" answers to build momentum.</div>
+                        <span class="term-category">Hypnosis/Sales</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Z -->
+            <div class="glossary-section" id="Z">
+                <h2 class="letter-header">Z</h2>
+                <div class="glossary-grid">
+                    <div class="term-card">
+                        <div class="term">Zeigarnik Effect</div>
+                        <div class="definition">Remembering uncompleted tasks better than completed ones.</div>
+                        <span class="term-category">Cognitive Bias</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chapter-nav">
+            <a href="chapter20.html" class="nav-btn"><span>←</span> Chapter 20</a>
+            <a href="index.html" class="nav-btn"><span>◈</span> Index</a>
+            <a href="appendix-b.html" class="nav-btn next">Appendix B <span>→</span></a>
+        </div>
+
+        <div class="footer">
+            <a href="index.html" class="back-home"><span>◈</span> Return to Home</a>
+            <div class="copyright">© 2024 YOUR NAME HERE · Glossary of Terms</div>
+        </div>
+    </div>
+
+    <script>
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) btn.classList.add('active');
+            });
+            localStorage.setItem('theme', theme);
+        }
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+
+        function searchGlossary() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const terms = document.querySelectorAll('.term-card');
+            
+            terms.forEach(term => {
+                const text = term.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    term.style.display = 'block';
+                } else {
+                    term.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

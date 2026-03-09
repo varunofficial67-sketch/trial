@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Chapter 13: Workplace Manipulation | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Theme Variables */
+        :root {
+            /* Dark theme (default) */
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+            --work-color: #4dabf7;
+            --work-glow: rgba(77, 171, 247, 0.3);
+        }
+
+        /* Light theme */
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+            --work-color: #1c7ed6;
+            --work-glow: rgba(28, 126, 214, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Settings Bar */
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        .chapter-progress {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chapter-progress span {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: var(--border-color);
+            position: fixed;
+            top: 73px;
+            left: 0;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.2s;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Chapter Header */
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .chapter-number {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .chapter-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        /* Content Sections */
+        .section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .section h2 i {
+            color: var(--accent-primary);
+            margin-right: 1rem;
+            font-style: normal;
+        }
+
+        .section h3 {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Workplace Box */
+        .workplace-box {
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-card));
+            border: 2px solid var(--work-color);
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workplace-box::before {
+            content: '💼';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(10deg);
+        }
+
+        .workplace-box h4 {
+            color: var(--work-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Statistics Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--work-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Tactic Grid */
+        .tactic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tactic-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--work-color);
+        }
+
+        .tactic-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--work-color);
+            box-shadow: 0 10px 20px var(--work-glow);
+        }
+
+        .tactic-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tactic-card h4 {
+            color: var(--work-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .tactic-example {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        /* Player Type Cards */
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .player-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .player-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+        }
+
+        .player-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .player-traits {
+            margin: 1rem 0;
+            padding-left: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .player-defense {
+            font-size: 0.9rem;
+            color: var(--success-color);
+            font-style: italic;
+        }
+
+        /* Red Flag Grid */
+        .redflag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .redflag-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .redflag-card h5 {
+            color: var(--danger-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobbing Stages */
+        .mobbing-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 2rem 0;
+        }
+
+        .mobbing-stage {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            border-left: 4px solid;
+        }
+        .mobbing-stage.stage-1 { border-left-color: var(--warning-color); }
+        .mobbing-stage.stage-2 { border-left-color: var(--warning-color); }
+        .mobbing-stage.stage-3 { border-left-color: var(--danger-color); }
+        .mobbing-stage.stage-4 { border-left-color: var(--danger-color); }
+        .mobbing-stage.stage-5 { border-left-color: var(--danger-color); }
+
+        .stage-num {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+        .stage-1 .stage-num { background: var(--warning-color); }
+        .stage-2 .stage-num { background: var(--warning-color); }
+        .stage-3 .stage-num { background: var(--danger-color); }
+        .stage-4 .stage-num { background: var(--danger-color); }
+        .stage-5 .stage-num { background: var(--danger-color); }
+
+        /* Defense Grid */
+        .defense-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .defense-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--success-color);
+        }
+
+        .defense-card h4 {
+            color: var(--success-color);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Chapter Navigation */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .nav-btn.next:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .chapter-title {
+                font-size: 2.5rem;
+            }
+
+            .mobbing-stage {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo-area {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Settings Bar -->
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">
+                        <span>🌙</span> Dark
+                    </button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">
+                        <span>☀️</span> Light
+                    </button>
+                </div>
+            </div>
+            <div class="chapter-progress">
+                Chapter <span>13</span> of <span>20</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Chapter Header -->
+        <div class="chapter-header">
+            <div class="chapter-badge">REAL-WORLD APPLICATIONS · CHAPTER 13</div>
+            <div class="chapter-number">THE CORPORATE JUNGLE</div>
+            <h1 class="chapter-title">
+                <span class="gradient-text">Workplace</span><br>
+                Manipulation
+            </h1>
+            <div class="chapter-subtitle">
+                How toxic bosses, colleagues, and office politics destroy careers - and how to protect yourself
+            </div>
+        </div>
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <div class="section">
+            <h2><i>💼</i> 13.1 The Dark Side of the Workplace</h2>
+            <p>We spend one-third of our lives at work. We need our jobs for income, identity, and purpose. And that's exactly what makes the workplace a perfect environment for manipulation. When your livelihood is at stake, you'll tolerate behavior you'd never accept elsewhere.</p>
+            
+            <p>Workplace manipulation is epidemic. Toxic bosses, backstabbing colleagues, and cutthroat politics destroy careers, health, and lives. Understanding these dynamics is essential for survival.</p>
+
+            <div class="workplace-box">
+                <h4>📊 Workplace Manipulation Statistics</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">75%</div>
+                        <div class="stat-label">Employees affected by workplace bullying</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">65%</div>
+                        <div class="stat-label">Bullies are bosses/superiors</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label">Never tell anyone they're being bullied</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$30B</div>
+                        <div class="stat-label">Annual cost of workplace bullying</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: 15 WORKPLACE MANIPULATION TACTICS -->
+        <div class="section">
+            <h2><i>🎭</i> 13.2 15 Common Workplace Manipulation Tactics</h2>
+            
+            <div class="tactic-grid">
+                <div class="tactic-card">
+                    <div class="tactic-icon">📉</div>
+                    <h4>1. Credit Stealing</h4>
+                    <p>Taking credit for your work, ideas, and achievements.</p>
+                    <div class="tactic-example">Boss presents your project as their own in meetings. Colleague implies your idea was theirs.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">📊</div>
+                    <h4>2. Gaslighting</h4>
+                    <p>Making you doubt your performance, memory, or sanity.</p>
+                    <div class="tactic-example">"I never said that deadline was important. You must have misunderstood."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🏝️</div>
+                    <h4>3. Isolation</h4>
+                    <p>Excluding you from meetings, emails, and social events.</p>
+                    <div class="tactic-example">"Oh, that meeting was just for core team." (You used to be core team.)</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">📋</div>
+                    <h4>4. Impossible Standards</h4>
+                    <p>Setting unachievable goals, then punishing failure.</p>
+                    <div class="tactic-example">"You missed the deadline by 2 hours" - on a project that needed 3 months and you had 2 weeks.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🔄</div>
+                    <h4>5. Moving Goalposts</h4>
+                    <p>Constantly changing requirements so you can never succeed.</p>
+                    <div class="tactic-example">You deliver exactly what was asked, then hear: "That's not what I meant."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🎭</div>
+                    <h4>6. Public Humiliation</h4>
+                    <p>Criticizing or mocking you in front of others.</p>
+                    <div class="tactic-example">"Everyone, let's learn from Sarah's mistake." (Highlighting minor error publicly.)</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🤐</div>
+                    <h4>7. Silent Treatment</h4>
+                    <p>Withholding communication, feedback, or support.</p>
+                    <div class="tactic-example">Boss ignores your emails for days, then blames you for not communicating.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">📢</div>
+                    <h4>8. Spreading Rumors</h4>
+                    <p>Gossip and lies to damage your reputation.</p>
+                    <div class="tactic-example">"I heard they're looking for other jobs anyway." "Rumor is they have a drinking problem."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">⚖️</div>
+                    <h4>9. Unequal Enforcement</h4>
+                    <p>Rules apply to you but not to favorites.</p>
+                    <div class="tactic-example">You're written up for being 5 minutes late; the boss's favorite comes in an hour late daily.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">📝</div>
+                    <h4>10. Overloading</h4>
+                    <p>Giving more work than humanly possible, then blaming you for not keeping up.</p>
+                    <div class="tactic-example">"You're just not managing your time well." (While doing three people's jobs.)</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🚫</div>
+                    <h4>11. Withholding Resources</h4>
+                    <p>Denying tools, information, or support needed to succeed.</p>
+                    <div class="tactic-example">"You should have figured out how to do it without training."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">👥</div>
+                    <h4>12. Triangulation</h4>
+                    <p>Bringing others into conflicts to isolate you.</p>
+                    <div class="tactic-example">"Everyone on the team agrees that you're the problem."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🎯</div>
+                    <h4>13. Micromanaging</h4>
+                    <p>Excessive control designed to make you feel incompetent.</p>
+                    <div class="tactic-example">Approving every email, checking every action, demanding constant updates.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">😢</div>
+                    <h4>14. Playing Victim</h4>
+                    <p>Making you feel guilty for their failures.</p>
+                    <div class="tactic-example">"If you'd just supported me better, I wouldn't have missed my deadline."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🕵️</div>
+                    <h4>15. Spying</h4>
+                    <p>Monitoring your work, conversations, and activities excessively.</p>
+                    <div class="tactic-example">Checking your computer activity, timing bathroom breaks, having others report on you.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: 6 TYPES OF TOXIC BOSSES -->
+        <div class="section">
+            <h2><i>👔</i> 13.3 6 Types of Toxic Bosses</h2>
+            
+            <div class="player-grid">
+                <div class="player-card">
+                    <div class="player-name">The Narcissist</div>
+                    <div class="player-traits">
+                        • Takes all credit<br>
+                        • Blames others for failures<br>
+                        • Needs constant admiration<br>
+                        • Explosive when challenged
+                    </div>
+                    <div class="player-defense">Document everything. Praise strategically. Don't compete for spotlight.</div>
+                </div>
+                <div class="player-card">
+                    <div class="player-name">The Gaslighter</div>
+                    <div class="player-traits">
+                        • Denies previous conversations<br>
+                        • Makes you question reality<br>
+                        • Changes history constantly<br>
+                        • Leaves you confused
+                    </div>
+                    <div class="player-defense">Email summaries after meetings. "Just to confirm, we agreed on X."</div>
+                </div>
+                <div class="player-card">
+                    <div class="player-name">The Credit Stealer</div>
+                    <div class="player-traits">
+                        • Presents your ideas as theirs<br>
+                        • Takes you off important emails<br>
+                        • Attends meetings without you<br>
+                        • Takes credit, gives blame
+                    </div>
+                    <div class="player-defense">Present ideas in writing, cc others. Build relationships above them.</div>
+                </div>
+                <div class="player-card">
+                    <div class="player-name">The Micromanager</div>
+                    <div class="player-traits">
+                        • Controls every detail<br>
+                        • Never delegates truly<br>
+                        • Creates dependency<br>
+                        • Undermines confidence
+                    </div>
+                    <div class="player-defense">Set clear expectations upfront. Over-communicate. Request autonomy gradually.</div>
+                </div>
+                <div class="player-card">
+                    <div class="player-name">The Mood Swing Boss</div>
+                    <div class="player-traits">
+                        • Unpredictable reactions<br>
+                        • Walking on eggshells<br>
+                        • Hot one day, cold next<br>
+                        • Personal life affects work
+                    </div>
+                    <div class="player-defense">Stay neutral. Don't take mood personally. Have backup plans.</div>
+                </div>
+                <div class="player-card">
+                    <div class="player-name">The Incompetent</div>
+                    <div class="player-traits">
+                        • Can't do their own job<br>
+                        • Relies on you completely<br>
+                        • Takes credit anyway<br>
+                        • Blocks your advancement
+                    </div>
+                    <div class="player-defense">Document your contributions. Network with their boss. Consider moving.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: 5 TYPES OF TOXIC COLLEAGUES -->
+        <div class="section">
+            <h2><i>👥</i> 13.4 5 Types of Toxic Colleagues</h2>
+            
+            <div class="player-grid">
+                <div class="player-card">
+                    <div class="player-name">The Gossip</div>
+                    <div class="player-traits">Spreads rumors, triangulates, creates drama, destroys trust.</div>
+                    <div class="player-defense">Share nothing personal. Be polite but distant. Don't engage in gossip.</div>
+                </div>
+                <div class="player-card">
+                    <div class="player-name">The Saboteur</div>
+                    <div class="player-traits">Undermines your work, withholds information, sets you up to fail.</div>
+                    <div class="player-defense">Document everything. Verify information. Build relationships with others.</div>
+                </div>
+                <div class="player-card">
+                    <div class="player-name">The Credit Thief</div>
+                    <div class="player-traits">Takes credit for your ideas, claims your work as theirs.</div>
+                    <div class="player-defense">Present ideas in group settings. CC others. Speak up immediately.</div>
+                </div>
+                <div class="player-card">
+                    <div class="player-name">The Energy Vampire</div>
+                    <div class="player-traits">Constant complaining, drama, takes your time and emotional energy.</div>
+                    <div class="player-defense">Set time boundaries. "I'd love to help but I'm on deadline."</div>
+                </div>
+                <div class="player-card">
+                    <div class="player-name">The Brown-Noser</div>
+                    <div class="player-traits">Sacrifices others to get ahead, tells boss what they want to hear.</div>
+                    <div class="player-defense">Stay professional. Document your work. Don't trust them with sensitive info.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: 20 WORKPLACE RED FLAGS -->
+        <div class="section">
+            <h2><i>🚩</i> 13.5 20 Red Flags You're Being Manipulated at Work</h2>
+            
+            <div class="redflag-grid">
+                <div class="redflag-card">
+                    <h5>🚩 Your Ideas Disappear</h5>
+                    <p>You suggest something, it's ignored. Someone else suggests it, it's brilliant.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 You're Excluded</h5>
+                    <p>Suddenly off email threads, not invited to meetings.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Goalposts Keep Moving</h5>
+                    <p>Requirements change after you've delivered.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Impossible Workload</h5>
+                    <p>More work than humanly possible, then blamed.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 No Clear Feedback</h5>
+                    <p>Vague criticism, nothing specific to improve.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Public Criticism</h5>
+                    <p>Corrected or humiliated in front of others.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Credit Theft</h5>
+                    <p>Others take credit for your work regularly.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Information Withheld</h5>
+                    <p>You're missing info needed to do your job.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Rules Apply Differently</h5>
+                    <p>You're held to standards others aren't.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Your Gut Says Danger</h5>
+                    <p>That uneasy feeling - trust it.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Gaslighting</h5>
+                    <p>"I never said that." "You're remembering wrong."</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Isolated from Higher-ups</h5>
+                    <p>Access to leadership blocked.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Performance Reviews Surprise</h5>
+                    <p>Negative feedback you've never heard before.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Resources Withheld</h5>
+                    <p>No training, tools, or support.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Micromanaged</h5>
+                    <p>Every detail controlled, no autonomy.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Gossip About You</h5>
+                    <p>You hear rumors about yourself.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Favors Expected</h5>
+                    <p>Personal favors framed as "teamwork."</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 No Work-Life Boundary</h5>
+                    <p>Expected to be available 24/7.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 Physical Symptoms</h5>
+                    <p>Anxiety, sleeplessness before work.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>🚩 You're Always Wrong</h5>
+                    <p>Nothing you do is good enough.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: MOBBING - GANGING UP ON TARGETS -->
+        <div class="section">
+            <h2><i>🐺</i> 13.6 Mobbing: When a Group Targets You</h2>
+            
+            <p>Mobbing is when multiple people in the workplace gang up on a target - often with the implicit or explicit approval of management. It's systematic psychological violence.</p>
+
+            <div class="mobbing-timeline">
+                <div class="mobbing-stage stage-1">
+                    <div class="stage-num">1</div>
+                    <div><strong>TRIGGER:</strong> Often triggered by the target being competent, ethical, or different. You're seen as a threat.</div>
+                </div>
+                <div class="mobbing-stage stage-2">
+                    <div class="stage-num">2</div>
+                    <div><strong>GOSSIP & RUMORS:</strong> Reputation attacked subtly. "They're difficult to work with." "They think they're better than us."</div>
+                </div>
+                <div class="mobbing-stage stage-3">
+                    <div class="stage-num">3</div>
+                    <div><strong>ISOLATION:</strong> Excluded from communication, social events, collaboration.</div>
+                </div>
+                <div class="mobbing-stage stage-4">
+                    <div class="stage-num">4</div>
+                    <div><strong>SABOTAGE:</strong> Work undermined, information withheld, resources denied.</div>
+                </div>
+                <div class="mobbing-stage stage-5">
+                    <div class="stage-num">5</div>
+                    <div><strong>EXPULSION:</strong> Target quits, is fired, or has breakdown. Group wins.</div>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    Mobbing is psychological terror in the workplace. It's not about one bad day - it's a systematic campaign that destroys careers and lives.
+                </div>
+                <div class="quote-author">— Dr. Heinz Leymann, Mobbing Researcher</div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: CASE STUDY - THE WHISTLEBLOWER -->
+        <div class="section">
+            <h2><i>📋</i> 13.7 Case Study: The Engineer Who Spoke Up</h2>
+            
+            <div class="case-study">
+                <h4>🎯 How a Top Performer Was Destroyed</h4>
+                <div class="case-study-meta">
+                    <span>📍 Industry: Construction</span>
+                    <span>📅 Role: Senior Engineer, 12 years</span>
+                </div>
+                <div class="case-study-content">
+                    <p><strong>The Situation:</strong> "Tom" was a respected senior engineer at a large construction firm. He'd won awards, led major projects, and mentored junior staff. Then he noticed safety violations in a high-profile project.</p>
+                    
+                    <p><strong>Phase 1 - Speaking Up:</strong> Tom raised concerns to his manager about substandard materials being used. He had documentation showing the materials wouldn't meet safety standards. His manager assured him it would be addressed.</p>
+                    
+                    <p><strong>Phase 2 - Gaslighting:</strong> Nothing changed. Tom raised it again. This time, his manager said, "I don't recall you mentioning this before. Are you sure you understood the specifications?"</p>
+                    
+                    <p><strong>Phase 3 - Isolation:</strong> Tom was removed from the project. He was told it was a "temporary reassignment." His emails to the project team went unanswered. He wasn't invited to meetings.</p>
+                    
+                    <p><strong>Phase 4 - Character Assassination:</strong> Rumors spread. "Tom's been struggling lately." "I heard he's having personal problems." "He's not a team player." Colleagues who were once friends became distant.</p>
+                    
+                    <p><strong>Phase 5 - Performance Reviews:</strong> Tom's next review was devastating. "Lack of teamwork." "Communication issues." "Needs improvement." Nothing about his 12 years of excellence.</p>
+                    
+                    <p><strong>Phase 6 - Constructive Discharge:</strong> Tom was put on a "performance improvement plan" with impossible goals. The stress affected his health - insomnia, anxiety, depression. After 8 months, he resigned.</p>
+                    
+                    <p><strong>The Aftermath:</strong> Tom couldn't find work for two years. The project's safety violations were later exposed - after a collapse that injured three workers. Tom now speaks about workplace bullying, but his career never recovered.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 8: NARCISSISTIC BOSS PATTERNS -->
+        <div class="section">
+            <h2><i>👑</i> 13.8 The Narcissistic Boss: A Deeper Look</h2>
+            
+            <div class="tactic-grid">
+                <div class="tactic-card">
+                    <h4>The Idealization Phase</h4>
+                    <p>When you're new, you're the best. Praised publicly, given choice assignments. You feel special.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>The Devaluation Phase</h4>
+                    <p>Suddenly, nothing you do is right. The same work that earned praise now draws criticism. You're confused, trying harder.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>The Discard Phase</h4>
+                    <p>You're replaced by a new favorite. Or fired. Or you quit, broken.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>The Hoover (Optional)</h4>
+                    <p>They may try to pull you back if they need you - then repeat the cycle.</p>
+                </div>
+            </div>
+
+            <div class="workplace-box">
+                <h4>⚠️ Warning Signs of a Narcissistic Boss:</h4>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Your successes are their successes; your failures are your failures</li>
+                    <li>They have favorites - and it changes unpredictably</li>
+                    <li>You feel like you're walking on eggshells</li>
+                    <li>They take credit for everything good, blame others for everything bad</li>
+                    <li>They surround themselves with admirers, not honest advisors</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 9: DEFENSE STRATEGIES -->
+        <div class="section">
+            <h2><i>🛡️</i> 13.9 Protecting Yourself at Work</h2>
+            
+            <h3>Documentation Strategies:</h3>
+            <div class="defense-grid">
+                <div class="defense-card">
+                    <h4>📓 The Paper Trail</h4>
+                    <p>Email summaries after verbal conversations. "Per our discussion, I understand that I need to..."</p>
+                </div>
+                <div class="defense-card">
+                    <h4>📋 Performance Log</h4>
+                    <p>Keep a private log of your achievements, positive feedback, and contributions.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>📎 Save Everything</h4>
+                    <p>Keep copies of emails, reviews, and documents off-site if possible.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>👥 Witnesses</h4>
+                    <p>Have others present during important conversations when possible.</p>
+                </div>
+            </div>
+
+            <h3>Relationship Strategies:</h3>
+            <div class="defense-grid">
+                <div class="defense-card">
+                    <h4>🤝 Network Up</h4>
+                    <p>Build relationships with people above your boss. They need to know your value independently.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>👥 Allies</h4>
+                    <p>Cultivate trusted colleagues who can verify your work and character.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>🚫 Don't Isolate</h4>
+                    <p>Stay connected. Isolation is the goal of workplace bullies.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>🎯 Stay Professional</h4>
+                    <p>Don't give them ammunition. Be punctual, prepared, professional.</p>
+                </div>
+            </div>
+
+            <h3>Boundary Strategies:</h3>
+            <div class="defense-grid">
+                <div class="defense-card">
+                    <h4>⏱️ Time Boundaries</h4>
+                    <p>"I'll need to prioritize that. What would you like me to deprioritize?"</p>
+                </div>
+                <div class="defense-card">
+                    <h4>📝 Scope Boundaries</h4>
+                    <p>"That's outside my role. Who should I connect you with?"</p>
+                </div>
+                <div class="defense-card">
+                    <h4>🚪 Physical Boundaries</h4>
+                    <p>Don't let them corner you. Stay near exits, keep door open.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>🧠 Emotional Boundaries</h4>
+                    <p>Their drama is not your emergency. Don't get drawn in.</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    In toxic workplaces, your only real protection is documentation, allies, and a current resume.
+                </div>
+                <div class="quote-author">— Workplace Bullying Institute</div>
+            </div>
+        </div>
+
+        <!-- SECTION 10: WHEN TO LEAVE -->
+        <div class="section">
+            <h2><i>🚪</i> 13.10 Knowing When to Walk Away</h2>
+            
+            <div class="tactic-grid">
+                <div class="tactic-card">
+                    <h4>Health Warning Signs</h4>
+                    <p>If work is affecting your sleep, mental health, or physical well-being - it's not worth it.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>No Support</h4>
+                    <p>If HR protects the company, not you, and higher-ups enable abuse.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>Pattern, Not Incident</h4>
+                    <p>One bad incident is manageable. A pattern of abuse won't stop.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>You've Tried Everything</h4>
+                    <p>Documentation, allies, boundaries - if nothing works, it's time.</p>
+                </div>
+            </div>
+
+            <div class="workplace-box">
+                <h4>✅ Exit Strategy Checklist:</h4>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Update resume and LinkedIn</li>
+                    <li>Network while employed</li>
+                    <li>Save money (emergency fund)</li>
+                    <li>Document everything for potential legal action</li>
+                    <li>Don't quit without a plan (if possible)</li>
+                    <li>But don't stay if your health is at risk</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 11: LEGAL PROTECTIONS -->
+        <div class="section">
+            <h2><i>⚖️</i> 13.11 Legal Options and Protections</h2>
+            
+            <div class="defense-grid">
+                <div class="defense-card">
+                    <h4>📋 Documentation</h4>
+                    <p>Legal cases require evidence. Dates, times, witnesses, emails.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>👥 HR Reports</h4>
+                    <p>Report in writing. Keep copies. Follow up. If HR is ineffective, document that too.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>⚖️ Legal Consultation</h4>
+                    <p>Employment attorneys often offer free consultations. Know your rights.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>📞 Government Agencies</h4>
+                    <p>EEOC for discrimination, OSHA for safety, Department of Labor for wage issues.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 12: CHAPTER SUMMARY -->
+        <div class="section">
+            <h2><i>📌</i> 13.12 Chapter Summary</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <p><strong>💼 Key Takeaways:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-secondary); line-height: 2;">
+                    <li><strong>15 workplace manipulation tactics</strong> from credit stealing to mobbing</li>
+                    <li><strong>6 types of toxic bosses:</strong> Narcissist, Gaslighter, Credit Stealer, Micromanager, Mood Swing, Incompetent</li>
+                    <li><strong>5 types of toxic colleagues:</strong> Gossip, Saboteur, Credit Thief, Energy Vampire, Brown-Noser</li>
+                    <li><strong>20 red flags</strong> you're being manipulated at work</li>
+                    <li><strong>Mobbing is systematic group bullying</strong> with 5 stages</li>
+                    <li><strong>Documentation is your best defense</strong> - email summaries, performance logs, witnesses</li>
+                    <li><strong>Know when to leave</strong> - health comes first</li>
+                </ul>
+                
+                <p style="margin-top: 2rem;"><strong>📝 Key Terms:</strong> Mobbing, Constructive Discharge, Credit Theft, Gaslighting, Triangulation, Performance Improvement Plan (PIP), Workplace Bullying, Toxic Boss, Narcissistic Leadership, Office Politics</p>
+            </div>
+        </div>
+
+        <!-- SECTION 13: SELF-ASSESSMENT -->
+        <div class="section">
+            <h2><i>📝</i> 13.13 Self-Assessment Questions</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <ol style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 2;">
+                    <li>Looking at the 15 tactics, which have you experienced in your workplace?</li>
+                    <li>Have you ever worked for a toxic boss? Which type were they? How did it affect you?</li>
+                    <li>Why do colleagues join in mobbing? What makes ordinary people participate?</li>
+                    <li>How can documentation protect you from gaslighting and credit theft?</li>
+                    <li>What's the difference between constructive feedback and public humiliation?</li>
+                    <li>How would you handle it if your boss took credit for your work?</li>
+                    <li>What signs would tell you it's time to leave a toxic workplace?</li>
+                    <li>How can you build allies and network without being seen as political?</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+            <a href="chapter12.html" class="nav-btn">
+                <span>←</span> Chapter 12: Manipulation in Relationships
+            </a>
+            <a href="index.html" class="nav-btn">
+                <span>◈</span> Index
+            </a>
+            <a href="chapter14.html" class="nav-btn next">
+                Chapter 14: Marketing & Sales Manipulation <span>→</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="index.html" class="back-home">
+                <span>◈</span> Return to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Save reading position
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            localStorage.setItem('chapter13_scroll', scrollPos);
+        });
+
+        // Restore reading position
+        window.addEventListener('load', () => {
+            const savedPos = localStorage.getItem('chapter13_scroll');
+            if (savedPos) {
+                setTimeout(() => {
+                    window.scrollTo(0, parseInt(savedPos));
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

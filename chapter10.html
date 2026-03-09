@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Chapter 10: Psychological Warfare | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Theme Variables */
+        :root {
+            /* Dark theme (default) */
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+            --warfare-color: #e03131;
+            --warfare-glow: rgba(224, 49, 49, 0.3);
+        }
+
+        /* Light theme */
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+            --warfare-color: #c92a2a;
+            --warfare-glow: rgba(201, 42, 42, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Settings Bar */
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        .chapter-progress {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chapter-progress span {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: var(--border-color);
+            position: fixed;
+            top: 73px;
+            left: 0;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.2s;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Chapter Header */
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .chapter-number {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .chapter-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        /* Content Sections */
+        .section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .section h2 i {
+            color: var(--accent-primary);
+            margin-right: 1rem;
+            font-style: normal;
+        }
+
+        .section h3 {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Warfare Box */
+        .warfare-box {
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-card));
+            border: 2px solid var(--warfare-color);
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warfare-box::before {
+            content: '⚔️';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(10deg);
+        }
+
+        .warfare-box h4 {
+            color: var(--warfare-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Tactics Grid */
+        .tactics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tactic-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--warfare-color);
+        }
+
+        .tactic-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--warfare-color);
+            box-shadow: 0 10px 20px var(--warfare-glow);
+        }
+
+        .tactic-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tactic-card h4 {
+            color: var(--warfare-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .tactic-example {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        /* Interrogation Phases */
+        .interrogation-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 2rem 0;
+        }
+
+        .interrogation-phase {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .phase-num {
+            width: 40px;
+            height: 40px;
+            background: var(--danger-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Information Control */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-name {
+            font-weight: 600;
+            color: var(--warning-color);
+        }
+
+        /* Stress Induction */
+        .stress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stress-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .stress-card h5 {
+            color: var(--danger-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sun Tzu Principles */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .principle-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .principle-quote {
+            font-style: italic;
+            color: var(--warning-color);
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Chapter Navigation */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .nav-btn.next:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .chapter-title {
+                font-size: 2.5rem;
+            }
+
+            .interrogation-phase {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo-area {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Settings Bar -->
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">
+                        <span>🌙</span> Dark
+                    </button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">
+                        <span>☀️</span> Light
+                    </button>
+                </div>
+            </div>
+            <div class="chapter-progress">
+                Chapter <span>10</span> of <span>20</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Chapter Header -->
+        <div class="chapter-header">
+            <div class="chapter-badge">ADVANCED TECHNIQUES · CHAPTER 10</div>
+            <div class="chapter-number">THE BATTLEFIELD OF THE MIND</div>
+            <h1 class="chapter-title">
+                <span class="gradient-text">Psychological</span><br>
+                Warfare
+            </h1>
+            <div class="chapter-subtitle">
+                How manipulators use systematic tactics to break down resistance, control information, and dominate through stress and confusion
+            </div>
+        </div>
+
+        <!-- SECTION 1: INTRODUCTION TO PSYCHOLOGICAL WARFARE -->
+        <div class="section">
+            <h2><i>⚔️</i> 10.1 What is Psychological Warfare?</h2>
+            <p>Psychological warfare (PSYWAR) is the systematic use of psychological tactics to demoralize, confuse, manipulate, and break down an opponent's resistance. Originally developed for military and intelligence operations, these techniques have been adapted for use in corporate takeovers, abusive relationships, cult indoctrination, and political campaigns.</p>
+            
+            <p>Unlike simple manipulation, psychological warfare is a sustained campaign designed to destroy the target's ability to resist or fight back. It targets every aspect of the human psyche: identity, reality perception, emotional stability, and physical endurance.</p>
+
+            <div class="warfare-box">
+                <h4>🎯 The Goal of Psychological Warfare</h4>
+                <p><strong>Not to defeat the enemy, but to convince them that defeat is inevitable, resistance is futile, and surrender is desirable.</strong></p>
+                <p style="margin-top: 1rem;">The ultimate victory is when the target internalizes the attacker's will as their own.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: THE 10 PRINCIPLES OF PSYCHOLOGICAL WARFARE -->
+        <div class="section">
+            <h2><i>📜</i> 10.2 The 10 Principles of Psychological Warfare</h2>
+            
+            <p>Based on Sun Tzu's "The Art of War" and modern military doctrine, these principles guide psychological operations:</p>
+
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <strong>1. Know Your Enemy</strong>
+                    <div class="principle-quote">"If you know the enemy and know yourself, you need not fear the result of a hundred battles."</div>
+                </div>
+                <div class="principle-card">
+                    <strong>2. Create Confusion</strong>
+                    <div class="principle-quote">"All warfare is based on deception."</div>
+                </div>
+                <div class="principle-card">
+                    <strong>3. Attack Weaknesses</strong>
+                    <div class="principle-quote">"Attack where the enemy is unprepared."</div>
+                </div>
+                <div class="principle-card">
+                    <strong>4. Control Information</strong>
+                    <div class="principle-quote">"He who controls the narrative, controls the outcome."</div>
+                </div>
+                <div class="principle-card">
+                    <strong>5. Isolate the Target</strong>
+                    <div class="principle-quote">"Separate the enemy from his allies."</div>
+                </div>
+                <div class="principle-card">
+                    <strong>6. Create Doubt</strong>
+                    <div class="principle-quote">"Sow confusion in their ranks."</div>
+                </div>
+                <div class="principle-card">
+                    <strong>7. Demoralize</strong>
+                    <div class="principle-quote">"Break their spirit before breaking their lines."</div>
+                </div>
+                <div class="principle-card">
+                    <strong>8. Use Momentum</strong>
+                    <div class="principle-quote">"The momentum of victory is unstoppable."</div>
+                </div>
+                <div class="principle-card">
+                    <strong>9. Offer an Exit</strong>
+                    <div class="principle-quote">"Leave the enemy a way out - then control it."</div>
+                </div>
+                <div class="principle-card">
+                    <strong>10. Win Without Fighting</strong>
+                    <div class="principle-quote">"The supreme art of war is to subdue the enemy without fighting."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: INFORMATION CONTROL -->
+        <div class="section">
+            <h2><i>📡</i> 10.3 Information Control</h2>
+            
+            <p>In psychological warfare, information is the primary weapon. Controlling what the target knows, when they know it, and how they interpret it determines the outcome.</p>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">📵</div>
+                    <div class="info-name">Information Blockade</div>
+                    <div>Cutting off access to outside information sources</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📢</div>
+                    <div class="info-name">Propaganda</div>
+                    <div>Controlled messaging to shape beliefs</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🔄</div>
+                    <div class="info-name">Disinformation</div>
+                    <div>Deliberate spreading of false information</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📊</div>
+                    <div class="info-name">Information Overload</div>
+                    <div>Overwhelming with too much data</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-name">Timing Manipulation</div>
+                    <div>Releasing information at vulnerable moments</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🔍</div>
+                    <div class="info-name">Selective Disclosure</div>
+                    <div>Revealing only what serves the agenda</div>
+                </div>
+            </div>
+
+            <div class="tactics-grid">
+                <div class="tactic-card">
+                    <h4>📰 Propaganda Techniques</h4>
+                    <p><strong>Name-Calling:</strong> Attaching negative labels</p>
+                    <p><strong>Glittering Generalities:</strong> Using virtuous words</p>
+                    <p><strong>Transfer:</strong> Associating with respected symbols</p>
+                    <p><strong>Testimonial:</strong> Using respected figures</p>
+                    <p><strong>Plain Folks:</strong> "Just like you" appeal</p>
+                    <p><strong>Card Stacking:</strong> One-sided presentation</p>
+                    <p><strong>Bandwagon:</strong> "Everyone is doing it"</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>📡 Disinformation Types</h4>
+                    <p><strong>Forged Documents:</strong> Fake evidence</p>
+                    <p><strong>Rumor Campaigns:</strong> Whisper networks</p>
+                    <p><strong>Deep Fakes:</strong> AI-generated false content</p>
+                    <p><strong>False Flags:</strong> Making attacks look like someone else did them</p>
+                    <p><strong>Poisoning the Well:</strong> Discrediting sources before they speak</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: ISOLATION TACTICS -->
+        <div class="section">
+            <h2><i>🏝️</i> 10.4 Isolation: Cutting Off Support</h2>
+            
+            <p>Isolation is the foundation of psychological warfare. A target without support systems cannot resist effectively.</p>
+
+            <div class="tactics-grid">
+                <div class="tactic-card">
+                    <h4>Physical Isolation</h4>
+                    <p>Separating the target from friends, family, and community. Moving them to new locations. Controlling access to outsiders.</p>
+                    <div class="tactic-example">Cults often require members to live communally,远离 previous relationships.</div>
+                </div>
+                <div class="tactic-card">
+                    <h4>Social Isolation</h4>
+                    <p>Turning others against the target. Spreading rumors. Creating conflict between the target and their support network.</p>
+                    <div class="tactic-example">"Your friends don't really care about you. They're jealous of what we have."</div>
+                </div>
+                <div class="tactic-card">
+                    <h4>Psychological Isolation</h4>
+                    <p>Making the target feel uniquely understood by the manipulator alone. "No one else gets you like I do."</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>Information Isolation</h4>
+                    <p>Controlling news, social media, and communication. Creating an information bubble.</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    Divide and conquer. Separate the target from their tribe, and they become yours.
+                </div>
+                <div class="quote-author">— Sun Tzu</div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: STRESS INDUCTION -->
+        <div class="section">
+            <h2><i>😫</i> 10.5 Stress Induction Techniques</h2>
+            
+            <p>Chronic stress breaks down cognitive function, emotional regulation, and physical health. Manipulators deliberately induce stress to weaken resistance.</p>
+
+            <div class="stress-grid">
+                <div class="stress-card">
+                    <h5>😴 Sleep Deprivation</h5>
+                    <p>Interrupting sleep, creating conditions where rest is impossible. 24 hours without sleep impairs judgment as much as intoxication.</p>
+                </div>
+                <div class="stress-card">
+                    <h5>🔊 Sensory Overload</h5>
+                    <p>Constant noise, bright lights, chaos - overwhelms the nervous system.</p>
+                </div>
+                <div class="stress-card">
+                    <h5>🤐 Sensory Deprivation</h5>
+                    <p>Isolation, darkness, silence - can cause hallucinations and breakdown.</p>
+                </div>
+                <div class="stress-card">
+                    <h5>🔄 Unpredictability</h5>
+                    <p>Inconsistent rules, random punishments - creates anxiety and hypervigilance.</p>
+                </div>
+                <div class="stress-card">
+                    <h5>⏰ Time Pressure</h5>
+                    <p>Forcing decisions under extreme time constraints prevents clear thinking.</p>
+                </div>
+                <div class="stress-card">
+                    <h5>🥶 Physical Discomfort</h5>
+                    <p>Temperature extremes, hunger, thirst - basic needs become overwhelming.</p>
+                </div>
+            </div>
+
+            <div class="warfare-box">
+                <h4>🧠 The Effects of Chronic Stress</h4>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Prefrontal cortex shutdown:</strong> Loss of executive function, decision-making</li>
+                    <li><strong>Amygdala overactivation:</strong> Constant fear response</li>
+                    <li><strong>Hippocampus damage:</strong> Memory problems</li>
+                    <li><strong>Immune suppression:</strong> Physical vulnerability</li>
+                    <li><strong>Emotional dysregulation:</strong> Mood swings, depression</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 6: INTERROGATION TECHNIQUES -->
+        <div class="section">
+            <h2><i>🔍</i> 10.6 Interrogation: Breaking Resistance</h2>
+            
+            <p>Interrogation techniques are designed to break down resistance and extract compliance or information. These same techniques appear in abusive relationships and high-control situations.</p>
+
+            <h3>The Reid Technique (9 Steps):</h3>
+            <div class="interrogation-timeline">
+                <div class="interrogation-phase">
+                    <div class="phase-num">1</div>
+                    <div><strong>Direct Confrontation:</strong> "We know you did it." Present evidence (real or fake).</div>
+                </div>
+                <div class="interrogation-phase">
+                    <div class="phase-num">2</div>
+                    <div><strong>Theme Development:</strong> Offer moral justification or face-saving excuses.</div>
+                </div>
+                <div class="interrogation-phase">
+                    <div class="phase-num">3</div>
+                    <div><strong>Stop Denials:</strong> Interrupt and discourage denials - they build confidence.</div>
+                </div>
+                <div class="interrogation-phase">
+                    <div class="phase-num">4</div>
+                    <div><strong>Overcome Objections:</strong> Address and dismiss their reasons for innocence.</div>
+                </div>
+                <div class="interrogation-phase">
+                    <div class="phase-num">5</div>
+                    <div><strong>Retain Attention:</strong> Move physically closer, maintain eye contact.</div>
+                </div>
+                <div class="interrogation-phase">
+                    <div class="phase-num">6</div>
+                    <div><strong>Handle Mood:</strong> Show sympathy and understanding when they're passive.</div>
+                </div>
+                <div class="interrogation-phase">
+                    <div class="phase-num">7</div>
+                    <div><strong>Offer Alternatives:</strong> Present two choices, both incriminating.</div>
+                </div>
+                <div class="interrogation-phase">
+                    <div class="phase-num">8</div>
+                    <div><strong>Develop Details:</strong> Get them talking about the "why" not "if."</div>
+                </div>
+                <div class="interrogation-phase">
+                    <div class="phase-num">9</div>
+                    <div><strong>Convert to Written:</strong> Get it in writing, on record.</div>
+                </div>
+            </div>
+
+            <p><strong>Note:</strong> These techniques have led to false confessions from innocent people. They work by breaking down psychological resistance.</p>
+        </div>
+
+        <!-- SECTION 7: THE 5 PHASES OF PSYCHOLOGICAL BREAKDOWN -->
+        <div class="section">
+            <h2><i>📉</i> 10.7 The 5 Phases of Psychological Breakdown</h2>
+            
+            <p>When psychological warfare is sustained, targets progress through predictable phases:</p>
+
+            <div class="interrogation-timeline">
+                <div class="interrogation-phase" style="border-left-color: var(--warning-color);">
+                    <div class="phase-num" style="background: var(--warning-color);">1</div>
+                    <div><strong>SHOCK:</strong> Initial disorientation, disbelief, confusion. "This can't be happening."</div>
+                </div>
+                <div class="interrogation-phase" style="border-left-color: var(--warning-color);">
+                    <div class="phase-num" style="background: var(--warning-color);">2</div>
+                    <div><strong>DENIAL:</strong> Refusing to accept reality. Clinging to normalcy. "They'll stop soon."</div>
+                </div>
+                <div class="interrogation-phase" style="border-left-color: var(--danger-color);">
+                    <div class="phase-num" style="background: var(--danger-color);">3</div>
+                    <div><strong>RESISTANCE:</strong> Active fighting back, attempting to escape or change situation.</div>
+                </div>
+                <div class="interrogation-phase" style="border-left-color: var(--danger-color);">
+                    <div class="phase-num" style="background: var(--danger-color);">4</div>
+                    <div><strong>EXHAUSTION:</strong> Physical and emotional depletion. Resistance weakens.</div>
+                </div>
+                <div class="interrogation-phase" style="border-left-color: var(--danger-color);">
+                    <div class="phase-num" style="background: var(--danger-color);">5</div>
+                    <div><strong>SURRENDER:</strong> Compliance, internalization of captor's will, or complete breakdown.</div>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    Every person has a breaking point. The goal of psychological warfare is to find it before they do.
+                </div>
+                <div class="quote-author">— Military Interrogation Manual</div>
+            </div>
+        </div>
+
+        <!-- SECTION 8: CORPORATE PSYCHOLOGICAL WARFARE -->
+        <div class="section">
+            <h2><i>🏢</i> 10.8 Corporate Psychological Warfare</h2>
+            
+            <p>These tactics are common in hostile takeovers, corporate sabotage, and office politics:</p>
+
+            <div class="tactics-grid">
+                <div class="tactic-card">
+                    <h4>🔄 Mobbing</h4>
+                    <p>Systematic ganging up on a target by multiple coworkers. Isolation, rumor-spreading, undermining work.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>📉 Constructive Discharge</h4>
+                    <p>Making work conditions so intolerable that the target quits, avoiding legal liability.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>🔒 Information Blackout</h4>
+                    <p>Excluding target from meetings, emails, decisions - then blaming them for being uninformed.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>🎯 Gaslighting Campaigns</h4>
+                    <p>Systematic reality distortion to make target doubt their competence and sanity.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>📋 Impossible Standards</h4>
+                    <p>Setting unachievable goals, then punishing failure to meet them.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>🕵️ Corporate Espionage</h4>
+                    <p>Stealing ideas, sabotaging projects, undermining credibility with stakeholders.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 9: CASE STUDY - THE STOCKHOLM SYNDROME -->
+        <div class="section">
+            <h2><i>📋</i> 10.9 Case Study: The Norrmalmstorg Robbery</h2>
+            
+            <div class="case-study">
+                <h4>🎯 Where Stockholm Syndrome Was Named</h4>
+                <div class="case-study-meta">
+                    <span>📍 Location: Stockholm, Sweden</span>
+                    <span>📅 Date: August 23-28, 1973</span>
+                </div>
+                <div class="case-study-content">
+                    <p><strong>The Situation:</strong> Two men held four bank employees hostage for six days in a bank vault. What happened next changed our understanding of psychological warfare.</p>
+                    
+                    <p><strong>Phase 1 - Fear and Terror:</strong> Hostages were terrified, believing they would die. The captors threatened violence.</p>
+                    
+                    <p><strong>Phase 2 - Small Kindnesses:</strong> After the initial terror, captors showed small kindnesses - giving blankets, allowing phone calls, expressing concern. These became disproportionately meaningful.</p>
+                    
+                    <p><strong>Phase 3 - Isolation from Rescuers:</strong> Hostages began to fear police rescue more than their captors. They believed police might cause violence.</p>
+                    
+                    <p><strong>Phase 4 - Bonding:</strong> Hostages developed genuine emotional bonds with captors. One hostage, Kristin, said "I'm not afraid of the robbers. I'm afraid of the police."</p>
+                    
+                    <p><strong>Phase 5 - Resistance to Rescue:</strong> When freed, hostages defended their captors, refused to testify, and raised money for their legal defense.</p>
+                    
+                    <p><strong>Phase 6 - Long-term Bonds:</strong> One hostage, Kristin, later became engaged to one of the captors.</p>
+                    
+                    <p><strong>The Psychology:</strong> When you control someone's life, then show mercy, you become their protector. The brain reframes the captor as ally to survive. This is now known as Stockholm Syndrome.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 10: DEFENSE STRATEGIES -->
+        <div class="section">
+            <h2><i>🛡️</i> 10.10 Defending Against Psychological Warfare</h2>
+            
+            <h3>Survival Strategies:</h3>
+            <div class="tactics-grid">
+                <div class="tactic-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">👥 Maintain Connections</h4>
+                    <p>Never let yourself be isolated. Stay in touch with trusted outsiders who can provide reality checks.</p>
+                </div>
+                <div class="tactic-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">📓 Document Everything</h4>
+                    <p>Write down events, dates, conversations. Gaslighting and propaganda rely on memory distortion.</p>
+                </div>
+                <div class="tactic-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">🧠 Know the Phases</h4>
+                    <p>Recognize which phase you're in (shock, denial, resistance, exhaustion, surrender). Awareness is power.</p>
+                </div>
+                <div class="tactic-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">⏱️ Delay Decisions</h4>
+                    <p>Never decide under pressure or exhaustion. "I need time to think about this."</p>
+                </div>
+                <div class="tactic-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">💪 Maintain Physical Health</h4>
+                    <p>Sleep, nutrition, exercise - physical resilience supports mental resilience.</p>
+                </div>
+                <div class="tactic-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">🔍 Reality Testing</h4>
+                    <p>Check information against multiple sources. If you're only hearing one narrative, that's a red flag.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">🚫 What NOT to Do:</h3>
+            <div class="key-points" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Isolate</h4>
+                    <p>Isolation is the first step to control. Resist it at all costs.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Trust Your Memory</h4>
+                    <p>Under stress, memory fails. Write things down.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Accept Their Reality</h4>
+                    <p>If their version of events differs from yours, trust your documentation.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Surrender Hope</h4>
+                    <p>Hopelessness is the goal of psychological warfare. Hope is resistance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 11: RECOVERY FROM PSYCHOLOGICAL WARFARE -->
+        <div class="section">
+            <h2><i>🌱</i> 10.11 Recovery and Healing</h2>
+            
+            <div class="interrogation-timeline">
+                <div class="interrogation-phase" style="border-left-color: var(--success-color);">
+                    <div class="phase-num" style="background: var(--success-color);">1</div>
+                    <div><strong>SAFETY:</strong> Remove yourself from the toxic environment. Physical safety first.</div>
+                </div>
+                <div class="interrogation-phase" style="border-left-color: var(--success-color);">
+                    <div class="phase-num" style="background: var(--success-color);">2</div>
+                    <div><strong>STABILIZATION:</strong> Restore sleep, nutrition, routine. The body heals before the mind.</div>
+                </div>
+                <div class="interrogation-phase" style="border-left-color: var(--success-color);">
+                    <div class="phase-num" style="background: var(--success-color);">3</div>
+                    <div><strong>CONNECTION:</strong> Rebuild relationships with trusted, supportive people.</div>
+                </div>
+                <div class="interrogation-phase" style="border-left-color: var(--success-color);">
+                    <div class="phase-num" style="background: var(--success-color);">4</div>
+                    <div><strong>PROCESSING:</strong> Therapy, support groups, journaling to make sense of what happened.</div>
+                </div>
+                <div class="interrogation-phase" style="border-left-color: var(--success-color);">
+                    <div class="phase-num" style="background: var(--success-color);">5</div>
+                    <div><strong>INTEGRATION:</strong> Incorporating the experience into your life story without being defined by it.</div>
+                </div>
+            </div>
+
+            <div class="quote-box" style="margin-top: 2rem;">
+                <div class="quote-text">
+                    They tried to break you. You survived. Now you rebuild - not what was lost, but something stronger.
+                </div>
+                <div class="quote-author">— Judith Herman, Trauma Expert</div>
+            </div>
+        </div>
+
+        <!-- SECTION 12: CHAPTER SUMMARY -->
+        <div class="section">
+            <h2><i>📌</i> 10.12 Chapter Summary</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <p><strong>⚔️ Key Takeaways:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-secondary); line-height: 2;">
+                    <li><strong>Psychological warfare</strong> is a sustained campaign to break down resistance, not just a single manipulation</li>
+                    <li><strong>10 principles</strong> from Sun Tzu: know enemy, create confusion, attack weaknesses, control information, isolate, create doubt, demoralize, use momentum, offer exit, win without fighting</li>
+                    <li><strong>Information control:</strong> blockade, propaganda, disinformation, overload, timing, selective disclosure</li>
+                    <li><strong>Isolation tactics:</strong> physical, social, psychological, information isolation</li>
+                    <li><strong>Stress induction:</strong> sleep deprivation, sensory overload/deprivation, unpredictability, time pressure, physical discomfort</li>
+                    <li><strong>Reid Technique (9 steps)</strong> of interrogation</li>
+                    <li><strong>5 phases of breakdown:</strong> shock → denial → resistance → exhaustion → surrender</li>
+                    <li><strong>Stockholm Syndrome:</strong> bonding with captors as survival mechanism</li>
+                </ul>
+                
+                <p style="margin-top: 2rem;"><strong>📝 Key Terms:</strong> PSYWAR, Information Warfare, Propaganda, Disinformation, Isolation, Stress Induction, Reid Technique, Stockholm Syndrome, Mobbing, Constructive Discharge, Sensory Overload, Sensory Deprivation</p>
+            </div>
+        </div>
+
+        <!-- SECTION 13: SELF-ASSESSMENT -->
+        <div class="section">
+            <h2><i>📝</i> 10.13 Self-Assessment Questions</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <ol style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 2;">
+                    <li>Have you ever experienced information control or isolation in a relationship or workplace? What did it feel like?</li>
+                    <li>Looking at the 5 phases of breakdown, where have you seen these in your own life or others'?</li>
+                    <li>Why is isolation the foundation of psychological warfare? What makes it so effective?</li>
+                    <li>How does stress affect decision-making? Have you made bad decisions under stress?</li>
+                    <li>Can you identify propaganda techniques in media or advertising? Give examples.</li>
+                    <li>Why do hostages sometimes bond with captors? How does this apply to abusive relationships?</li>
+                    <li>What would you do if you noticed someone trying to isolate you?</li>
+                    <li>How can you build a support system that can withstand isolation attempts?</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+            <a href="chapter9.html" class="nav-btn">
+                <span>←</span> Chapter 9: Hypnotic Techniques
+            </a>
+            <a href="index.html" class="nav-btn">
+                <span>◈</span> Index
+            </a>
+            <a href="chapter11.html" class="nav-btn next">
+                Chapter 11: Dark Triad Personalities <span>→</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="index.html" class="back-home">
+                <span>◈</span> Return to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Save reading position
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            localStorage.setItem('chapter10_scroll', scrollPos);
+        });
+
+        // Restore reading position
+        window.addEventListener('load', () => {
+            const savedPos = localStorage.getItem('chapter10_scroll');
+            if (savedPos) {
+                setTimeout(() => {
+                    window.scrollTo(0, parseInt(savedPos));
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

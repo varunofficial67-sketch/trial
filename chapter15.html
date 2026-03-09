@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Chapter 15: Media & Political Manipulation | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Theme Variables */
+        :root {
+            /* Dark theme (default) */
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+            --media-color: #4dabf7;
+            --media-glow: rgba(77, 171, 247, 0.3);
+        }
+
+        /* Light theme */
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+            --media-color: #1c7ed6;
+            --media-glow: rgba(28, 126, 214, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Settings Bar */
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        .chapter-progress {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chapter-progress span {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: var(--border-color);
+            position: fixed;
+            top: 73px;
+            left: 0;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.2s;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Chapter Header */
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .chapter-number {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .chapter-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        /* Content Sections */
+        .section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .section h2 i {
+            color: var(--accent-primary);
+            margin-right: 1rem;
+            font-style: normal;
+        }
+
+        .section h3 {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Media Box */
+        .media-box {
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-card));
+            border: 2px solid var(--media-color);
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .media-box::before {
+            content: '📺';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(10deg);
+        }
+
+        .media-box h4 {
+            color: var(--media-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Statistics Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--media-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Propaganda Grid */
+        .propaganda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .propaganda-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--media-color);
+        }
+
+        .propaganda-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--media-color);
+            box-shadow: 0 10px 20px var(--media-glow);
+        }
+
+        .propaganda-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .propaganda-card h4 {
+            color: var(--media-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .propaganda-example {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        /* Framing Grid */
+        .framing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .framing-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border-left: 4px solid;
+        }
+        .framing-card.positive { border-left-color: var(--success-color); }
+        .framing-card.negative { border-left-color: var(--danger-color); }
+
+        .framing-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .framing-card.positive .framing-label { color: var(--success-color); }
+        .framing-card.negative .framing-label { color: var(--danger-color); }
+
+        /* Social Media Grid */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-card h4 {
+            color: var(--warning-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline */
+        .manipulation-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 2rem 0;
+        }
+
+        .timeline-step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            border-left: 4px solid;
+        }
+        .timeline-step.step-1 { border-left-color: var(--success-color); }
+        .timeline-step.step-2 { border-left-color: var(--warning-color); }
+        .timeline-step.step-3 { border-left-color: var(--warning-color); }
+        .timeline-step.step-4 { border-left-color: var(--danger-color); }
+        .timeline-step.step-5 { border-left-color: var(--danger-color); }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+        .step-1 .step-num { background: var(--success-color); }
+        .step-2 .step-num { background: var(--warning-color); }
+        .step-3 .step-num { background: var(--warning-color); }
+        .step-4 .step-num { background: var(--danger-color); }
+        .step-5 .step-num { background: var(--danger-color); }
+
+        /* Defense Grid */
+        .defense-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .defense-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--success-color);
+        }
+
+        .defense-card h4 {
+            color: var(--success-color);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Chapter Navigation */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .nav-btn.next:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .chapter-title {
+                font-size: 2.5rem;
+            }
+
+            .timeline-step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo-area {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Settings Bar -->
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">
+                        <span>🌙</span> Dark
+                    </button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">
+                        <span>☀️</span> Light
+                    </button>
+                </div>
+            </div>
+            <div class="chapter-progress">
+                Chapter <span>15</span> of <span>20</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Chapter Header -->
+        <div class="chapter-header">
+            <div class="chapter-badge">REAL-WORLD APPLICATIONS · CHAPTER 15</div>
+            <div class="chapter-number">THE FOURTH ESTATE</div>
+            <h1 class="chapter-title">
+                <span class="gradient-text">Media & Political</span><br>
+                Manipulation
+            </h1>
+            <div class="chapter-subtitle">
+                How news, propaganda, and social media shape your beliefs, control your votes, and manufacture consent
+            </div>
+        </div>
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <div class="section">
+            <h2><i>📺</i> 15.1 The Architecture of Consent</h2>
+            <p>Media is the most powerful manipulation tool ever created. It doesn't just report reality - it shapes it. By controlling what you see, how you see it, and what you don't see, media manipulators can manufacture consent, create enemies, and control populations.</p>
+            
+            <p>Political manipulation takes this further, using propaganda, emotional appeals, and division to win power and control. Understanding these techniques is essential for any functioning democracy - and for your own mental freedom.</p>
+
+            <div class="media-box">
+                <h4>📊 Media Consumption Statistics</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">8+ hrs</div>
+                        <div class="stat-label">Daily media consumption</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Companies control 90% of media</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">47%</div>
+                        <div class="stat-label">Believe fake news is a major problem</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3:1</div>
+                        <div class="stat-label">Negative news ratio to positive</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: 15 PROPAGANDA TECHNIQUES -->
+        <div class="section">
+            <h2><i>🎭</i> 15.2 15 Classic Propaganda Techniques</h2>
+            
+            <div class="propaganda-grid">
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">🏷️</div>
+                    <h4>1. Name-Calling</h4>
+                    <p>Attaching negative labels to opponents to create rejection without examination.</p>
+                    <div class="propaganda-example">"Radical," "Extremist," "Socialist," "Fascist" - labels that trigger emotional rejection.</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">✨</div>
+                    <h4>2. Glittering Generalities</h4>
+                    <p>Using virtuous words that feel good but mean little.</p>
+                    <div class="propaganda-example">"Freedom," "Democracy," "Family values," "Change," "Hope," "Progress."</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">🔄</div>
+                    <h4>3. Transfer</h4>
+                    <p>Carrying authority of something respected over to something else.</p>
+                    <div class="propaganda-example">Politician standing with flag, religious symbols, or respected figures.</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">👤</div>
+                    <h4>4. Testimonial</h4>
+                    <p>Having respected or liked people endorse a position.</p>
+                    <div class="propaganda-example">Celebrities endorsing politicians, experts endorsing products, "real people" testimonials.</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">👥</div>
+                    <h4>5. Plain Folks</h4>
+                    <p>"I'm just like you" appeal.</p>
+                    <div class="propaganda-example">Politicians in casual clothes, eating at diners, using "ordinary people" language.</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">📊</div>
+                    <h4>6. Card Stacking</h4>
+                    <p>Selective presentation of facts - only one side of the story.</p>
+                    <div class="propaganda-example">News that only shows one perspective, cherry-picked statistics.</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">🚂</div>
+                    <h4>7. Bandwagon</h4>
+                    <p>Everyone's doing it, so should you.</p>
+                    <div class="propaganda-example">"Join the millions who support..." "The whole country is behind..."</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">😨</div>
+                    <h4>8. Fear</h4>
+                    <p>Creating fear, then offering yourself as the solution.</p>
+                    <div class="propaganda-example">Fear of crime → vote for me. Fear of immigration → support my policy. Fear of economic collapse → elect me.</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">📈</div>
+                    <h4>9. Simplification</h4>
+                    <p>Reducing complex issues to simple slogans.</p>
+                    <div class="propaganda-example">"Make America Great Again," "Yes We Can," "Take Back Control."</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">🔄</div>
+                    <h4>10. Repetition</h4>
+                    <p>Repeating a message until it's accepted as truth.</p>
+                    <div class="propaganda-example">"Crooked Hillary," "Drain the swamp," "Build the wall" - repeated constantly.</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">🎯</div>
+                    <h4>11. Slogans</h4>
+                    <p>Catchy phrases that bypass critical thinking.</p>
+                    <div class="propaganda-example">"Law and order," "America first," "People over profit."</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">👁️</div>
+                    <h4>12. Lesser of Two Evils</h4>
+                    <p>Convincing you to accept something by comparing it to something worse.</p>
+                    <div class="propaganda-example">"He may not be perfect, but the alternative is worse."</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">🎭</div>
+                    <h4>13. Scapegoating</h4>
+                    <p>Blaming a group for problems to deflect from real causes.</p>
+                    <div class="propaganda-example">Immigrants, minorities, "the elite," "the media" - easy targets.</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">🕊️</div>
+                    <h4>14. Virtue Words</h4>
+                    <p>Words that trigger positive associations.</p>
+                    <div class="propaganda-example">"Freedom," "Patriotism," "Family," "Security," "Justice."</div>
+                </div>
+                <div class="propaganda-card">
+                    <div class="propaganda-icon">🤫</div>
+                    <h4>15. Censorship</h4>
+                    <p>Preventing opposing views from being heard.</p>
+                    <div class="propaganda-example">Controlling media, deplatforming opponents, "cancel culture."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: NEWS MANIPULATION TECHNIQUES -->
+        <div class="section">
+            <h2><i>📰</i> 15.3 How News Manipulates You</h2>
+            
+            <div class="propaganda-grid">
+                <div class="propaganda-card">
+                    <h4>📰 Selection Bias</h4>
+                    <p>What's reported and what's ignored shapes your view of what matters.</p>
+                    <div class="propaganda-example">One plane crash gets more coverage than 1,000 car crashes. Crime coverage creates fear despite falling crime rates.</div>
+                </div>
+                <div class="propaganda-card">
+                    <h4>🖼️ Framing</h4>
+                    <p>The context and angle of a story changes its meaning.</p>
+                    <div class="propaganda-example">"Protesters clash with police" vs "Freedom fighters resist oppression" - same event, different frames.</div>
+                </div>
+                <div class="propaganda-card">
+                    <h4>📊 False Balance</h4>
+                    <p>Giving equal weight to both sides when one side has no scientific basis.</p>
+                    <div class="propaganda-example">Climate change debate: one scientist vs another, even though 99.9% agree.</div>
+                </div>
+                <div class="propaganda-card">
+                    <h4>🎯 Agenda Setting</h4>
+                    <p>Media doesn't tell you what to think, but what to think about.</p>
+                    <div class="propaganda-example">If media covers crime heavily, you believe crime is the most important issue.</div>
+                </div>
+                <div class="propaganda-card">
+                    <h4>😢 Emotional Storytelling</h4>
+                    <p>Individual stories override statistics emotionally.</p>
+                    <div class="propaganda-example">One crying child affected by policy is more powerful than data on millions helped.</div>
+                </div>
+                <div class="propaganda-card">
+                    <h4>📈 Horse Race Coverage</h4>
+                    <p>Treating politics like sports - polls, strategies, who's winning - not issues.</p>
+                </div>
+                <div class="propaganda-card">
+                    <h4>🎭 Both-Sides-ism</h4>
+                    <p>Presenting moral equivalence where none exists.</p>
+                    <div class="propaganda-example">Treating a racist policy and opposition to it as "both sides."</div>
+                </div>
+                <div class="propaganda-card">
+                    <h4>🔁 Echo Chambers</h4>
+                    <p>Only exposing audiences to views they already agree with.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: FRAMING - THE POWER OF PERSPECTIVE -->
+        <div class="section">
+            <h2><i>🖼️</i> 15.4 Framing: How Language Shapes Reality</h2>
+            
+            <p>The same fact can be framed in multiple ways, each triggering a different emotional response.</p>
+
+            <div class="framing-grid">
+                <div class="framing-card positive">
+                    <div class="framing-label">✅ POSITIVE FRAME</div>
+                    <p>"The tax cut will save families $500 per year."</p>
+                </div>
+                <div class="framing-card negative">
+                    <div class="framing-label">❌ NEGATIVE FRAME</div>
+                    <p>"The tax cut will increase the deficit by $1 trillion."</p>
+                </div>
+                <div class="framing-card positive">
+                    <div class="framing-label">✅ POSITIVE FRAME</div>
+                    <p>"The policy has a 95% success rate."</p>
+                </div>
+                <div class="framing-card negative">
+                    <div class="framing-label">❌ NEGATIVE FRAME</div>
+                    <p>"The policy fails 5% of the time."</p>
+                </div>
+                <div class="framing-card positive">
+                    <div class="framing-label">✅ POSITIVE FRAME</div>
+                    <p>"We must protect our borders."</p>
+                </div>
+                <div class="framing-card negative">
+                    <div class="framing-label">❌ NEGATIVE FRAME</div>
+                    <p>"We must build walls against desperate people."</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    He who controls the language, controls the debate. He who controls the debate, controls the outcome.
+                </div>
+                <div class="quote-author">— George Lakoff, Cognitive Linguist</div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: SOCIAL MEDIA MANIPULATION -->
+        <div class="section">
+            <h2><i>📱</i> 15.5 Social Media: The Ultimate Manipulation Machine</h2>
+            
+            <div class="social-grid">
+                <div class="social-card">
+                    <h4>🎯 Algorithmic Radicalization</h4>
+                    <p>Algorithms show increasingly extreme content to keep you engaged. YouTube, Facebook, and TikTok have been shown to push users toward radical content.</p>
+                </div>
+                <div class="social-card">
+                    <h4>📊 Echo Chambers</h4>
+                    <p>Algorithms show you content you agree with, reinforcing beliefs and making you more extreme.</p>
+                </div>
+                <div class="social-card">
+                    <h4>😡 Outrage Engagement</h4>
+                    <p>Outrage is the most engaging emotion. Algorithms promote content that makes you angry because you'll share it.</p>
+                </div>
+                <div class="social-card">
+                    <h4>🤖 Bots and Trolls</h4>
+                    <p>Fake accounts amplify messages, attack opponents, and create false consensus.</p>
+                </div>
+                <div class="social-card">
+                    <h4>📈 Viral Manipulation</h4>
+                    <p>Coordinated networks push hashtags, memes, and narratives to make them appear organic.</p>
+                </div>
+                <div class="social-card">
+                    <h4>🎯 Microtargeting</h4>
+                    <p>Cambridge Analytica-style manipulation: using your data to show you personalized political ads.</p>
+                </div>
+                <div class="social-card">
+                    <h4>🔍 Filter Bubbles</h4>
+                    <p>You never see opposing views, so you believe everyone agrees with you.</p>
+                </div>
+                <div class="social-card">
+                    <h4>📉 Dog Whistles</h4>
+                    <p>Messages with hidden meanings understood by target audiences but deniable to others.</p>
+                </div>
+            </div>
+
+            <div class="media-box">
+                <h4>📊 Cambridge Analytica Case</h4>
+                <p>In 2016, Cambridge Analytica harvested data from 87 million Facebook users to build psychological profiles and deliver personalized political ads. They targeted individuals based on their fears, personalities, and vulnerabilities. The goal: manipulate voting behavior.</p>
+                <p style="margin-top: 1rem;"><strong>Result:</strong> Helped sway Brexit referendum and US election, according to whistleblowers.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 6: THE 5 STAGES OF MEDIA MANIPULATION -->
+        <div class="section">
+            <h2><i>📈</i> 15.6 The 5 Stages of Media Manipulation</h2>
+            
+            <div class="manipulation-timeline">
+                <div class="timeline-step step-1">
+                    <div class="step-num">1</div>
+                    <div><strong>CONTROL INFORMATION:</strong> Decide what to report and what to ignore. Set the agenda.</div>
+                </div>
+                <div class="timeline-step step-2">
+                    <div class="step-num">2</div>
+                    <div><strong>FRAME THE NARRATIVE:</strong> Choose the language, context, and angle.</div>
+                </div>
+                <div class="timeline-step step-3">
+                    <div class="step-num">3</div>
+                    <div><strong>AMPLIFY EMOTION:</strong> Use fear, outrage, or hope to drive engagement.</div>
+                </div>
+                <div class="timeline-step step-4">
+                    <div class="step-num">4</div>
+                    <div><strong>CREATE ECHO CHAMBERS:</strong> Reinforce beliefs, filter opposing views.</div>
+                </div>
+                <div class="timeline-step step-5">
+                    <div class="step-num">5</div>
+                    <div><strong>SHAPE OPINION:</strong> Manufacture consent for desired outcomes.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: CASE STUDY - THE IRAQ WAR -->
+        <div class="section">
+            <h2><i>📋</i> 15.7 Case Study: Manufacturing the Iraq War</h2>
+            
+            <div class="case-study">
+                <h4>🎯 How Media Manipulation Led to War</h4>
+                <div class="case-study-meta">
+                    <span>📍 Event: Iraq War (2003)</span>
+                    <span>📅 Result: 500,000+ deaths</span>
+                </div>
+                <div class="case-study-content">
+                    <p><strong>The Situation:</strong> The US government wanted to invade Iraq. They needed public support. What followed was a masterclass in media manipulation.</p>
+                    
+                    <p><strong>1. Framing:</strong> Iraq was framed as part of the "Axis of Evil" - associating it with terrorism and evil.</p>
+                    
+                    <p><strong>2. Fear:</strong> Constant repetition of threats - "weapons of mass destruction," "mushroom clouds," "imminent threat."</p>
+                    
+                    <p><strong>3. Testimonials:</strong> Secretary of State Colin Powell presented "evidence" to the UN (later proven false).</p>
+                    
+                    <p><strong>4. Repetition:</strong> "WMD" was repeated thousands of times in media until it was accepted as fact.</p>
+                    
+                    <p><strong>5. Patriotic Framing:</strong> To oppose the war was framed as unpatriotic, supporting terrorism.</p>
+                    
+                    <p><strong>6. Card Stacking:</strong> Media presented only pro-war voices; anti-war voices were marginalized.</p>
+                    
+                    <p><strong>7. Slogans:</strong> "Shock and awe," "Mission Accomplished," "Support our troops."</p>
+                    
+                    <p><strong>8. Scapegoating:</strong> Saddam Hussein was personally demonized - making the war about one evil man.</p>
+                    
+                    <p><strong>The Result:</strong> 70% of Americans supported the invasion. No WMDs were found. Over 500,000 died. The architects of the manipulation faced no consequences.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 8: POLITICAL MANIPULATION TACTICS -->
+        <div class="section">
+            <h2><i>🏛️</i> 15.8 Political Manipulation Tactics</h2>
+            
+            <div class="propaganda-grid">
+                <div class="propaganda-card">
+                    <h4>🎯 Dog Whistles</h4>
+                    <p>Messages with hidden meanings for target audiences.</p>
+                    <div class="propaganda-example">"States' rights," "Law and order," "Family values" - code words understood by specific groups.</div>
+                </div>
+                <div class="propaganda-card">
+                    <h4>⚖️ Whataboutism</h4>
+                    <p>Deflecting criticism by pointing to opponent's flaws.</p>
+                    <div class="propaganda-example">"You say I did X, but what about what they did?"</div>
+                </div>
+                <div class="propaganda-card">
+                    <h4>🔄 Gish Gallop</h4>
+                    <p>Overwhelming opponent with so many false claims they can't refute them all.</p>
+                </div>
+                <div class="propaganda-card">
+                    <h4>🎭 Virtue Signaling</h4>
+                    <p>Expressing opinions to signal moral superiority, not to engage genuinely.</p>
+                </div>
+                <div class="propaganda-card">
+                    <h4>📉 Concern Trolling</h4>
+                    <p>Pretending to be concerned about something to undermine it.</p>
+                    <div class="propaganda-example">"I'm just worried that this policy will hurt the very people it claims to help."</div>
+                </div>
+                <div class="propaganda-card">
+                    <h4>🔍 Sea-Lioning</h4>
+                    <p>Repeatedly asking "just questions" to exhaust and harass.</p>
+                </div>
+                <div class="propaganda-card">
+                    <h4>📊 Cherry-Picking</h4>
+                    <p>Selecting only data that supports your position.</p>
+                </div>
+                <div class="propaganda-card">
+                    <h4>🎭 Astroturfing</h4>
+                    <p>Fake grassroots movements that appear organic but are corporate/government funded.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 9: 20 SIGNS OF MEDIA MANIPULATION -->
+        <div class="section">
+            <h2><i>🚩</i> 15.9 20 Signs You're Being Manipulated by Media</h2>
+            
+            <div class="propaganda-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="propaganda-card">😡 Content makes you angry</div>
+                <div class="propaganda-card">😨 Content makes you afraid</div>
+                <div class="propaganda-card">🎯 Only one side presented</div>
+                <div class="propaganda-card">📊 Statistics without context</div>
+                <div class="propaganda-card">👤 One emotional story over data</div>
+                <div class="propaganda-card">🏷️ Name-calling instead of argument</div>
+                <div class="propaganda-card">✨ Vague virtuous language</div>
+                <div class="propaganda-card">🔄 Same message repeated constantly</div>
+                <div class="propaganda-card">👥 "Everyone agrees" claims</div>
+                <div class="propaganda-card">🔮 Predictions presented as fact</div>
+                <div class="propaganda-card">📰 Headline doesn't match article</div>
+                <div class="propaganda-card">📸 Images that misrepresent</div>
+                <div class="propaganda-card">🎭 False balance on settled science</div>
+                <div class="propaganda-card">📈 Horse race not issues</div>
+                <div class="propaganda-card">🔍 No sources or anonymous sources</div>
+                <div class="propaganda-card">😤 Outrage is the goal</div>
+                <div class="propaganda-card">📉 You feel hopeless after consuming</div>
+                <div class="propaganda-card">🔄 Confirmation of your biases only</div>
+                <div class="propaganda-card">🎯 You're being divided from "others"</div>
+                <div class="propaganda-card">💭 You never see opposing views</div>
+            </div>
+        </div>
+
+        <!-- SECTION 10: DEFENSE STRATEGIES -->
+        <div class="section">
+            <h2><i>🛡️</i> 15.10 Protecting Your Mind from Media Manipulation</h2>
+            
+            <h3>Media Literacy Skills:</h3>
+            <div class="defense-grid">
+                <div class="defense-card">
+                    <h4>📰 Check Multiple Sources</h4>
+                    <p>Read news from across the spectrum. If all sources say the same thing, it's likely true. If they differ, you're getting framing.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>🔍 Verify Before Sharing</h4>
+                    <p>Check Snopes, Politifact, or other fact-checkers. Emotional content is often false.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>📊 Look for Primary Sources</h4>
+                    <p>Go to the original study, speech, or document. Don't trust media summaries.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>🧠 Identify Emotional Manipulation</h4>
+                    <p>If content makes you angry or afraid, ask: "What are they trying to make me feel? Why?"</p>
+                </div>
+                <div class="defense-card">
+                    <h4>🎯 Follow the Money</h4>
+                    <p>Who owns this media outlet? What's their agenda? Follow the funding.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>📉 Beware of Confirmation Bias</h4>
+                    <p>If you agree with everything, you're in an echo chamber. Seek out thoughtful opposing views.</p>
+                </div>
+            </div>
+
+            <h3>The 5 Questions to Ask About Every News Story:</h3>
+            <div class="defense-grid">
+                <div class="defense-card">
+                    <h4>1. Who is the source?</h4>
+                    <p>Are they credible? What's their agenda?</p>
+                </div>
+                <div class="defense-card">
+                    <h4>2. What's the evidence?</h4>
+                    <p>Is there data? Primary sources? Or just claims?</p>
+                </div>
+                <div class="defense-card">
+                    <h4>3. What's missing?</h4>
+                    <p>What perspectives, facts, or context are left out?</p>
+                </div>
+                <div class="defense-card">
+                    <h4>4. How does this make me feel?</h4>
+                    <p>Am I being emotionally manipulated?</p>
+                </div>
+                <div class="defense-card">
+                    <h4>5. Who benefits?</h4>
+                    <p>If I believe this, who wins?</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    The most important skill in the 21st century is not knowing what to think - it's knowing how to think. Media literacy is survival.
+                </div>
+                <div class="quote-author">— Neil Postman, "Amusing Ourselves to Death"</div>
+            </div>
+        </div>
+
+        <!-- SECTION 11: CHAPTER SUMMARY -->
+        <div class="section">
+            <h2><i>📌</i> 15.11 Chapter Summary</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <p><strong>📺 Key Takeaways:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-secondary); line-height: 2;">
+                    <li><strong>15 propaganda techniques:</strong> Name-calling, glittering generalities, transfer, testimonial, plain folks, card stacking, bandwagon, fear, simplification, repetition, slogans, lesser of two evils, scapegoating, virtue words, censorship</li>
+                    <li><strong>News manipulation:</strong> selection bias, framing, false balance, agenda setting, emotional storytelling, horse race coverage, both-sides-ism, echo chambers</li>
+                    <li><strong>Framing:</strong> The same fact can be presented positively or negatively</li>
+                    <li><strong>Social media manipulation:</strong> algorithmic radicalization, echo chambers, outrage engagement, bots, microtargeting</li>
+                    <li><strong>5 stages:</strong> Control information → Frame narrative → Amplify emotion → Create echo chambers → Shape opinion</li>
+                    <li><strong>20 signs</strong> of media manipulation</li>
+                    <li><strong>Defense:</strong> Check multiple sources, verify, follow the money, 5 questions</li>
+                </ul>
+                
+                <p style="margin-top: 2rem;"><strong>📝 Key Terms:</strong> Propaganda, Framing, Agenda Setting, Selection Bias, False Balance, Echo Chamber, Filter Bubble, Algorithmic Radicalization, Microtargeting, Astroturfing, Dog Whistle, Whataboutism, Gish Gallop, Virtue Signaling, Concern Trolling, Sea-Lioning</p>
+            </div>
+        </div>
+
+        <!-- SECTION 12: SELF-ASSESSMENT -->
+        <div class="section">
+            <h2><i>📝</i> 15.12 Self-Assessment Questions</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <ol style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 2;">
+                    <li>Which propaganda techniques do you see most often in your media consumption?</li>
+                    <li>Think of a news story you believed that turned out to be false. Which manipulation tactics were used?</li>
+                    <li>How does framing affect your perception of political issues? Can you think of an issue that's been framed differently by different sources?</li>
+                    <li>Have you experienced algorithmic radicalization - being shown increasingly extreme content?</li>
+                    <li>Why is outrage the most engaging emotion? How do media companies profit from your anger?</li>
+                    <li>How can you break out of your echo chamber and encounter thoughtful opposing views?</li>
+                    <li>What sources do you trust? Why? Have you verified their ownership and agenda?</li>
+                    <li>How would you explain media manipulation to someone who's never thought about it?</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+            <a href="chapter14.html" class="nav-btn">
+                <span>←</span> Chapter 14: Marketing & Sales Manipulation
+            </a>
+            <a href="index.html" class="nav-btn">
+                <span>◈</span> Index
+            </a>
+            <a href="chapter16.html" class="nav-btn next">
+                Chapter 16: Recognizing Manipulation <span>→</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="index.html" class="back-home">
+                <span>◈</span> Return to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Save reading position
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            localStorage.setItem('chapter15_scroll', scrollPos);
+        });
+
+        // Restore reading position
+        window.addEventListener('load', () => {
+            const savedPos = localStorage.getItem('chapter15_scroll');
+            if (savedPos) {
+                setTimeout(() => {
+                    window.scrollTo(0, parseInt(savedPos));
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

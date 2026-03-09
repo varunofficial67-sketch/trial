@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Chapter 11: Dark Triad Personalities | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Theme Variables */
+        :root {
+            /* Dark theme (default) */
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+            --narcissus-color: #f59f00;
+            --machiavellian-color: #7950f2;
+            --psychopath-color: #e03131;
+            --darktriad-glow: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Light theme */
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+            --narcissus-color: #e67700;
+            --machiavellian-color: #6741d9;
+            --psychopath-color: #c92a2a;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Settings Bar */
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        .chapter-progress {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chapter-progress span {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: var(--border-color);
+            position: fixed;
+            top: 73px;
+            left: 0;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.2s;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Chapter Header */
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .chapter-number {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .chapter-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        /* Content Sections */
+        .section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .section h2 i {
+            color: var(--accent-primary);
+            margin-right: 1rem;
+            font-style: normal;
+        }
+
+        .section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Triad Container */
+        .triad-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .triad-card {
+            background: var(--bg-primary);
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .triad-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .triad-card.narcissus {
+            border-top: 4px solid var(--narcissus-color);
+        }
+        .triad-card.narcissus:hover {
+            box-shadow: 0 20px 30px rgba(245, 159, 0, 0.2);
+        }
+        .triad-card.machiavellian {
+            border-top: 4px solid var(--machiavellian-color);
+        }
+        .triad-card.machiavellian:hover {
+            box-shadow: 0 20px 30px rgba(121, 80, 242, 0.2);
+        }
+        .triad-card.psychopath {
+            border-top: 4px solid var(--psychopath-color);
+        }
+        .triad-card.psychopath:hover {
+            box-shadow: 0 20px 30px rgba(224, 49, 49, 0.2);
+        }
+
+        .triad-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .triad-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .triad-card.narcissus .triad-name { color: var(--narcissus-color); }
+        .triad-card.machiavellian .triad-name { color: var(--machiavellian-color); }
+        .triad-card.psychopath .triad-name { color: var(--psychopath-color); }
+
+        .triad-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .prevalence {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .triad-traits {
+            text-align: left;
+            list-style: none;
+        }
+        .triad-traits li {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .triad-traits li::before {
+            content: "•";
+            font-size: 1.5rem;
+        }
+        .triad-card.narcissus .triad-traits li::before { color: var(--narcissus-color); }
+        .triad-card.machiavellian .triad-traits li::before { color: var(--machiavellian-color); }
+        .triad-card.psychopath .triad-traits li::before { color: var(--psychopath-color); }
+
+        /* Trait Grid */
+        .trait-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .trait-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .trait-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .trait-icon {
+            font-size: 2rem;
+        }
+
+        .trait-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .trait-desc {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .trait-example {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+            padding: 0.8rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-primary);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            padding: 1rem;
+            text-align: left;
+            color: white;
+            font-weight: 600;
+        }
+        .comparison-table th.narcissus { background: var(--narcissus-color); }
+        .comparison-table th.machiavellian { background: var(--machiavellian-color); }
+        .comparison-table th.psychopath { background: var(--psychopath-color); }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Red Flag Cards */
+        .redflag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .redflag-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .redflag-card h5 {
+            color: var(--danger-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Spectrum Cards */
+        .spectrum-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin: 1rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .spectrum-scale {
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 4px;
+            margin: 1rem 0;
+            position: relative;
+        }
+        .spectrum-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--warning-color), var(--danger-color));
+            border-radius: 4px;
+            width: 70%;
+        }
+        .spectrum-labels {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Chapter Navigation */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .nav-btn.next:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .chapter-title {
+                font-size: 2.5rem;
+            }
+
+            .triad-container {
+                grid-template-columns: 1fr;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo-area {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Settings Bar -->
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">
+                        <span>🌙</span> Dark
+                    </button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">
+                        <span>☀️</span> Light
+                    </button>
+                </div>
+            </div>
+            <div class="chapter-progress">
+                Chapter <span>11</span> of <span>20</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Chapter Header -->
+        <div class="chapter-header">
+            <div class="chapter-badge">ADVANCED TECHNIQUES · CHAPTER 11</div>
+            <div class="chapter-number">THE DARK TRIAD</div>
+            <h1 class="chapter-title">
+                <span class="gradient-text">Dark Triad</span><br>
+                Personalities
+            </h1>
+            <div class="chapter-subtitle">
+                Understanding the three most dangerous personality types: Narcissism, Machiavellianism, and Psychopathy
+            </div>
+        </div>
+
+        <!-- SECTION 1: INTRODUCTION TO THE DARK TRIAD -->
+        <div class="section">
+            <h2><i>🎭</i> 11.1 What is the Dark Triad?</h2>
+            <p>The Dark Triad is a cluster of three socially aversive personality traits: Narcissism, Machiavellianism, and Psychopathy. First identified by researchers Paulhus and Williams in 2002, these traits overlap significantly but have distinct characteristics.</p>
+            
+            <p>While everyone displays some of these traits occasionally, individuals high in Dark Triad traits use them as their primary way of interacting with the world. They lack empathy, exploit others, and see relationships as transactions.</p>
+
+            <div class="warfare-box" style="border-color: var(--accent-primary);">
+                <h4>📊 Prevalence in Population</h4>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+                    <div>
+                        <div style="font-size: 2rem; color: var(--narcissus-color);">1-6%</div>
+                        <div>Clinical Narcissism</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; color: var(--machiavellian-color);">10-15%</div>
+                        <div>High Machiavellianism</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; color: var(--psychopath-color);">1-4%</div>
+                        <div>Clinical Psychopathy</div>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; font-style: italic;">Subclinical levels are much higher - many people have enough traits to cause harm without meeting clinical diagnosis.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: THE THREE FACES - OVERVIEW -->
+        <div class="section">
+            <h2><i>👥</i> 11.2 The Three Faces of Evil</h2>
+            
+            <div class="triad-container">
+                <!-- Narcissism -->
+                <div class="triad-card narcissus">
+                    <div class="triad-icon">🦚</div>
+                    <div class="triad-name">NARCISSISM</div>
+                    <div class="triad-desc">Grandiosity, entitlement, and an insatiable need for admiration</div>
+                    <div class="prevalence">Prevalence: 1-6% (clinical)</div>
+                    <ul class="triad-traits">
+                        <li>Grandiose sense of self-importance</li>
+                        <li>Preoccupation with fantasies of success</li>
+                        <li>Believes they are "special"</li>
+                        <li>Requires excessive admiration</li>
+                        <li>Sense of entitlement</li>
+                        <li>Lack of empathy</li>
+                        <li>Envious of others</li>
+                        <li>Arrogant behaviors</li>
+                    </ul>
+                </div>
+                
+                <!-- Machiavellianism -->
+                <div class="triad-card machiavellian">
+                    <div class="triad-icon">🎭</div>
+                    <div class="triad-name">MACHIAVELLIANISM</div>
+                    <div class="triad-desc">Cunning, strategic manipulation, and cynical worldview</div>
+                    <div class="prevalence">Prevalence: 10-15% (high levels)</div>
+                    <ul class="triad-traits">
+                        <li>Manipulative and exploitative</li>
+                        <li>Cynical view of human nature</li>
+                        <li>Lacks conventional morality</li>
+                        <li>Strategic long-term planning</li>
+                        <li>Emotional detachment</li>
+                        <li>Focus on self-interest</li>
+                        <li>Deceptive and charming</li>
+                        <li>Seeks power and control</li>
+                    </ul>
+                </div>
+                
+                <!-- Psychopathy -->
+                <div class="triad-card psychopath">
+                    <div class="triad-icon">😈</div>
+                    <div class="triad-name">PSYCHOPATHY</div>
+                    <div class="triad-desc">Lack of empathy, impulsivity, and antisocial behavior</div>
+                    <div class="prevalence">Prevalence: 1-4% (clinical)</div>
+                    <ul class="triad-traits">
+                        <li>Lack of empathy or remorse</li>
+                        <li>Superficial charm</li>
+                        <li>Grandiose self-worth</li>
+                        <li>Pathological lying</li>
+                        <li>Manipulative tendencies</li>
+                        <li>Shallow emotions</li>
+                        <li>Impulsivity</li>
+                        <li>Antisocial behavior</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: NARCISSISM - DEEP DIVE -->
+        <div class="section">
+            <h2><i>🦚</i> 11.3 Narcissism: The Mirror's Gaze</h2>
+            
+            <p>Narcissism is characterized by grandiosity, a need for admiration, and lack of empathy. There are two types: grandiose (overt) and vulnerable (covert).</p>
+
+            <div class="trait-grid">
+                <div class="trait-card">
+                    <div class="trait-header">
+                        <div class="trait-icon">👑</div>
+                        <div class="trait-name">Grandiose Narcissism</div>
+                    </div>
+                    <div class="trait-desc">Overt, arrogant, attention-seeking, extraverted. "Look at me."</div>
+                    <div class="trait-example">Example: The executive who takes credit for others' work, belittles subordinates, and needs constant praise.</div>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-header">
+                        <div class="trait-icon">🎭</div>
+                        <div class="trait-name">Vulnerable Narcissism</div>
+                    </div>
+                    <div class="trait-desc">Insecure, defensive, hypersensitive to criticism. "Why don't they appreciate me?"</div>
+                    <div class="trait-example">Example: The friend who constantly seeks reassurance, takes offense easily, and plays victim when challenged.</div>
+                </div>
+            </div>
+
+            <h3>🔴 Red Flags of Narcissism:</h3>
+            <div class="redflag-grid">
+                <div class="redflag-card">
+                    <h5>Conversation Dominance</h5>
+                    <p>Always brings conversation back to themselves. Your stories trigger their stories.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Lack of Reciprocity</h5>
+                    <p>Takes but rarely gives. Your needs are secondary.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Special Treatment</h5>
+                    <p>Expects exceptions, rules don't apply to them.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Reaction to Criticism</h5>
+                    <p>Even gentle feedback triggers rage or cold withdrawal.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Name-Dropping</h5>
+                    <p>Constantly associates with important people to boost status.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Boundary Violations</h5>
+                    <p>Your time, possessions, and feelings are theirs to use.</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    The narcissist doesn't love themselves - they are in love with an image they've created. Anyone who threatens that image becomes an enemy.
+                </div>
+                <div class="quote-author">— Dr. Craig Malkin</div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: MACHIAVELLIANISM - DEEP DIVE -->
+        <div class="section">
+            <h2><i>🎭</i> 11.4 Machiavellianism: The Prince's Playbook</h2>
+            
+            <p>Machiavellianism is named after Niccolò Machiavelli, who wrote "The Prince" - a guide to political manipulation. Machiavellians are strategic, cunning, and view others as pawns.</p>
+
+            <div class="trait-grid">
+                <div class="trait-card">
+                    <div class="trait-header">
+                        <div class="trait-icon">📜</div>
+                        <div class="trait-name">Core Beliefs</div>
+                    </div>
+                    <div class="trait-desc">"People are untrustworthy." "You have to manipulate to get ahead." "The ends justify the means."</div>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-header">
+                        <div class="trait-icon">⏳</div>
+                        <div class="trait-name">Long-Term Strategy</div>
+                    </div>
+                    <div class="trait-desc">Unlike impulsive psychopaths, Machiavellians plan carefully, building networks of influence over years.</div>
+                </div>
+            </div>
+
+            <h3>🔴 Red Flags of Machiavellianism:</h3>
+            <div class="redflag-grid">
+                <div class="redflag-card">
+                    <h5>Information Gathering</h5>
+                    <p>Asks many personal questions - they're collecting data for future use.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Triangulation</h5>
+                    <p>Brings third parties into conflicts, plays people against each other.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Strategic Favors</h5>
+                    <p>Does favors with expectation of future payback (often unspoken).</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Emotional Detachment</h5>
+                    <p>Can turn emotions on and off at will. Never truly vulnerable.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Cynical Comments</h5>
+                    <p>"Everyone's just looking out for themselves." Projects their motives onto others.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Secret Keeping</h5>
+                    <p>Holds secrets about others, uses them as leverage when needed.</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    The Machiavellian doesn't see people - they see tools, obstacles, and pawns. Relationships are chess games to be won.
+                </div>
+                <div class="quote-author">— Dr. Daniel Jones</div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: PSYCHOPATHY - DEEP DIVE -->
+        <div class="section">
+            <h2><i>😈</i> 11.5 Psychopathy: The Empty Shell</h2>
+            
+            <p>Psychopathy is characterized by lack of empathy, shallow emotions, and antisocial behavior. Primary psychopaths are born this way; secondary psychopaths develop traits through environment.</p>
+
+            <div class="trait-grid">
+                <div class="trait-card">
+                    <div class="trait-header">
+                        <div class="trait-icon">🎭</div>
+                        <div class="trait-name">Primary Psychopath</div>
+                    </div>
+                    <div class="trait-desc">Born with emotional deficits. Cold, calculating, fearless. The "corporate psychopath."</div>
+                </div>
+                <div class="trait-card">
+                    <div class="trait-header">
+                        <div class="trait-icon">⚡</div>
+                        <div class="trait-name">Secondary Psychopath</div>
+                    </div>
+                    <div class="trait-desc">Developed through trauma or environment. More impulsive, reactive, emotional.</div>
+                </div>
+            </div>
+
+            <h3>🔴 Red Flags of Psychopathy:</h3>
+            <div class="redflag-grid">
+                <div class="redflag-card">
+                    <h5>Superficial Charm</h5>
+                    <p>Charismatic, engaging, but it feels "too perfect" or rehearsed.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Lack of Remorse</h5>
+                    <p>Never truly sorry - only sorry they got caught.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Pathological Lying</h5>
+                    <p>Lies easily, convincingly, even when truth would work.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Shallow Emotions</h5>
+                    <p>Emotions seem fake, performative. No depth.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Parasitic Lifestyle</h5>
+                    <p>Lives off others, takes without giving.</p>
+                </div>
+                <div class="redflag-card">
+                    <h5>Cruelty to Animals</h5>
+                    <p>Often a childhood sign (but not always present).</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    The psychopath knows the words but not the music. They can tell you they love you, but they have no idea what love feels like.
+                </div>
+                <div class="quote-author">— Dr. Robert Hare</div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: COMPARISON TABLE -->
+        <div class="section">
+            <h2><i>📊</i> 11.6 Dark Triad Comparison</h2>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="narcissus">NARCISSISM</th>
+                            <th class="machiavellian">MACHIAVELLIANISM</th>
+                            <th class="psychopath">PSYCHOPATHY</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Grandiose self-image</td>
+                            <td>Cynical worldview</td>
+                            <td>Shallow emotions</td>
+                        </tr>
+                        <tr>
+                            <td>Needs admiration</td>
+                            <td>Strategic manipulation</td>
+                            <td>Lack of remorse</td>
+                        </tr>
+                        <tr>
+                            <td>Envious of others</td>
+                            <td>Long-term planning</td>
+                            <td>Impulsive</td>
+                        </tr>
+                        <tr>
+                            <td>Fragile ego</td>
+                            <td>Emotional detachment</td>
+                            <td>Pathological lying</td>
+                        </tr>
+                        <tr>
+                            <td>Exploits for admiration</td>
+                            <td>Exploits for gain</td>
+                            <td>Exploits for thrill/gain</td>
+                        </tr>
+                        <tr>
+                            <td>Reactively aggressive</td>
+                            <td>Instrumentally aggressive</td>
+                            <td>Both reactive and instrumental</td>
+                        </tr>
+                        <tr>
+                            <td>Needs audience</td>
+                            <td>Works in shadows</td>
+                            <td>Doesn't care about audience</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SECTION 7: OVERLAP AND DISTINCTIONS -->
+        <div class="section">
+            <h2><i>🔄</i> 11.7 Overlap and Distinctions</h2>
+            
+            <p>The Dark Triad traits overlap significantly - most high in one are high in others. But they have distinct cores:</p>
+
+            <div class="trait-grid">
+                <div class="trait-card">
+                    <h4>Common Elements</h4>
+                    <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                        <li>Lack of empathy</li>
+                        <li>Exploitative behavior</li>
+                        <li>Sense of entitlement</li>
+                        <li>Manipulative tendencies</li>
+                        <li>Callousness</li>
+                    </ul>
+                </div>
+                <div class="trait-card">
+                    <h4>Key Distinctions</h4>
+                    <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                        <li><strong>Narcissism:</strong> Needs admiration, fragile ego</li>
+                        <li><strong>Machiavellianism:</strong> Strategic, cynical, patient</li>
+                        <li><strong>Psychopathy:</strong> Impulsive, fearless, shallow emotions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="spectrum-card">
+                <h4>🧠 The Empathy Spectrum</h4>
+                <div class="spectrum-scale">
+                    <div class="spectrum-fill" style="width: 90%;"></div>
+                </div>
+                <div class="spectrum-labels">
+                    <span>High Empathy</span>
+                    <span>Low Empathy</span>
+                </div>
+                <p style="margin-top: 1rem;">All Dark Triad types are low in empathy, but for different reasons: Narcissists can't see past themselves, Machiavellians choose not to care, Psychopaths literally can't feel it.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 8: ORIGINS - NATURE VS NURTURE -->
+        <div class="section">
+            <h2><i>🧬</i> 11.8 Origins of the Dark Triad</h2>
+            
+            <div class="trait-grid">
+                <div class="trait-card">
+                    <h4>Genetic Factors</h4>
+                    <p>Research suggests 40-60% heritability for Dark Triad traits. Psychopathy has the strongest genetic component.</p>
+                </div>
+                <div class="trait-card">
+                    <h4>Environmental Factors</h4>
+                    <p>Childhood trauma, neglect, inconsistent parenting, and modeling by parents can amplify these traits.</p>
+                </div>
+                <div class="trait-card">
+                    <h4>Evolutionary Advantage</h4>
+                    <p>These traits persist because they can be advantageous - short-term mating success, resource acquisition, status attainment.</p>
+                </div>
+                <div class="trait-card">
+                    <h4>Brain Differences</h4>
+                    <p>Psychopaths show reduced amygdala activity (fear/empathy). Narcissists have differences in prefrontal cortex (self-awareness).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 9: THE DARK TETRAD -->
+        <div class="section">
+            <h2><i>➕</i> 11.9 The Dark Tetrad: Adding Sadism</h2>
+            
+            <p>Recent research has proposed a fourth trait: <strong>Everyday Sadism</strong> - deriving pleasure from others' pain.</p>
+
+            <div class="triad-container" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="triad-card narcissus" style="border-top-color: var(--narcissus-color);">
+                    <div class="triad-icon">🦚</div>
+                    <div class="triad-name" style="font-size: 1.2rem;">NARCISSISM</div>
+                </div>
+                <div class="triad-card machiavellian" style="border-top-color: var(--machiavellian-color);">
+                    <div class="triad-icon">🎭</div>
+                    <div class="triad-name" style="font-size: 1.2rem;">MACHIAVELLIAN</div>
+                </div>
+                <div class="triad-card psychopath" style="border-top-color: var(--psychopath-color);">
+                    <div class="triad-icon">😈</div>
+                    <div class="triad-name" style="font-size: 1.2rem;">PSYCHOPATHY</div>
+                </div>
+                <div class="triad-card" style="border-top-color: var(--warning-color);">
+                    <div class="triad-icon">😈</div>
+                    <div class="triad-name" style="font-size: 1.2rem; color: var(--warning-color);">SADISM</div>
+                </div>
+            </div>
+
+            <p><strong>Sadism traits:</strong> Humiliating others, enjoying violence, cruelty for pleasure, trolling, bullying.</p>
+        </div>
+
+        <!-- SECTION 10: CASE STUDY - THE CORPORATE CLIMBER -->
+        <div class="section">
+            <h2><i>📋</i> 11.10 Case Study: The Executive Who Had It All</h2>
+            
+            <div class="case-study">
+                <h4>🎯 How Dark Triad Traits Propelled and Destroyed a Career</h4>
+                <div class="case-study-meta">
+                    <span>📍 Setting: Fortune 500 Company</span>
+                    <span>📅 Subject: "Richard" - VP of Sales</span>
+                </div>
+                <div class="case-study-content">
+                    <p><strong>The Rise:</strong> Richard was charismatic, confident, and brilliant. He interviewed flawlessly, networked effortlessly, and rose through the ranks faster than anyone.</p>
+                    
+                    <p><strong>Narcissistic Traits:</strong> He truly believed he was special. He took credit for his team's work, demanded constant praise, and had photos of himself throughout his office.</p>
+                    
+                    <p><strong>Machiavellian Traits:</strong> Richard cultivated relationships strategically. He kept files on colleagues' weaknesses, did favors he could call in later, and always had a backup plan.</p>
+                    
+                    <p><strong>Psychopathic Traits:</strong> When restructuring happened, Richard fired people without blinking. He showed no emotion, slept perfectly, and moved on immediately. Employees called him "The Robot."</p>
+                    
+                    <p><strong>The Turning Point:</strong> An assistant discovered Richard's files on colleagues. She leaked them. The manipulation, the strategic betrayals, the calculated cruelty - all exposed.</p>
+                    
+                    <p><strong>The Fall:</strong> Within weeks, Richard was fired. His network collapsed - no one trusted him. He couldn't understand why; in his mind, he'd just been playing the game.</p>
+                    
+                    <p><strong>The Diagnosis:</strong> Richard scored high on all three Dark Triad measures. His traits made him successful - until they destroyed him.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 11: DEFENSE STRATEGIES -->
+        <div class="section">
+            <h2><i>🛡️</i> 11.11 Protecting Yourself from Dark Triad Personalities</h2>
+            
+            <h3>Recognition and Response:</h3>
+            <div class="trait-grid">
+                <div class="trait-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">🔍 Know the Red Flags</h4>
+                    <p>Memorize the signs. Early recognition is your best defense.</p>
+                </div>
+                <div class="trait-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">🚫 Set Firm Boundaries</h4>
+                    <p>Dark Triad individuals test boundaries constantly. Hold yours firmly and consistently.</p>
+                </div>
+                <div class="trait-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">📓 Document Everything</h4>
+                    <p>They lie, gaslight, and rewrite history. Written records protect you.</p>
+                </div>
+                <div class="trait-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">👥 Don't Isolate</h4>
+                    <p>They'll try to separate you from supporters. Stay connected.</p>
+                </div>
+                <div class="trait-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">🧠 Trust Your Gut</h4>
+                    <p>If something feels "off" about someone - the charm too perfect, the empathy missing - trust that feeling.</p>
+                </div>
+                <div class="trait-card" style="border-left-color: var(--success-color);">
+                    <h4 style="color: var(--success-color);">🚪 Have an Exit Strategy</h4>
+                    <p>When dealing with high Dark Triad individuals, know how to leave. Relationships with them rarely end well.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">🚫 What NOT to Do:</h3>
+            <div class="key-points" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Confront Directly</h4>
+                    <p>They'll escalate, gaslight, and destroy you socially.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Expect Change</h4>
+                    <p>They won't change for you. Promises are manipulation.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Share Vulnerabilities</h4>
+                    <p>Every weakness you show becomes a weapon.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Play Their Game</h4>
+                    <p>You can't win. They've been playing their whole lives.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 12: CHAPTER SUMMARY -->
+        <div class="section">
+            <h2><i>📌</i> 11.12 Chapter Summary</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <p><strong>🎭 Key Takeaways:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-secondary); line-height: 2;">
+                    <li><strong>Dark Triad:</strong> Narcissism, Machiavellianism, Psychopathy - three overlapping but distinct personality types</li>
+                    <li><strong>Narcissism:</strong> Grandiosity, need for admiration, fragile ego, two types (grandiose and vulnerable)</li>
+                    <li><strong>Machiavellianism:</strong> Strategic manipulation, cynical worldview, long-term planning, emotional detachment</li>
+                    <li><strong>Psychopathy:</strong> Lack of empathy, shallow emotions, impulsivity, pathological lying, two types (primary and secondary)</li>
+                    <li><strong>Common elements:</strong> Lack of empathy, exploitative behavior, entitlement, callousness</li>
+                    <li><strong>Origins:</strong> 40-60% heritable, environmental factors, brain differences, evolutionary advantage</li>
+                    <li><strong>Dark Tetrad:</strong> Adding Sadism (pleasure from others' pain)</li>
+                </ul>
+                
+                <p style="margin-top: 2rem;"><strong>📝 Key Terms:</strong> Dark Triad, Narcissism, Grandiose Narcissism, Vulnerable Narcissism, Machiavellianism, Psychopathy, Primary Psychopathy, Secondary Psychopathy, Dark Tetrad, Sadism, Empathy Deficit, Strategic Manipulation, Pathological Lying, Superficial Charm</p>
+            </div>
+        </div>
+
+        <!-- SECTION 13: SELF-ASSESSMENT -->
+        <div class="section">
+            <h2><i>📝</i> 11.13 Self-Assessment Questions</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <ol style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 2;">
+                    <li>Have you encountered people who fit each of the Dark Triad types? What were the key signs?</li>
+                    <li>What's the difference between healthy confidence and narcissism? Where's the line?</li>
+                    <li>Why do Machiavellians keep files on people? What purpose does that serve?</li>
+                    <li>How can you tell the difference between genuine charm and superficial charm?</li>
+                    <li>Why do Dark Triad traits persist in the population if they're so harmful?</li>
+                    <li>What would you do if you realized your boss was a psychopath?</li>
+                    <li>How can you set boundaries with a narcissist without triggering their rage?</li>
+                    <li>Why is documentation so important when dealing with Dark Triad individuals?</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+            <a href="chapter10.html" class="nav-btn">
+                <span>←</span> Chapter 10: Psychological Warfare
+            </a>
+            <a href="index.html" class="nav-btn">
+                <span>◈</span> Index
+            </a>
+            <a href="chapter12.html" class="nav-btn next">
+                Chapter 12: Manipulation in Relationships <span>→</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="index.html" class="back-home">
+                <span>◈</span> Return to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Save reading position
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            localStorage.setItem('chapter11_scroll', scrollPos);
+        });
+
+        // Restore reading position
+        window.addEventListener('load', () => {
+            const savedPos = localStorage.getItem('chapter11_scroll');
+            if (savedPos) {
+                setTimeout(() => {
+                    window.scrollTo(0, parseInt(savedPos));
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

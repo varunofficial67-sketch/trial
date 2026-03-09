@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Chapter 5: Non-Verbal Manipulation | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Theme Variables */
+        :root {
+            /* Dark theme (default) */
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+            --nonverbal-color: #a55eea;
+            --nonverbal-glow: rgba(165, 94, 234, 0.3);
+        }
+
+        /* Light theme */
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+            --nonverbal-color: #7b3fe4;
+            --nonverbal-glow: rgba(123, 63, 228, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Settings Bar */
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        .chapter-progress {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chapter-progress span {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: var(--border-color);
+            position: fixed;
+            top: 73px;
+            left: 0;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.2s;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Chapter Header */
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .chapter-number {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .chapter-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        /* Content Sections */
+        .section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .section h2 i {
+            color: var(--accent-primary);
+            margin-right: 1rem;
+            font-style: normal;
+        }
+
+        .section h3 {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Non-Verbal Box */
+        .nonverbal-box {
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-card));
+            border: 2px solid var(--nonverbal-color);
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nonverbal-box::before {
+            content: '👁️';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(10deg);
+        }
+
+        .nonverbal-box h4 {
+            color: var(--nonverbal-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Body Language Grid */
+        .bodylanguage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .body-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .body-card:hover {
+            border-color: var(--nonverbal-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--nonverbal-glow);
+        }
+
+        .body-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .body-card h4 {
+            color: var(--nonverbal-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .body-meaning {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        /* Eye Contact Table */
+        .eye-contact-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .eye-item {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .eye-type {
+            font-weight: 700;
+            color: var(--nonverbal-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Space Invasion Levels */
+        .space-levels {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .space-level {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 12px;
+        }
+
+        .space-distance {
+            min-width: 100px;
+            font-weight: 700;
+            color: var(--nonverbal-color);
+        }
+
+        .space-desc {
+            flex: 1;
+        }
+
+        .space-power {
+            color: var(--danger-color);
+            font-size: 0.9rem;
+        }
+
+        /* Voice Modulation */
+        .voice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .voice-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border-left: 4px solid var(--nonverbal-color);
+        }
+
+        .voice-card h5 {
+            color: var(--nonverbal-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Micro-Expressions */
+        .micro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .micro-item {
+            background: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .micro-emotion {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .micro-name {
+            font-weight: 600;
+            color: var(--warning-color);
+        }
+
+        .micro-time {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Chapter Navigation */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .nav-btn.next:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .chapter-title {
+                font-size: 2.5rem;
+            }
+
+            .space-level {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo-area {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Settings Bar -->
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">
+                        <span>🌙</span> Dark
+                    </button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">
+                        <span>☀️</span> Light
+                    </button>
+                </div>
+            </div>
+            <div class="chapter-progress">
+                Chapter <span>5</span> of <span>20</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Chapter Header -->
+        <div class="chapter-header">
+            <div class="chapter-badge">MANIPULATION TECHNIQUES · CHAPTER 5</div>
+            <div class="chapter-number">THE SILENT LANGUAGE</div>
+            <h1 class="chapter-title">
+                <span class="gradient-text">Non-Verbal</span><br>
+                Manipulation
+            </h1>
+            <div class="chapter-subtitle">
+                How manipulators use body language, space, voice, and silence to control, intimidate, and dominate without saying a word
+            </div>
+        </div>
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <div class="section">
+            <h2><i>👁️</i> 5.1 The Silent Language of Power</h2>
+            <p>Words are just the tip of the communication iceberg. Research shows that 70-93% of all communication is non-verbal. Manipulators understand this deeply - they know that what they don't say often speaks louder than what they do.</p>
+            
+            <p>Non-verbal manipulation is particularly dangerous because it operates below conscious awareness. You feel uncomfortable, intimidated, or controlled but can't quite explain why. The manipulator can always deny intent - "I didn't say anything."</p>
+
+            <div class="nonverbal-box">
+                <h4>📊 The Communication Pie (Mehrabian's Rule)</h4>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+                    <div>
+                        <div style="font-size: 2.5rem; color: var(--accent-primary);">7%</div>
+                        <div>Words</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; color: var(--warning-color);">38%</div>
+                        <div>Voice Tone</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; color: var(--nonverbal-color);">55%</div>
+                        <div>Body Language</div>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem; font-style: italic;">When words and body language conflict, humans believe the body language every time.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: BODY LANGUAGE DOMINATION -->
+        <div class="section">
+            <h2><i>🦁</i> 5.2 Body Language of Domination</h2>
+            
+            <div class="bodylanguage-grid">
+                <div class="body-card">
+                    <div class="body-icon">🦅</div>
+                    <h4>The Alpha Stance</h4>
+                    <p>Feet planted wide, shoulders back, chest out - taking up maximum space signals dominance and confidence.</p>
+                    <div class="body-meaning">Manipulator's intent: "I am powerful, you are small."</div>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">👑</div>
+                    <h4>Elevated Position</h4>
+                    <p>Standing while you sit, sitting on higher chairs, looking down at you literally and figuratively.</p>
+                    <div class="body-meaning">Manipulator's intent: "I am above you."</div>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">🚪</div>
+                    <h4>Blocking Exits</h4>
+                    <p>Positioning themselves between you and the door, blocking your escape path.</p>
+                    <div class="body-meaning">Manipulator's intent: "You cannot leave until I allow it."</div>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">🪞</div>
+                    <h4>Mirroring</h4>
+                    <p>Subtly copying your body language to build false rapport and trust.</p>
+                    <div class="body-meaning">Manipulator's intent: "We're the same. Trust me."</div>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">✋</div>
+                    <h4>Steepling</h4>
+                    <p>Fingertips touching to form a steeple - signals confidence and superiority.</p>
+                    <div class="body-meaning">Manipulator's intent: "I know something you don't."</div>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">🤚</div>
+                    <h4>The Stop Hand</h4>
+                    <p>Palm out, hand raised - a nonverbal command to stop speaking.</p>
+                    <div class="body-meaning">Manipulator's intent: "Your words don't matter. I'm done listening."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: EYE CONTACT AS WEAPON -->
+        <div class="section">
+            <h2><i>👀</i> 5.3 The Eyes Have It</h2>
+            
+            <p>Eye contact is one of the most powerful non-verbal tools. Manipulators use it to intimidate, seduce, dominate, and destabilize.</p>
+
+            <div class="eye-contact-table">
+                <div class="eye-item">
+                    <div class="eye-type">The Death Stare</div>
+                    <div>Unblinking, intense eye contact that intimidates and challenges.</div>
+                    <div style="font-size: 0.9rem; margin-top: 0.5rem;">"I'm not afraid of you. I'm in control."</div>
+                </div>
+                <div class="eye-item">
+                    <div class="eye-type">The Invasive Gaze</div>
+                    <div>Looking at body parts in ways that feel violating.</div>
+                    <div style="font-size: 0.9rem; margin-top: 0.5rem;">"I can look at you however I want."</div>
+                </div>
+                <div class="eye-item">
+                    <div class="eye-type">The Withhold</div>
+                    <div>Refusing eye contact entirely - dismissive, contemptuous.</div>
+                    <div style="font-size: 0.9rem; margin-top: 0.5rem;">"You're not worth my attention."</div>
+                </div>
+                <div class="eye-item">
+                    <div class="eye-type">The Scan</div>
+                    <div>Looking around the room while you speak - shows disinterest.</div>
+                    <div style="font-size: 0.9rem; margin-top: 0.5rem;">"What you're saying bores me."</div>
+                </div>
+                <div class="eye-item">
+                    <div class="eye-type">The Glance</div>
+                    <div>Quick looks at others to share secret amusement at your expense.</div>
+                    <div style="font-size: 0.9rem; margin-top: 0.5rem;">"We're both laughing at you."</div>
+                </div>
+                <div class="eye-item">
+                    <div class="eye-type">The Micro-Dart</div>
+                    <div>Brief flash of anger or contempt too fast to consciously register.</div>
+                    <div style="font-size: 0.9rem; margin-top: 0.5rem;">Your subconscious notices even if you don't.</div>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    The eyes don't just see - they threaten, they promise, they dominate. A skilled manipulator's gaze can make you feel loved one moment and worthless the next.
+                </div>
+                <div class="quote-author">— Dr. Paul Ekman, Emotion Researcher</div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: SPACE INVASION -->
+        <div class="section">
+            <h2><i>📏</i> 5.4 Territorial Domination</h2>
+            
+            <p>Personal space exists in zones. Manipulators violate these boundaries to assert dominance and create discomfort.</p>
+
+            <div class="space-levels">
+                <div class="space-level">
+                    <div class="space-distance">Intimate Zone<br>0-18 inches</div>
+                    <div class="space-desc">Reserved for lovers, family, and close friends. Invaders enter uninvited.</div>
+                    <div class="space-power">Power Move: Standing too close makes you retreat or feel threatened.</div>
+                </div>
+                <div class="space-level">
+                    <div class="space-distance">Personal Zone<br>18 inches-4 ft</div>
+                    <div class="space-desc">For friends and acquaintances. Manipulators edge closer than comfortable.</div>
+                    <div class="space-power">Power Move: Creeping closer during arguments to intimidate.</div>
+                </div>
+                <div class="space-level">
+                    <div class="space-distance">Social Zone<br>4-12 ft</div>
+                    <div class="space-desc">For strangers and formal interactions. Manipulators may stand too far (dismissive).</div>
+                    <div class="space-power">Power Move: Standing far away to signal you're beneath them.</div>
+                </div>
+                <div class="space-level">
+                    <div class="space-distance">Public Zone<br>12+ ft</div>
+                    <div class="space-desc">Public speaking distance. Manipulators use this for lectures, not conversations.</div>
+                    <div class="space-power">Power Move: Positioning themselves on stages, podiums above you.</div>
+                </div>
+            </div>
+
+            <h3>Space Invasion Tactics:</h3>
+            <div class="bodylanguage-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="body-card">
+                    <h4>The Lean-In</h4>
+                    <p>Leaning into your personal space during conversation, making you lean back.</p>
+                </div>
+                <div class="body-card">
+                    <h4>The Corner</h4>
+                    <p>Maneuvering you into a corner or against a wall with no escape.</p>
+                </div>
+                <div class="body-card">
+                    <h4>The Block</h4>
+                    <p>Standing in doorways, blocking exits, preventing retreat.</p>
+                </div>
+                <div class="body-card">
+                    <h4>The Tower</h4>
+                    <p>Standing over you while you're seated - literal towering.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: TOUCH AS CONTROL -->
+        <div class="section">
+            <h2><i>🤚</i> 5.5 The Power of Touch</h2>
+            
+            <p>Touch is the most intimate non-verbal signal. Manipulators use touch to establish dominance, test boundaries, and create discomfort.</p>
+
+            <div class="bodylanguage-grid">
+                <div class="body-card">
+                    <div class="body-icon">✋</div>
+                    <h4>The Patronizing Pat</h4>
+                    <p>A pat on the head, shoulder, or back - like you'd pat a dog or child.</p>
+                    <div class="body-meaning">"You're beneath me. I'm indulging you."</div>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">🤝</div>
+                    <h4>The Dominant Handshake</h4>
+                    <p>Palm down, too firm, too long, pulling you off balance.</p>
+                    <div class="body-meaning">"I'm in control of this interaction."</div>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">👐</div>
+                    <h4>The Double-Hand Grab</h4>
+                    <p>Holding your hand between both of theirs - traps you.</p>
+                    <div class="body-meaning">"You cannot easily pull away."</div>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">👉</div>
+                    <h4>The Pointing Finger</h4>
+                    <p>Jabbing fingers at you - aggressive, accusatory.</p>
+                    <div class="body-meaning">"I'm accusing you. Defend yourself."</div>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">👆</div>
+                    <h4>The Arm Touch</h4>
+                    <p>Touching your arm while making a point - tests boundaries.</p>
+                    <div class="body-meaning">"I can touch you whenever I want."</div>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">🤏</div>
+                    <h4>The Invasive Touch</h4>
+                    <p>Touch that's slightly too intimate for the relationship.</p>
+                    <div class="body-meaning">"I'm testing what I can get away with."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: VOICE MODULATION -->
+        <div class="section">
+            <h2><i>🎤</i> 5.6 The Manipulative Voice</h2>
+            
+            <p>How something is said matters more than what is said. Voice tone, pace, and volume are powerful tools.</p>
+
+            <div class="voice-grid">
+                <div class="voice-card">
+                    <h5>📢 Volume Control</h5>
+                    <p><strong>Too Loud:</strong> Intimidation, dominance, anger</p>
+                    <p><strong>Too Quiet:</strong> Forces you to lean in, creates intimacy, signals victimhood</p>
+                    <p><strong>Sudden Changes:</strong> Keeps you off-balance</p>
+                </div>
+                <div class="voice-card">
+                    <h5>⏱️ Pace Manipulation</h5>
+                    <p><strong>Too Fast:</strong> Overwhelms, prevents thinking</p>
+                    <p><strong>Too Slow:</strong> Creates tension, signals boredom</p>
+                    <p><strong>Sudden Stops:</strong> Creates awkward silence you'll fill</p>
+                </div>
+                <div class="voice-card">
+                    <h5>🎭 Tone Weapons</h5>
+                    <p><strong>Sarcasm:</strong> Hostility disguised as humor</p>
+                    <p><strong>Condescension:</strong> "Sweetie," "Honey" in professional settings</p>
+                    <p><strong>Ice:</strong> Cold, flat tone signals contempt</p>
+                </div>
+                <div class="voice-card">
+                    <h5>🔇 Silence</h5>
+                    <p>The most powerful voice weapon. Silence makes you uncomfortable, makes you fill the void, makes you give away information.</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    Silence is the most powerful scream. A manipulator's silence can punish, control, and dominate more effectively than any words.
+                </div>
+                <div class="quote-author">— Unknown</div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: MICRO-EXPRESSIONS -->
+        <div class="section">
+            <h2><i>⚡</i> 5.7 Micro-Expressions: The Truth Leaks</h2>
+            
+            <p>Micro-expressions are facial expressions that last 1/15 to 1/25 of a second. They reveal true emotions that manipulators try to hide. Learn to spot these leaks.</p>
+
+            <div class="micro-grid">
+                <div class="micro-item">
+                    <div class="micro-emotion">😡</div>
+                    <div class="micro-name">Contempt</div>
+                    <div class="micro-time">One-sided mouth curl</div>
+                </div>
+                <div class="micro-item">
+                    <div class="micro-emotion">😨</div>
+                    <div class="micro-name">Fear</div>
+                    <div class="micro-time">Eyebrows up, eyes wide</div>
+                </div>
+                <div class="micro-item">
+                    <div class="micro-emotion">😠</div>
+                    <div class="micro-name">Anger</div>
+                    <div class="micro-time">Eyebrows down, lips thin</div>
+                </div>
+                <div class="micro-item">
+                    <div class="micro-emotion">😲</div>
+                    <div class="micro-name">Surprise</div>
+                    <div class="micro-time">Jaw drop, eyebrows up</div>
+                </div>
+                <div class="micro-item">
+                    <div class="micro-emotion">😞</div>
+                    <div class="micro-name">Sadness</div>
+                    <div class="micro-time">Lip corners down, chin up</div>
+                </div>
+                <div class="micro-item">
+                    <div class="micro-emotion">🤢</div>
+                    <div class="micro-name">Disgust</div>
+                    <div class="micro-time">Nose wrinkle, upper lip up</div>
+                </div>
+            </div>
+
+            <p><strong>Manipulator's Giveaway:</strong> When someone says "I'm not angry" but shows a micro-expression of anger for 1/15 second - believe the micro-expression.</p>
+        </div>
+
+        <!-- SECTION 8: TIMING & RHYTHM -->
+        <div class="section">
+            <h2><i>⏰</i> 5.8 Temporal Manipulation</h2>
+            
+            <div class="bodylanguage-grid">
+                <div class="body-card">
+                    <div class="body-icon">⏳</div>
+                    <h4>The Pause</h4>
+                    <p>Long pauses before answering make you nervous, make you fill the silence with more information.</p>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">⌛</div>
+                    <h4>The Interrupt</h4>
+                    <p>Cutting you off mid-sentence signals your words aren't valuable.</p>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">🕰️</div>
+                    <h4>The Delay</h4>
+                    <p>Taking hours or days to respond to urgent messages - shows power.</p>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">⏲️</div>
+                    <h4>The Rush</h4>
+                    <p>Suddenly rushing you when you need time to think.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 9: CASE STUDY - THE INTERROGATION -->
+        <div class="section">
+            <h2><i>📋</i> 5.9 Case Study: Police Interrogation Tactics</h2>
+            
+            <div class="case-study">
+                <h4>🎯 How Non-Verbals Break Suspects</h4>
+                <div class="case-study-meta">
+                    <span>📍 Setting: Interrogation Room</span>
+                    <span>📅 Tactic: Reid Technique</span>
+                </div>
+                <div class="case-study-content">
+                    <p><strong>The Situation:</strong> Police interrogators are trained in non-verbal manipulation to extract confessions - guilty or innocent.</p>
+                    
+                    <p><strong>Space Invasion:</strong> Interrogators sit close, in the personal zone, with no table barrier. Suspect cannot retreat.</p>
+                    
+                    <p><strong>Eye Contact:</strong> Unblinking stare while asking questions - intimidating, pressure to confess.</p>
+                    
+                    <p><strong>Body Mirroring:</strong> Matching the suspect's posture to build false rapport, then shifting to dominant posture to lead.</p>
+                    
+                    <p><strong>Touch:</strong> Light touches on arm or shoulder during "compassionate" moments - creates false intimacy.</p>
+                    
+                    <p><strong>Voice Modulation:</strong> Soft, understanding tone during "soft" phase; loud, accusatory during "hard" phase.</p>
+                    
+                    <p><strong>The Result:</strong> Innocent people have confessed to crimes they didn't commit because non-verbal pressure overwhelmed their psychology.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 10: DEFENSE STRATEGIES -->
+        <div class="section">
+            <h2><i>🛡️</i> 5.10 Protecting Yourself</h2>
+            
+            <h3>Counter Non-Verbal Manipulation:</h3>
+            <div class="bodylanguage-grid">
+                <div class="body-card">
+                    <div class="body-icon">📏</div>
+                    <h4>Maintain Space</h4>
+                    <p>Step back when someone invades your space. If they follow, name it: "You're standing too close. Please step back."</p>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">👁️</div>
+                    <h4>Return the Gaze</h4>
+                    <p>When someone uses the death stare, look back calmly. Don't look down or away - that signals submission.</p>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">🪑</div>
+                    <h4>Control Position</h4>
+                    <p>Never let someone stand while you sit. Stand up. Don't be cornered.</p>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">✋</div>
+                    <h4>Block Touch</h4>
+                    <p>Pull away from unwanted touch. Say "Please don't touch me" firmly.</p>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">🤐</div>
+                    <h4>Embrace Silence</h4>
+                    <p>When they use silence to make you talk - don't. Let silence stretch. You'll win.</p>
+                </div>
+                <div class="body-card">
+                    <div class="body-icon">🚪</div>
+                    <h4>Never Be Trapped</h4>
+                    <p>Always position yourself near an exit. If blocked, say "Excuse me, I'm leaving now."</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">🚫 What NOT to Do:</h3>
+            <div class="key-points" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Lean Back</h4>
+                    <p>When they lean in, leaning back signals submission. Stand your ground or step forward.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Look Down</h4>
+                    <p>Breaking eye contact by looking down signals defeat. Look to the side if needed.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Fill Silence</h4>
+                    <p>Their silence is a trap. Don't fall for it.</p>
+                </div>
+                <div class="key-card" style="border-color: var(--danger-color);">
+                    <h4 style="color: var(--danger-color);">Don't Apologize</h4>
+                    <p>Don't apologize for setting physical boundaries.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 11: CHAPTER SUMMARY -->
+        <div class="section">
+            <h2><i>📌</i> 5.11 Chapter Summary</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <p><strong>👁️ Key Takeaways:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-secondary); line-height: 2;">
+                    <li><strong>93% of communication</strong> is non-verbal - words are the smallest part</li>
+                    <li><strong>Body language domination:</strong> alpha stance, elevated position, blocking exits, mirroring</li>
+                    <li><strong>Eye contact weapons:</strong> death stare, invasive gaze, withhold, micro-darts</li>
+                    <li><strong>Space invasion:</strong> violating intimate, personal, social zones to intimidate</li>
+                    <li><strong>Touch as control:</strong> patronizing pat, dominant handshake, invasive touch</li>
+                    <li><strong>Voice modulation:</strong> volume, pace, tone, and silence are all weapons</li>
+                    <li><strong>Micro-expressions:</strong> 1/15 second truth leaks revealing real emotions</li>
+                    <li><strong>Temporal manipulation:</strong> pauses, interruptions, delays control the rhythm</li>
+                </ul>
+                
+                <p style="margin-top: 2rem;"><strong>📝 Key Terms:</strong> Alpha Stance, Mirroring, Steepling, Death Stare, Micro-Expressions, Proxemics (Space Zones), Haptics (Touch), Paralanguage (Voice), Temporal Manipulation, Reid Technique</p>
+            </div>
+        </div>
+
+        <!-- SECTION 12: SELF-ASSESSMENT -->
+        <div class="section">
+            <h2><i>📝</i> 5.12 Self-Assessment Questions</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <ol style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 2;">
+                    <li>Think of someone who made you uncomfortable without saying anything. What non-verbal cues were they using?</li>
+                    <li>Have you experienced space invasion? How did it feel? What did you do?</li>
+                    <li>Practice spotting micro-expressions - watch interviews on mute and guess emotions.</li>
+                    <li>How do you typically respond to the silent treatment? What could you do differently?</li>
+                    <li>Why do manipulators use touch? What makes it so powerful?</li>
+                    <li>What's your natural response to eye contact intimidation? Do you look away?</li>
+                    <li>How can you practice maintaining your space without being aggressive?</li>
+                    <li>Why is it important to never be cornered or trapped in conversations?</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+            <a href="chapter4.html" class="nav-btn">
+                <span>←</span> Chapter 4: Verbal Manipulation
+            </a>
+            <a href="index.html" class="nav-btn">
+                <span>◈</span> Index
+            </a>
+            <a href="chapter6.html" class="nav-btn next">
+                Chapter 6: Emotional Manipulation <span>→</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="index.html" class="back-home">
+                <span>◈</span> Return to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Save reading position
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            localStorage.setItem('chapter5_scroll', scrollPos);
+        });
+
+        // Restore reading position
+        window.addEventListener('load', () => {
+            const savedPos = localStorage.getItem('chapter5_scroll');
+            if (savedPos) {
+                setTimeout(() => {
+                    window.scrollTo(0, parseInt(savedPos));
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

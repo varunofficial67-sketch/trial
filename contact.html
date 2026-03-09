@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Dark Psychology A-Z</title>
+    <style>
+        /* Same base styles as above */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-gradient-start: #0b0f17; --bg-gradient-end: #1a1f2e; --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30; --bg-card: #1e2440; --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8; --text-muted: #8f9bb3; --border-color: #2f3760;
+            --accent-primary: #ff6b6b; --accent-secondary: #ff8e8e; --header-bg: rgba(15,20,32,0.95);
+        }
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff; --bg-gradient-end: #ffffff; --bg-primary: #f8faff;
+            --bg-secondary: #ffffff; --bg-card: #ffffff; --text-primary: #1e293b;
+            --text-secondary: #475569; --text-muted: #64748b; --border-color: #e2e8f0;
+            --accent-primary: #dc2626; --accent-secondary: #ef4444; --header-bg: rgba(255,255,255,0.95);
+        }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end)); color: var(--text-primary); }
+        .settings-bar { background: var(--header-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem; position: sticky; top: 0; }
+        .settings-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 800; text-decoration: none; }
+        .logo span { background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .theme-toggle { display: flex; gap: 0.5rem; background: var(--bg-card); padding: 0.4rem; border-radius: 40px; border: 1px solid var(--border-color); }
+        .theme-btn { border: none; background: transparent; color: var(--text-secondary); padding: 0.6rem 1.2rem; border-radius: 30px; cursor: pointer; }
+        .theme-btn.active { background: var(--accent-primary); color: white; }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        .page-title { font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 2rem; text-align: center; }
+        .contact-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem; margin: 3rem 0;
+        }
+        .contact-card {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 30px; padding: 2rem; text-align: center;
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px); border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px rgba(255,107,107,0.2);
+        }
+        .contact-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .contact-title { font-size: 1.3rem; color: var(--accent-primary); margin-bottom: 0.5rem; }
+        .contact-detail { color: var(--text-secondary); }
+        .contact-form {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 30px; padding: 2rem; margin: 2rem 0;
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; color: var(--text-secondary); }
+        .form-input, .form-textarea {
+            width: 100%; padding: 1rem; background: var(--bg-primary);
+            border: 1px solid var(--border-color); border-radius: 12px;
+            color: var(--text-primary); font-size: 1rem;
+        }
+        .form-input:focus, .form-textarea:focus {
+            outline: none; border-color: var(--accent-primary);
+        }
+        .form-textarea { min-height: 150px; resize: vertical; }
+        .form-btn {
+            background: var(--accent-primary); color: white; border: none;
+            padding: 1rem 2rem; border-radius: 40px; font-size: 1.1rem;
+            font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+        }
+        .form-btn:hover { background: var(--accent-secondary); transform: translateY(-2px); }
+        .chapter-nav { display: flex; justify-content: space-between; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .nav-btn { text-decoration: none; color: var(--text-secondary); padding: 1rem 2rem; border-radius: 40px; background: var(--bg-card); border: 1px solid var(--border-color); }
+        .nav-btn:hover { color: var(--accent-primary); border-color: var(--accent-primary); }
+        .footer { margin-top: 3rem; text-align: center; }
+        @media (max-width: 768px) { .container { padding: 1.5rem; } .page-title { font-size: 2.2rem; } .chapter-nav { flex-direction: column; gap: 1rem; } .nav-btn { width: 100%; text-align: center; } }
+    </style>
+</head>
+<body data-theme="dark">
+    <div class="settings-bar">
+        <div class="settings-container">
+            <a href="index.html" class="logo"><span>◈ DARK PSYCHOLOGY</span></a>
+            <div class="theme-toggle">
+                <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">🌙 Dark</button>
+                <button class="theme-btn" data-theme="light" onclick="setTheme('light')">☀️ Light</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="page-title">📬 Contact Us</h1>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <div class="contact-title">Email</div>
+                <div class="contact-detail">contact@yourdomain.com</div>
+                <div class="contact-detail" style="margin-top: 0.5rem; font-size: 0.9rem;">Response within 48 hours</div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">🐦</div>
+                <div class="contact-title">Twitter/X</div>
+                <div class="contact-detail">@yourhandle</div>
+                <div class="contact-detail" style="margin-top: 0.5rem; font-size: 0.9rem;">DMs open</div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📘</div>
+                <div class="contact-title">Facebook</div>
+                <div class="contact-detail">/yourpage</div>
+                <div class="contact-detail" style="margin-top: 0.5rem; font-size: 0.9rem;">Follow for updates</div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2 style="color: var(--accent-primary); margin-bottom: 2rem;">✉️ Send a Message</h2>
+            <form onsubmit="event.preventDefault(); alert('Thank you for your message! This is a demo form - in production, connect to a backend service.');">
+                <div class="form-group">
+                    <label class="form-label">Your Name</label>
+                    <input type="text" class="form-input" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Subject</label>
+                    <input type="text" class="form-input" placeholder="What's this about?">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-textarea" placeholder="Write your message here..."></textarea>
+                </div>
+                <button type="submit" class="form-btn">Send Message →</button>
+            </form>
+            <p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.9rem;">This is a demo form. For a live site, connect to Formspree, EmailJS, or a backend service.</p>
+        </div>
+
+        <div class="chapter-nav">
+            <a href="privacy.html" class="nav-btn"><span>←</span> Privacy</a>
+            <a href="terms.html" class="nav-btn">Terms <span>→</span></a>
+        </div>
+
+        <div class="footer">
+            <a href="index.html" style="color: var(--text-muted); text-decoration: none;">◈ Return to Home</a>
+        </div>
+    </div>
+
+    <script>
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) btn.classList.add('active');
+            });
+            localStorage.setItem('theme', theme);
+        }
+        (function() { setTheme(localStorage.getItem('theme') || 'dark'); })();
+    </script>
+</body>
+</html>

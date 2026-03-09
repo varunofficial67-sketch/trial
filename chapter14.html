@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Chapter 14: Marketing & Sales Manipulation | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Theme Variables */
+        :root {
+            /* Dark theme (default) */
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+            --marketing-color: #ff922b;
+            --marketing-glow: rgba(255, 146, 43, 0.3);
+        }
+
+        /* Light theme */
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+            --marketing-color: #f76707;
+            --marketing-glow: rgba(247, 103, 7, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Settings Bar */
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        .chapter-progress {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .chapter-progress span {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: var(--border-color);
+            position: fixed;
+            top: 73px;
+            left: 0;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.2s;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Chapter Header */
+        .chapter-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .chapter-number {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .chapter-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            border-left: 4px solid var(--accent-primary);
+            padding-left: 2rem;
+            text-align: left;
+        }
+
+        /* Content Sections */
+        .section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .section h2 i {
+            color: var(--accent-primary);
+            margin-right: 1rem;
+            font-style: normal;
+        }
+
+        .section h3 {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin: 2rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Marketing Box */
+        .marketing-box {
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-card));
+            border: 2px solid var(--marketing-color);
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marketing-box::before {
+            content: '💰';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(10deg);
+        }
+
+        .marketing-box h4 {
+            color: var(--marketing-color);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Statistics Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--marketing-color);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Tactic Grid */
+        .tactic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tactic-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--marketing-color);
+        }
+
+        .tactic-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--marketing-color);
+            box-shadow: 0 10px 20px var(--marketing-glow);
+        }
+
+        .tactic-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tactic-card h4 {
+            color: var(--marketing-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .tactic-example {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .pricing-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .pricing-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--marketing-color);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-example {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Ad Techniques Grid */
+        .ad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .ad-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .ad-card h4 {
+            color: var(--warning-color);
+            margin-bottom: 1rem;
+        }
+
+        .ad-example {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 8px;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        /* Sales Stages */
+        .sales-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 2rem 0;
+        }
+
+        .sales-stage {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            border-left: 4px solid;
+        }
+        .sales-stage.stage-1 { border-left-color: var(--success-color); }
+        .sales-stage.stage-2 { border-left-color: var(--warning-color); }
+        .sales-stage.stage-3 { border-left-color: var(--warning-color); }
+        .sales-stage.stage-4 { border-left-color: var(--danger-color); }
+        .sales-stage.stage-5 { border-left-color: var(--danger-color); }
+
+        .stage-num {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+        }
+        .stage-1 .stage-num { background: var(--success-color); }
+        .stage-2 .stage-num { background: var(--warning-color); }
+        .stage-3 .stage-num { background: var(--warning-color); }
+        .stage-4 .stage-num { background: var(--danger-color); }
+        .stage-5 .stage-num { background: var(--danger-color); }
+
+        /* Defense Grid */
+        .defense-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .defense-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--success-color);
+        }
+
+        .defense-card h4 {
+            color: var(--success-color);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Chapter Navigation */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .nav-btn.next:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .chapter-title {
+                font-size: 2.5rem;
+            }
+
+            .sales-stage {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .logo-area {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Settings Bar -->
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">
+                        <span>🌙</span> Dark
+                    </button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">
+                        <span>☀️</span> Light
+                    </button>
+                </div>
+            </div>
+            <div class="chapter-progress">
+                Chapter <span>14</span> of <span>20</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Chapter Header -->
+        <div class="chapter-header">
+            <div class="chapter-badge">REAL-WORLD APPLICATIONS · CHAPTER 14</div>
+            <div class="chapter-number">THE SELLING MACHINE</div>
+            <h1 class="chapter-title">
+                <span class="gradient-text">Marketing & Sales</span><br>
+                Manipulation
+            </h1>
+            <div class="chapter-subtitle">
+                How advertisers and salespeople use psychology to make you buy what you don't need, with money you don't have
+            </div>
+        </div>
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <div class="section">
+            <h2><i>💰</i> 14.1 The Psychology of Selling</h2>
+            <p>Marketing and sales are applied psychology. Every ad, every sales pitch, every price tag is designed to bypass your rational mind and trigger automatic buying responses. The goal isn't to inform you - it's to influence you.</p>
+            
+            <p>In 2024, the average person sees between 6,000 and 10,000 ads per day. Each one is crafted by psychologists, neuroscientists, and behavioral economists to exploit your cognitive biases and emotional triggers.</p>
+
+            <div class="marketing-box">
+                <h4>📊 Marketing Manipulation Statistics</h4>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Purchases are subconscious</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$600B</div>
+                        <div class="stat-label">Annual ad spending</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10,000</div>
+                        <div class="stat-label">Ads per day</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3 sec</div>
+                        <div class="stat-label">To capture attention</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: 15 MARKETING MANIPULATION TACTICS -->
+        <div class="section">
+            <h2><i>🎯</i> 14.2 15 Marketing Manipulation Tactics</h2>
+            
+            <div class="tactic-grid">
+                <div class="tactic-card">
+                    <div class="tactic-icon">⏳</div>
+                    <h4>1. Scarcity</h4>
+                    <p>Limited time, limited quantity creates urgency and fear of missing out.</p>
+                    <div class="tactic-example">"Only 3 left in stock!" "Sale ends tonight!" "Limited edition."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">👥</div>
+                    <h4>2. Social Proof</h4>
+                    <p>People follow the crowd. If others bought it, it must be good.</p>
+                    <div class="tactic-example">"10,000 customers can't be wrong." "Best-seller!" "Join millions who trust..."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">⚓</div>
+                    <h4>3. Anchoring</h4>
+                    <p>First price you see becomes the reference point for all future prices.</p>
+                    <div class="tactic-example">Was $999, now $499. The $999 anchor makes $499 seem cheap.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🎁</div>
+                    <h4>4. Reciprocity</h4>
+                    <p>Give something "free" to trigger the urge to return the favor.</p>
+                    <div class="tactic-example">Free samples, free consultations, free e-books - then you feel obligated to buy.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">👑</div>
+                    <h4>5. Authority</h4>
+                    <p>Experts, celebrities, and authority figures lend credibility.</p>
+                    <div class="tactic-example">"9 out of 10 doctors recommend." Celebrity endorsements. "As seen on TV."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">💔</div>
+                    <h4>6. Loss Aversion</h4>
+                    <p>Fear of loss is twice as powerful as desire for gain.</p>
+                    <div class="tactic-example">"Don't miss out!" "Last chance!" "You'll regret not buying this."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🤝</div>
+                    <h4>7. Liking</h4>
+                    <p>We buy from people we like. Advertisers create likable personas.</p>
+                    <div class="tactic-example">Relatable characters, friendly spokespeople, brands with personality.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">📈</div>
+                    <h4>8. Decoy Effect</h4>
+                    <p>Add a third option to make one option seem more attractive.</p>
+                    <div class="tactic-example">Small $3, Medium $6, Large $7 - Medium is the decoy to make Large seem like a deal.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🆓</div>
+                    <h4>9. The Power of Free</h4>
+                    <p>"Free" triggers an irrational emotional response.</p>
+                    <div class="tactic-example">"Buy one, get one free" works better than "50% off two" - even when identical.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🔢</div>
+                    <h4>10. Charm Pricing</h4>
+                    <p>Prices ending in .99 or .97 feel significantly cheaper.</p>
+                    <div class="tactic-example">$19.99 feels like $19, not $20. The left-digit effect.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🎰</div>
+                    <h4>11. Gamification</h4>
+                    <p>Adding game elements triggers dopamine and engagement.</p>
+                    <div class="tactic-example">Spin the wheel discounts, loyalty points, progress bars, scratch cards.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">😨</div>
+                    <h4>12. Fear Appeals</h4>
+                    <p>Scare you, then offer the solution.</p>
+                    <div class="tactic-example">Life insurance ads showing grieving families. Security software showing hacked computers.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🔮</div>
+                    <h4>13. Future Pacing</h4>
+                    <p>Help you imagine owning the product and how good it will feel.</p>
+                    <div class="tactic-example">"Imagine yourself driving this car on a sunny day..."</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🔄</div>
+                    <h4>14. Commitment Consistency</h4>
+                    <p>Get a small "yes" first, then escalate to bigger requests.</p>
+                    <div class="tactic-example">"Would you sign this petition?" then "Would you donate?" "Would you like to try our product?" then upsell.</div>
+                </div>
+                <div class="tactic-card">
+                    <div class="tactic-icon">🔍</div>
+                    <h4>15. Information Gap</h4>
+                    <p>Create curiosity by revealing there's something you don't know.</p>
+                    <div class="tactic-example">"The one secret your dentist won't tell you." "What happens next will shock you."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: PRICING PSYCHOLOGY -->
+        <div class="section">
+            <h2><i>💰</i> 14.3 The Psychology of Pricing</h2>
+            
+            <p>Price isn't just numbers - it's psychology. How a price is presented dramatically affects whether you buy.</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-name">Left-Digit Effect</div>
+                    <p>$4.99 feels significantly cheaper than $5.00, even though the difference is one cent.</p>
+                    <div class="pricing-example">$19.99 → $20.00 is a 1-cent difference that feels like $1 difference.</div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Price Anchoring</div>
+                    <p>Show a high price first, then a lower price seems reasonable.</p>
+                    <div class="pricing-example">"Was $1,000, now $499." The $1,000 anchor makes $499 feel like a steal.</div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Decoy Pricing</div>
+                    <p>Add a third option to make the target option look better.</p>
+                    <div class="pricing-example">The Economist: Print $125, Web $125? No. Print $125, Web $59, Print+Web $125 - makes the combo look like a free upgrade.</div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Charm Pricing</div>
+                    <p>.99, .97, .95 all signal "deal" and "discount."</p>
+                    <div class="pricing-example">Luxury brands use round numbers ($500) to signal quality; discounters use .99.</div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Bundling</div>
+                    <p>Combine products to obscure individual prices and increase perceived value.</p>
+                    <div class="pricing-example">"Complete package for $199" - you don't calculate each item's cost.</div>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Installment Pricing</div>
+                    <p>Break price into small monthly payments to hide total cost.</p>
+                    <div class="pricing-example">"Only $29/month" for 24 months ($696 total) feels cheaper than $696 once.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: ADVERTISING MANIPULATION -->
+        <div class="section">
+            <h2><i>📺</i> 14.4 Advertising Manipulation Techniques</h2>
+            
+            <div class="ad-grid">
+                <div class="ad-card">
+                    <h4>Before-After</h4>
+                    <p>Show problem, then solution. Creates tension then relief.</p>
+                    <div class="ad-example">Weight loss ads: fat person → thin person. Cleaning products: dirty → clean.</div>
+                </div>
+                <div class="ad-card">
+                    <h4>Problem-Agitation-Solution</h4>
+                    <p>Identify problem, make it worse in your mind, then offer solution.</p>
+                    <div class="ad-example">"Tired of low energy? It's affecting your relationships, your career, your happiness. Try Vitality Boost!"</div>
+                </div>
+                <div class="ad-card">
+                    <h4>Slice of Life</h4>
+                    <p>Relatable everyday situations with your product as the hero.</p>
+                    <div class="ad-example">Mom struggling with laundry, then finds the perfect detergent. Happy family.</div>
+                </div>
+                <div class="ad-card">
+                    <h4>Testimonials</h4>
+                    <p>Real people (or actors) sharing success stories.</p>
+                    <div class="ad-example">"I lost 50 pounds in 3 months!" "This program changed my life!"</div>
+                </div>
+                <div class="ad-card">
+                    <h4>Bandwagon</h4>
+                    <p>Everyone's doing it - you should too.</p>
+                    <div class="ad-example">"Join the millions who've switched." "The fastest-growing brand."</div>
+                </div>
+                <div class="ad-card">
+                    <h4>Transfer</h4>
+                    <p>Associate product with positive feelings/images.</p>
+                    <div class="ad-example">Cars with beautiful landscapes, perfume with romance, beer with friendship.</div>
+                </div>
+                <div class="ad-card">
+                    <h4>Card Stacking</h4>
+                    <p>Present only the positive, hide all negatives.</p>
+                    <div class="ad-example">"Our phone has the best camera!" (ignores battery life, durability, service).</div>
+                </div>
+                <div class="ad-card">
+                    <h4>Glittering Generalities</h4>
+                    <p>Virtuous words that feel good but mean little.</p>
+                    <div class="ad-example">"All-natural," "artisanal," "premium," "authentic," "sustainable."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: THE 5 STAGES OF SALES MANIPULATION -->
+        <div class="section">
+            <h2><i>📈</i> 14.5 The 5 Stages of High-Pressure Sales</h2>
+            
+            <div class="sales-timeline">
+                <div class="sales-stage stage-1">
+                    <div class="stage-num">1</div>
+                    <div><strong>RAPPORT:</strong> Build trust through mirroring, liking, and finding common ground.</div>
+                </div>
+                <div class="sales-stage stage-2">
+                    <div class="stage-num">2</div>
+                    <div><strong>PAIN:</strong> Identify problems, fears, and desires. Make them feel the pain.</div>
+                </div>
+                <div class="sales-stage stage-3">
+                    <div class="stage-num">3</div>
+                    <div><strong>SOLUTION:</strong> Position product as the only logical solution to their pain.</div>
+                </div>
+                <div class="sales-stage stage-4">
+                    <div class="stage-num">4</div>
+                    <div><strong>OVERCOME OBJECTIONS:</strong> Dismiss concerns, reframe doubts, wear down resistance.</div>
+                </div>
+                <div class="sales-stage stage-5">
+                    <div class="stage-num">5</div>
+                    <div><strong>CLOSE:</strong> Create urgency, assume the sale, ask for commitment.</div>
+                </div>
+            </div>
+
+            <div class="marketing-box">
+                <h4>🎭 Common Closing Techniques:</h4>
+                <ul style="margin-left: 1.5rem;">
+                    <li><strong>Assumptive Close:</strong> "Will that be cash or credit?" (assumes they're buying)</li>
+                    <li><strong>Now or Never:</strong> "This price is only good today."</li>
+                    <li><strong>Sharp Angle:</strong> "If I could do X, would you buy today?"</li>
+                    <li><strong>Question Close:</strong> "Do you want the red or the blue?" (assumes purchase)</li>
+                    <li><strong>Ben Franklin Close:</strong> List pros and cons - with your help, pros win.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION 6: ONLINE MANIPULATION -->
+        <div class="section">
+            <h2><i>💻</i> 14.6 Digital Manipulation: How Websites Trick You</h2>
+            
+            <div class="tactic-grid">
+                <div class="tactic-card">
+                    <h4>Dark Patterns</h4>
+                    <p>Interface designs that trick you into doing things you didn't intend.</p>
+                    <div class="tactic-example">Hard-to-cancel subscriptions, pre-checked boxes, hidden fees at checkout.</div>
+                </div>
+                <div class="tactic-card">
+                    <h4>Countdown Timers</h4>
+                    <p>Fake urgency with ticking clocks.</p>
+                    <div class="tactic-example">"Sale ends in 02:34:12!" (resets when you refresh)</div>
+                </div>
+                <div class="tactic-card">
+                    <h4>Social Proof Popups</h4>
+                    <p>Fake notifications of recent purchases.</p>
+                    <div class="tactic-example">"John from California just bought this." "5 people are viewing this right now."</div>
+                </div>
+                <div class="tactic-card">
+                    <h4>Low Stock Warnings</h4>
+                    <p>"Only 2 left" - even when inventory is plentiful.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>Free Trials</h4>
+                    <p>Require credit card, easy to forget to cancel.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>Confirmshaming</h4>
+                    <p>Shame you into accepting.</p>
+                    <div class="tactic-example">"No thanks, I don't want to save money." "I prefer to pay full price."</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: CASE STUDY - THE TIMESHARE PRESENTATION -->
+        <div class="section">
+            <h2><i>📋</i> 14.7 Case Study: The 90-Minute Timeshare Trap</h2>
+            
+            <div class="case-study">
+                <h4>🎯 How Multiple Techniques Are Used in Sequence</h4>
+                <div class="case-study-meta">
+                    <span>📍 Setting: Vacation Resort</span>
+                    <span>📅 Duration: 90 Minutes</span>
+                </div>
+                <div class="case-study-content">
+                    <p><strong>The Bait:</strong> "Free 3-day vacation" for attending a 90-minute timeshare presentation. What follows is a masterclass in manipulation.</p>
+                    
+                    <p><strong>1. Reciprocity (0 min):</strong> You've already accepted the "free" vacation. You feel obligated to listen.</p>
+                    
+                    <p><strong>2. Rapport Building (15 min):</strong> Friendly salesperson mirrors you, finds common ground, builds trust.</p>
+                    
+                    <p><strong>3. Pain Identification (30 min):</strong> Questions about your vacations - "Don't you wish you could travel more? Spend more time with family?"</p>
+                    
+                    <p><strong>4. Future Pacing (45 min):</strong> "Imagine your family here every year, creating memories that last forever."</p>
+                    
+                    <p><strong>5. Anchoring (60 min):</strong> "$50,000 for this package!" (Sets high anchor)</p>
+                    
+                    <p><strong>6. Social Proof (65 min):</strong> "Look at all these happy owners." (Planted actors share stories)</p>
+                    
+                    <p><strong>7. Authority (70 min):</strong> "Our travel expert says this is the best investment."</p>
+                    
+                    <p><strong>8. Scarcity (75 min):</strong> "Only 3 units left at this price. This offer expires today."</p>
+                    
+                    <p><strong>9. Decoy Pricing (80 min):</strong> Show expensive package, then "special" package that seems reasonable by comparison.</p>
+                    
+                    <p><strong>10. Assumptive Close (85 min):</strong> "Will that be financing or credit card?"</p>
+                    
+                    <p><strong>The Result:</strong> 30% of attendees purchase on the spot. 70% regret within 30 days. Many can't afford it.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 8: SUBLIMINAL & NEUROMARKETING -->
+        <div class="section">
+            <h2><i>🧠</i> 14.8 Subliminal and Neuromarketing</h2>
+            
+            <div class="tactic-grid">
+                <div class="tactic-card">
+                    <h4>Subliminal Messaging</h4>
+                    <p>Messages below conscious awareness. Controversial and largely debunked, but the idea persists.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>Neuromarketing</h4>
+                    <p>Using brain scans and biometrics to measure unconscious responses to ads.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>Color Psychology</h4>
+                    <p>Colors trigger specific emotions: red = urgency/excitement, blue = trust/calm, yellow = happiness/attention.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>Sound Branding</h4>
+                    <p>Jingles and sonic logos trigger memory and emotion.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>Scent Marketing</h4>
+                    <p>Scents in stores increase time spent and purchases.</p>
+                </div>
+                <div class="tactic-card">
+                    <h4>Music Tempo</h4>
+                    <p>Slow music = longer shopping, faster music = quicker decisions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 9: 20 SIGNS YOU'RE BEING MANIPULATED TO BUY -->
+        <div class="section">
+            <h2><i>🚩</i> 14.9 20 Signs You're Being Manipulated</h2>
+            
+            <div class="tactic-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="tactic-card">⏳ "Limited time only!"</div>
+                <div class="tactic-card">📊 "Only X left!"</div>
+                <div class="tactic-card">👥 "Everyone's buying this."</div>
+                <div class="tactic-card">💰 "Was $XXX, now $XX!"</div>
+                <div class="tactic-card">🎁 "Free gift with purchase."</div>
+                <div class="tactic-card">🔬 "Doctors recommend..."</div>
+                <div class="tactic-card">😨 Fear-based messaging</div>
+                <div class="tactic-card">🤔 You feel pressured</div>
+                <div class="tactic-card">📅 Countdown timers</div>
+                <div class="tactic-card">🔄 Hard to cancel</div>
+                <div class="tactic-card">📋 Pre-checked boxes</div>
+                <div class="tactic-card">💳 Credit card required for "free"</div>
+                <div class="tactic-card">🎭 "You deserve this"</div>
+                <div class="tactic-card">👶 "Treat yourself"</div>
+                <div class="tactic-card">📈 "Act now!"</div>
+                <div class="tactic-card">🔮 "Imagine your life with..."</div>
+                <div class="tactic-card">😢 Emotional stories</div>
+                <div class="tactic-card">🏆 "Best-seller"</div>
+                <div class="tactic-card">⭐ Fake reviews</div>
+                <div class="tactic-card">🤷 "What do you have to lose?" (your money)</div>
+            </div>
+        </div>
+
+        <!-- SECTION 10: DEFENSE STRATEGIES -->
+        <div class="section">
+            <h2><i>🛡️</i> 14.10 Protecting Yourself from Marketing Manipulation</h2>
+            
+            <h3>The 5 Questions to Ask Before Any Purchase:</h3>
+            <div class="defense-grid">
+                <div class="defense-card">
+                    <h4>1. Do I actually need this?</h4>
+                    <p>Or am I being sold a solution to a problem I didn't have?</p>
+                </div>
+                <div class="defense-card">
+                    <h4>2. What's the real price?</h4>
+                    <p>Total cost, including fees, subscriptions, maintenance?</p>
+                </div>
+                <div class="defense-card">
+                    <h4>3. Is this urgent?</h4>
+                    <p>Or is the urgency manufactured? Can I wait 24 hours?</p>
+                </div>
+                <div class="defense-card">
+                    <h4>4. Who benefits?</h4>
+                    <p>Is this in my best interest or the seller's?</p>
+                </div>
+                <div class="defense-card">
+                    <h4>5. Would I buy this without pressure?</h4>
+                    <p>If the timer wasn't ticking, would I still want it?</p>
+                </div>
+            </div>
+
+            <h3>The 24-Hour Rule:</h3>
+            <div class="marketing-box">
+                <p>For any non-essential purchase over $50, wait 24 hours. Sleep on it. If you still want it tomorrow, consider it. Most impulse purchases fail this test.</p>
+            </div>
+
+            <h3>Additional Defenses:</h3>
+            <div class="defense-grid">
+                <div class="defense-card">
+                    <h4>🚫 Unsubscribe</h4>
+                    <p>Unsubscribe from marketing emails. Out of sight, out of mind.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>🛑 Ad Blockers</h4>
+                    <p>Use ad blockers to reduce exposure.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>📵 No Credit Card on File</h4>
+                    <p>Don't save payment info - the friction helps you pause.</p>
+                </div>
+                <div class="defense-card">
+                    <h4>🧠 Know the Tactics</h4>
+                    <p>When you recognize scarcity, anchoring, or social proof, you're less susceptible.</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">
+                    The best way to resist manipulation is to recognize it. When you see the scarcity timer, the social proof, the anchored price - you're no longer a target, you're an observer.
+                </div>
+                <div class="quote-author">— Robert Cialdini, "Influence"</div>
+            </div>
+        </div>
+
+        <!-- SECTION 11: CHAPTER SUMMARY -->
+        <div class="section">
+            <h2><i>📌</i> 14.11 Chapter Summary</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <p><strong>💰 Key Takeaways:</strong></p>
+                <ul style="margin-left: 2rem; color: var(--text-secondary); line-height: 2;">
+                    <li><strong>15 marketing tactics</strong> from scarcity to information gap</li>
+                    <li><strong>Pricing psychology:</strong> left-digit effect, anchoring, decoy, charm pricing, bundling, installments</li>
+                    <li><strong>8 advertising techniques:</strong> before-after, problem-agitation-solution, testimonial, bandwagon, etc.</li>
+                    <li><strong>5 stages of sales:</strong> Rapport → Pain → Solution → Overcome Objections → Close</li>
+                    <li><strong>Digital dark patterns:</strong> countdown timers, fake social proof, confirmshaming</li>
+                    <li><strong>20 signs</strong> you're being manipulated to buy</li>
+                    <li><strong>The 24-hour rule</strong> and 5 questions before any purchase</li>
+                </ul>
+                
+                <p style="margin-top: 2rem;"><strong>📝 Key Terms:</strong> Scarcity, Social Proof, Anchoring, Reciprocity, Authority, Loss Aversion, Decoy Effect, Charm Pricing, Dark Patterns, Neuromarketing, Subliminal Advertising, Future Pacing, Commitment Consistency, Information Gap, Assumptive Close</p>
+            </div>
+        </div>
+
+        <!-- SECTION 12: SELF-ASSESSMENT -->
+        <div class="section">
+            <h2><i>📝</i> 14.12 Self-Assessment Questions</h2>
+            
+            <div style="background: var(--bg-primary); padding: 2rem; border-radius: 16px;">
+                <ol style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 2;">
+                    <li>Which marketing tactics do you find yourself most susceptible to? Scarcity? Social proof? Authority?</li>
+                    <li>Think of a purchase you regretted. Which tactics were used on you?</li>
+                    <li>How does the decoy effect influence your choices when you see pricing tiers?</li>
+                    <li>Why does "free" trigger such a strong emotional response?</li>
+                    <li>Have you ever fallen for a "limited time" offer that wasn't actually limited?</li>
+                    <li>How can the 24-hour rule protect you from impulse purchases?</li>
+                    <li>What dark patterns have you noticed on websites? Hard-to-cancel subscriptions? Pre-checked boxes?</li>
+                    <li>How can knowledge of these tactics make you a smarter consumer?</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+            <a href="chapter13.html" class="nav-btn">
+                <span>←</span> Chapter 13: Workplace Manipulation
+            </a>
+            <a href="index.html" class="nav-btn">
+                <span>◈</span> Index
+            </a>
+            <a href="chapter15.html" class="nav-btn next">
+                Chapter 15: Media & Political Manipulation <span>→</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="index.html" class="back-home">
+                <span>◈</span> Return to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Save reading position
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            localStorage.setItem('chapter14_scroll', scrollPos);
+        });
+
+        // Restore reading position
+        window.addEventListener('load', () => {
+            const savedPos = localStorage.getItem('chapter14_scroll');
+            if (savedPos) {
+                setTimeout(() => {
+                    window.scrollTo(0, parseInt(savedPos));
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

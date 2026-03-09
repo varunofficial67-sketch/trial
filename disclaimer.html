@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | Dark Psychology A-Z</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-gradient-start: #0b0f17; --bg-gradient-end: #1a1f2e; --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30; --bg-card: #1e2440; --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8; --text-muted: #8f9bb3; --border-color: #2f3760;
+            --accent-primary: #ff6b6b; --accent-secondary: #ff8e8e; --header-bg: rgba(15,20,32,0.95);
+        }
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff; --bg-gradient-end: #ffffff; --bg-primary: #f8faff;
+            --bg-secondary: #ffffff; --bg-card: #ffffff; --text-primary: #1e293b;
+            --text-secondary: #475569; --text-muted: #64748b; --border-color: #e2e8f0;
+            --accent-primary: #dc2626; --accent-secondary: #ef4444; --header-bg: rgba(255,255,255,0.95);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary); line-height: 1.7; min-height: 100vh;
+        }
+        .settings-bar {
+            background: var(--header-bg); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem;
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .settings-container {
+            max-width: 1200px; margin: 0 auto; display: flex;
+            justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+        }
+        .logo { font-size: 1.4rem; font-weight: 800; text-decoration: none; }
+        .logo span { background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .theme-toggle {
+            display: flex; align-items: center; gap: 0.5rem; background: var(--bg-card);
+            padding: 0.4rem; border-radius: 40px; border: 1px solid var(--border-color);
+        }
+        .theme-btn {
+            border: none; background: transparent; color: var(--text-secondary);
+            padding: 0.6rem 1.2rem; border-radius: 30px; cursor: pointer;
+            font-weight: 600; transition: all 0.3s ease;
+        }
+        .theme-btn.active { background: var(--accent-primary); color: white; }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        .page-header { text-align: center; margin-bottom: 3rem; }
+        .page-title {
+            font-size: 3rem; font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text; background-clip: text; color: transparent;
+            margin-bottom: 1rem;
+        }
+        .warning-box {
+            background: rgba(255, 107, 107, 0.1); border: 2px solid var(--accent-primary);
+            border-radius: 30px; padding: 2rem; margin: 2rem 0; text-align: center;
+        }
+        .section {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 30px; padding: 2rem; margin: 2rem 0;
+        }
+        .section h2 {
+            color: var(--accent-primary); margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;
+        }
+        .chapter-nav {
+            display: flex; justify-content: space-between; margin-top: 3rem;
+            padding-top: 2rem; border-top: 1px solid var(--border-color);
+        }
+        .nav-btn {
+            text-decoration: none; color: var(--text-secondary); display: flex;
+            align-items: center; gap: 0.8rem; padding: 1rem 2rem;
+            border-radius: 40px; background: var(--bg-card); border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover { color: var(--accent-primary); border-color: var(--accent-primary); }
+        .footer { margin-top: 3rem; padding: 2rem 0; text-align: center; border-top: 1px solid var(--border-color); }
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; } .page-title { font-size: 2.2rem; }
+            .chapter-nav { flex-direction: column; gap: 1rem; }
+            .nav-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <div class="settings-bar">
+        <div class="settings-container">
+            <a href="index.html" class="logo"><span>◈ DARK PSYCHOLOGY</span></a>
+            <div class="theme-toggle">
+                <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">🌙 Dark</button>
+                <button class="theme-btn" data-theme="light" onclick="setTheme('light')">☀️ Light</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">⚠️ Legal Disclaimer</h1>
+            <p style="color: var(--text-secondary);">Please read carefully before using this material</p>
+        </div>
+
+        <div class="warning-box">
+            <h2 style="color: var(--accent-primary); margin-bottom: 1rem;">FOR EDUCATIONAL PURPOSES ONLY</h2>
+            <p style="font-size: 1.2rem;">The information contained in this ebook is for educational and self-defense purposes only.</p>
+        </div>
+
+        <div class="section">
+            <h2>📚 Educational Purpose</h2>
+            <p>This material is provided solely for educational purposes. The techniques and concepts described are explained so they can be recognized, understood, and defended against. The author does not endorse or encourage the use of any psychological manipulation techniques for unethical purposes.</p>
+        </div>
+
+        <div class="section">
+            <h2>⚖️ No Professional Advice</h2>
+            <p>The content is not intended to be a substitute for professional psychological advice, diagnosis, or treatment. Always seek the advice of qualified mental health professionals with any questions you may have regarding psychological conditions or situations.</p>
+        </div>
+
+        <div class="section">
+            <h2>🚫 No Liability</h2>
+            <p>The author and publisher disclaim any liability for any direct, indirect, or consequential loss or damage in connection with the use of this material. Readers are solely responsible for their own choices and actions.</p>
+        </div>
+
+        <div class="section">
+            <h2>🔞 Age Restriction</h2>
+            <p>This material is intended for mature audiences only (18+). Some content may not be suitable for younger readers.</p>
+        </div>
+
+        <div class="section">
+            <h2>📋 Terms of Use</h2>
+            <p>By reading this material, you agree:</p>
+            <ul style="margin-left: 2rem; color: var(--text-secondary);">
+                <li>To use this information ethically and responsibly</li>
+                <li>Not to use these techniques to harm or exploit others</li>
+                <li>To seek professional help if you recognize manipulative patterns in your own behavior</li>
+                <li>That you are solely responsible for how you apply this knowledge</li>
+            </ul>
+        </div>
+
+        <div class="chapter-nav">
+            <a href="index.html" class="nav-btn"><span>←</span> Home</a>
+            <a href="privacy.html" class="nav-btn">Privacy Policy <span>→</span></a>
+        </div>
+
+        <div class="footer">
+            <a href="index.html" style="color: var(--text-muted); text-decoration: none;">◈ Return to Home</a>
+            <div style="margin-top: 1rem; color: var(--text-muted);">© 2024 YOUR NAME HERE · All Rights Reserved</div>
+        </div>
+    </div>
+
+    <script>
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) btn.classList.add('active');
+            });
+            localStorage.setItem('theme', theme);
+        }
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+    </script>
+</body>
+</html>

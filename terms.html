@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Terms of Use | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Theme Variables */
+        :root {
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+        }
+
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 5px;
+        }
+
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--accent-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .section ul, .section ol {
+            margin-left: 2rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            margin: 0.8rem 0;
+        }
+
+        .highlight-box {
+            background: var(--bg-primary);
+            border-left: 4px solid var(--accent-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .term-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .term-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .term-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .term-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .warning-box {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid var(--accent-primary);
+            border-radius: 30px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .warning-box h3 {
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .last-updated {
+            text-align: right;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: var(--accent-primary);
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+
+            .terms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Settings Bar -->
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">🌙 Dark</button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">☀️ Light</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="page-badge">LEGAL · TERMS OF USE</div>
+            <h1 class="page-title">Terms of Use</h1>
+            <div class="page-subtitle">Please read these terms carefully before using this website</div>
+        </div>
+
+        <!-- Warning Box -->
+        <div class="warning-box">
+            <h3>⚠️ IMPORTANT LEGAL NOTICE</h3>
+            <p>By accessing or using this website, you agree to be bound by these Terms of Use. If you do not agree to all of these terms, do not use this website.</p>
+        </div>
+
+        <!-- Section 1: Acceptance of Terms -->
+        <div class="section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>Welcome to the Dark Psychology A-Z Guide. These Terms of Use constitute a legally binding agreement between you ("User" or "You") and the creator/owner of this website ("We," "Us," or "Our") regarding your use of this website and its content.</p>
+            
+            <p>By accessing, browsing, or using this website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use. If you do not agree to these terms, you must not access or use this website.</p>
+            
+            <div class="highlight-box">
+                <h4>📋 Key Point:</h4>
+                <p>Using this website = You agree to these terms. Period.</p>
+            </div>
+        </div>
+
+        <!-- Section 2: Eligibility -->
+        <div class="section">
+            <h2>2. Eligibility</h2>
+            <p>By using this website, you represent and warrant that:</p>
+            <ul>
+                <li><strong>You are at least 18 years of age</strong> (or the age of majority in your jurisdiction). This website contains mature content that may not be suitable for minors.</li>
+                <li><strong>You have the legal capacity</strong> to enter into these Terms of Use.</li>
+                <li><strong>You are not located in a country</strong> that is subject to a U.S. government embargo or that has been designated as a "terrorist supporting" country.</li>
+                <li><strong>You are not on any list</strong> of prohibited or restricted parties.</li>
+            </ul>
+        </div>
+
+        <!-- Section 3: Educational Purpose Only -->
+        <div class="section">
+            <h2>3. Educational Purpose Only</h2>
+            <p>The content provided on this website is for <strong>educational and informational purposes only</strong>. It is not intended to be:</p>
+            <ul>
+                <li>Professional psychological advice</li>
+                <li>Mental health treatment or therapy</li>
+                <li>A substitute for professional counseling</li>
+                <li>Medical or psychiatric advice</li>
+                <li>Legal advice</li>
+            </ul>
+            <p>The techniques and concepts described are explained so they can be <strong>recognized, understood, and defended against</strong>. We do not endorse or encourage the use of any psychological manipulation techniques for unethical purposes.</p>
+            
+            <div class="highlight-box">
+                <h4>⚠️ Important Disclaimer:</h4>
+                <p>The author and publisher disclaim any liability for any direct, indirect, or consequential loss or damage in connection with the use of this material. Readers are solely responsible for their own choices and actions.</p>
+            </div>
+        </div>
+
+        <!-- Section 4: User Conduct -->
+        <div class="section">
+            <h2>4. User Conduct</h2>
+            <p>You agree to use this website responsibly and ethically. Specifically, you agree NOT to:</p>
+            
+            <div class="terms-grid">
+                <div class="term-card">
+                    <div class="term-number">🚫</div>
+                    <div class="term-title">Harm Others</div>
+                    <div class="term-desc">Use this information to manipulate, exploit, or harm others</div>
+                </div>
+                <div class="term-card">
+                    <div class="term-number">🚫</div>
+                    <div class="term-title">Break Laws</div>
+                    <div class="term-desc">Violate any applicable laws or regulations</div>
+                </div>
+                <div class="term-card">
+                    <div class="term-number">🚫</div>
+                    <div class="term-title">Infringe Rights</div>
+                    <div class="term-desc">Violate intellectual property or privacy rights</div>
+                </div>
+                <div class="term-card">
+                    <div class="term-number">🚫</div>
+                    <div class="term-title">Distribute Malware</div>
+                    <div class="term-desc">Introduce viruses or harmful code</div>
+                </div>
+                <div class="term-card">
+                    <div class="term-number">🚫</div>
+                    <div class="term-title">Interfere</div>
+                    <div class="term-desc">Disrupt the website's functionality</div>
+                </div>
+                <div class="term-card">
+                    <div class="term-number">🚫</div>
+                    <div class="term-title">Scrape Content</div>
+                    <div class="term-desc">Use automated tools to extract content</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Intellectual Property -->
+        <div class="section">
+            <h2>5. Intellectual Property Rights</h2>
+            <h3>5.1 Our Content</h3>
+            <p>All content on this website, including but not limited to:</p>
+            <ul>
+                <li>Text, articles, and chapters</li>
+                <li>Graphics, logos, and designs</li>
+                <li>Code, scripts, and software</li>
+                <li>Images, videos, and audio</li>
+                <li>Layout and structure</li>
+            </ul>
+            <p>is the exclusive property of the website owner and is protected by copyright, trademark, and other intellectual property laws.</p>
+
+            <h3>5.2 Limited License</h3>
+            <p>We grant you a <strong>limited, non-exclusive, non-transferable license</strong> to:</p>
+            <ul>
+                <li>Access and view the content for personal, non-commercial use</li>
+                <li>Print copies for personal reference only</li>
+                <li>Share links to our content with proper attribution</li>
+            </ul>
+
+            <h3>5.3 Prohibited Uses</h3>
+            <p>You may NOT:</p>
+            <ul>
+                <li>Copy, reproduce, or distribute content without written permission</li>
+                <li>Sell or commercially exploit this content</li>
+                <li>Remove or alter copyright notices</li>
+                <li>Create derivative works without permission</li>
+                <li>Use our content to train AI or machine learning models</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h4>📚 For Permission Requests:</h4>
+                <p>Contact us at: <span style="color: var(--accent-primary);">permissions@yourdomain.com</span></p>
+            </div>
+        </div>
+
+        <!-- Section 6: Disclaimer of Warranties -->
+        <div class="section">
+            <h2>6. Disclaimer of Warranties</h2>
+            <p>THIS WEBSITE AND ITS CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</p>
+            
+            <p>To the fullest extent permitted by law, we disclaim all warranties, including but not limited to:</p>
+            <ul>
+                <li>Merchantability or fitness for a particular purpose</li>
+                <li>Non-infringement of third-party rights</li>
+                <li>Accuracy, completeness, or reliability of content</li>
+                <li>Uninterrupted or error-free operation</li>
+                <li>Freedom from viruses or harmful code</li>
+            </ul>
+            
+            <p>We do not warrant that:</p>
+            <ul>
+                <li>The content is accurate, complete, or up-to-date</li>
+                <li>The website will meet your requirements</li>
+                <li>Defects will be corrected</li>
+                <li>The website is secure or free from errors</li>
+            </ul>
+        </div>
+
+        <!-- Section 7: Limitation of Liability -->
+        <div class="section">
+            <h2>7. Limitation of Liability</h2>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL WE BE LIABLE FOR:</p>
+            
+            <div class="terms-grid">
+                <div class="term-card">
+                    <div class="term-number">💰</div>
+                    <div class="term-title">Direct Damages</div>
+                    <div class="term-desc">Any direct losses or damages</div>
+                </div>
+                <div class="term-card">
+                    <div class="term-number">📉</div>
+                    <div class="term-title">Indirect Damages</div>
+                    <div class="term-desc">Consequential or incidental damages</div>
+                </div>
+                <div class="term-card">
+                    <div class="term-number">💔</div>
+                    <div class="term-title">Emotional Distress</div>
+                    <div class="term-desc">Psychological or emotional harm</div>
+                </div>
+                <div class="term-card">
+                    <div class="term-number">📱</div>
+                    <div class="term-title">Data Loss</div>
+                    <div class="term-desc">Loss of data or privacy breaches</div>
+                </div>
+            </div>
+            
+            <p>This limitation applies regardless of the theory of liability (contract, tort, negligence, or otherwise) even if we have been advised of the possibility of such damages.</p>
+        </div>
+
+        <!-- Section 8: Indemnification -->
+        <div class="section">
+            <h2>8. Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless the website owner, its affiliates, officers, directors, employees, and agents from and against any and all claims, damages, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from:</p>
+            <ul>
+                <li>Your use of this website</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any third-party rights</li>
+                <li>Your misuse of the content</li>
+                <li>Any harm caused by your actions</li>
+            </ul>
+        </div>
+
+        <!-- Section 9: Third-Party Links -->
+        <div class="section">
+            <h2>9. Third-Party Links and Ads</h2>
+            <p>This website may contain links to third-party websites, advertisements, or services. We do not endorse or control these third parties and are not responsible for:</p>
+            <ul>
+                <li>Their content, policies, or practices</li>
+                <li>Any damages or losses caused by them</li>
+                <li>Their accuracy or reliability</li>
+                <li>Their privacy or data practices</li>
+            </ul>
+            <p>Your interactions with third parties are solely between you and them. We recommend reviewing their terms and privacy policies.</p>
+        </div>
+
+        <!-- Section 10: User-Generated Content -->
+        <div class="section">
+            <h2>10. User-Generated Content</h2>
+            <p>If this website allows comments, reviews, or other user submissions:</p>
+            <ul>
+                <li><strong>License:</strong> You grant us a non-exclusive, royalty-free, perpetual license to use your content</li>
+                <li><strong>Responsibility:</strong> You are solely responsible for your submissions</li>
+                <li><strong>Prohibited Content:</strong> No illegal, offensive, or harmful content</li>
+                <li><strong>Monitoring:</strong> We reserve the right to moderate or remove content</li>
+                <li><strong>No Obligation:</strong> We have no obligation to monitor submissions</li>
+            </ul>
+        </div>
+
+        <!-- Section 11: Privacy -->
+        <div class="section">
+            <h2>11. Privacy</h2>
+            <p>Your use of this website is also governed by our <a href="privacy.html" style="color: var(--accent-primary);">Privacy Policy</a>, which is incorporated into these Terms by reference. Please review it to understand our practices regarding your personal information.</p>
+        </div>
+
+        <!-- Section 12: Modifications -->
+        <div class="section">
+            <h2>12. Modifications to Terms</h2>
+            <p>We reserve the right to modify these Terms of Use at any time without prior notice. Changes will be effective immediately upon posting. Your continued use of the website after changes constitutes acceptance of the modified terms.</p>
+            
+            <p>It is your responsibility to review these Terms periodically for updates. The "Last Updated" date at the bottom of this page indicates when these terms were last revised.</p>
+        </div>
+
+        <!-- Section 13: Termination -->
+        <div class="section">
+            <h2>13. Termination</h2>
+            <p>We reserve the right to terminate or suspend your access to this website immediately, without prior notice or liability, for any reason, including without limitation if you breach these Terms.</p>
+            
+            <p>Upon termination:</p>
+            <ul>
+                <li>Your right to use the website ceases immediately</li>
+                <li>Provisions that should survive termination will survive (including intellectual property, limitations of liability, indemnification)</li>
+            </ul>
+        </div>
+
+        <!-- Section 14: Governing Law -->
+        <div class="section">
+            <h2>14. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law provisions.</p>
+            
+            <p>Any legal action or proceeding arising out of or relating to these Terms or your use of the website shall be brought exclusively in the courts of [Your Jurisdiction]. You consent to the personal jurisdiction of such courts.</p>
+        </div>
+
+        <!-- Section 15: Dispute Resolution -->
+        <div class="section">
+            <h2>15. Dispute Resolution</h2>
+            <h3>15.1 Informal Resolution</h3>
+            <p>Before filing any claim, you agree to attempt to resolve any dispute informally by contacting us. We will attempt to resolve the dispute through good-faith negotiations.</p>
+
+            <h3>15.2 Binding Arbitration</h3>
+            <p>If informal resolution fails, any dispute shall be resolved through binding arbitration in accordance with the rules of [Arbitration Association]. Judgment on the arbitration award may be entered in any court having jurisdiction.</p>
+
+            <h3>15.3 Class Action Waiver</h3>
+            <p>You agree to resolve disputes on an individual basis and waive any right to participate in a class action, collective action, or representative proceeding.</p>
+        </div>
+
+        <!-- Section 16: Severability -->
+        <div class="section">
+            <h2>16. Severability</h2>
+            <p>If any provision of these Terms is held to be unenforceable or invalid, such provision shall be modified to the minimum extent necessary to make it enforceable, or if not possible, severed from these Terms. The remaining provisions shall continue in full force and effect.</p>
+        </div>
+
+        <!-- Section 17: Entire Agreement -->
+        <div class="section">
+            <h2>17. Entire Agreement</h2>
+            <p>These Terms, together with our Privacy Policy and any other legal notices published by us, constitute the entire agreement between you and us regarding your use of this website and supersede all prior agreements and understandings.</p>
+        </div>
+
+        <!-- Section 18: Waiver -->
+        <div class="section">
+            <h2>18. Waiver</h2>
+            <p>Our failure to enforce any right or provision of these Terms shall not be deemed a waiver of such right or provision. Any waiver must be in writing and signed by an authorized representative.</p>
+        </div>
+
+        <!-- Section 19: Contact Information -->
+        <div class="section">
+            <h2>19. Contact Information</h2>
+            <p>If you have any questions about these Terms of Use, please contact us at:</p>
+            
+            <div style="background: var(--bg-primary); padding: 1.5rem; border-radius: 16px; margin-top: 1rem;">
+                <p><strong>Email:</strong> <span style="color: var(--accent-primary);">legal@yourdomain.com</span></p>
+                <p><strong>Address:</strong> [Your Physical Address, if applicable]</p>
+                <p><strong>Website:</strong> <a href="index.html" style="color: var(--accent-primary);">www.yourdomain.com</a></p>
+            </div>
+        </div>
+
+        <!-- Last Updated -->
+        <div class="last-updated">
+            Last Updated: January 1, 2024
+        </div>
+
+        <!-- Navigation -->
+        <div class="chapter-nav">
+            <a href="disclaimer.html" class="nav-btn">
+                <span>←</span> Disclaimer
+            </a>
+            <a href="index.html" class="nav-btn">
+                <span>◈</span> Home
+            </a>
+            <a href="privacy.html" class="nav-btn next">
+                Privacy Policy <span>→</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="index.html" class="back-home">
+                <span>◈</span> Return to Home
+            </a>
+            <div class="copyright">
+                © 2024 YOUR NAME HERE · All Rights Reserved
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) btn.classList.add('active');
+            });
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>About This Project | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Theme Variables */
+        :root {
+            /* Dark theme (default) */
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+        }
+
+        /* Light theme */
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Settings Bar */
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        .section h2 i {
+            color: var(--accent-primary);
+            margin-right: 1rem;
+        }
+
+        .section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Creator Card */
+        .creator-card {
+            background: linear-gradient(135deg, var(--bg-primary), var(--bg-card));
+            border: 2px solid var(--accent-primary);
+            border-radius: 30px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .creator-card::before {
+            content: '👑';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(10deg);
+        }
+
+        .creator-name {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .creator-title {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .creator-quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--text-primary);
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1rem;
+            border-left: 4px solid var(--accent-primary);
+            text-align: left;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-primary);
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Milestone Timeline */
+        .milestone-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .milestone-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: var(--bg-primary);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .milestone-date {
+            min-width: 100px;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        /* Tech Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tech-card {
+            background: var(--bg-primary);
+            padding: 1.2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .tech-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-name {
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        /* Social Links */
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 40px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--accent-glow);
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Navigation */
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-home:hover {
+            color: var(--accent-primary);
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .creator-name {
+                font-size: 2.2rem;
+            }
+
+            .milestone-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .milestone-date {
+                min-width: auto;
+            }
+
+            .social-link {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .chapter-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Settings Bar -->
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">
+                        <span>🌙</span> Dark
+                    </button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">
+                        <span>☀️</span> Light
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="page-icon">📖</div>
+            <h1 class="page-title">About This Project</h1>
+            <div class="page-subtitle">The story behind the Dark Psychology A-Z Guide</div>
+        </div>
+
+        <!-- CREATOR CARD - YOUR CREDIT HERE -->
+        <div class="creator-card">
+            <h2 class="creator-name">YOUR NAME HERE</h2>
+            <div class="creator-title">Creator • Author • Psychological Awareness Advocate</div>
+            <div class="creator-quote">
+                "Knowledge is the best defense. This encyclopedia was built to give everyone the tools to recognize, resist, and recover from psychological manipulation."
+            </div>
+        </div>
+
+        <!-- PROJECT STATS -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">20</div>
+                <div class="stat-label">Complete Chapters</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">300+</div>
+                <div class="stat-label">Pages of Content</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Manipulation Techniques</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Defense Strategies</div>
+            </div>
+        </div>
+
+        <!-- THE STORY SECTION -->
+        <div class="section">
+            <h2><i>📜</i> The Story Behind the Book</h2>
+            <p>This project began with a simple observation: manipulation is everywhere, but education about it is not. In relationships, workplaces, media, and politics, psychological tactics are used daily to control, confuse, and exploit. Most people don't recognize it until it's too late.</p>
+            
+            <p><strong>YOUR NAME HERE</strong> recognized this gap and set out to create the most comprehensive, accessible guide to dark psychology ever written. What started as a personal journey of understanding became a mission to empower others with the knowledge they need to protect themselves.</p>
+            
+            <p>Every technique in this book has been researched, documented, and explained with real-world examples. Every defense strategy has been tested and refined. The result is a complete A-Z encyclopedia that takes readers from basic awareness to mastery-level protection.</p>
+        </div>
+
+        <!-- THE MISSION -->
+        <div class="section">
+            <h2><i>🎯</i> The Mission</h2>
+            <p>This book has one goal: <strong>to make manipulation visible.</strong></p>
+            <p>Manipulation thrives in darkness. When you can't see it, you can't resist it. By naming every tactic, every pattern, every red flag, this book brings manipulation into the light. Once you see it, you can't unsee it. And that's the point.</p>
+            <p>The mission is not to teach people how to manipulate - it's to teach people how to recognize, resist, and recover. Knowledge is power, and this knowledge belongs to everyone.</p>
+        </div>
+
+        <!-- CREATION MILESTONES -->
+        <div class="section">
+            <h2><i>⏳</i> Creation Timeline</h2>
+            
+            <div class="milestone-timeline">
+                <div class="milestone-item">
+                    <div class="milestone-date">January 2024</div>
+                    <div><strong>The Idea:</strong> The concept of a complete A-Z guide to dark psychology was born.</div>
+                </div>
+                <div class="milestone-item">
+                    <div class="milestone-date">February 2024</div>
+                    <div><strong>Research Phase:</strong> Hundreds of sources, studies, and case studies compiled.</div>
+                </div>
+                <div class="milestone-item">
+                    <div class="milestone-date">March 2024</div>
+                    <div><strong>Structure Design:</strong> 20 chapters organized into 6 comprehensive parts.</div>
+                </div>
+                <div class="milestone-item">
+                    <div class="milestone-date">April 2024</div>
+                    <div><strong>Writing Begins:</strong> Chapter by chapter, the encyclopedia takes shape.</div>
+                </div>
+                <div class="milestone-item">
+                    <div class="milestone-date">May 2024</div>
+                    <div><strong>Technical Development:</strong> Mobile-responsive design, dark/light theme, interactive elements added.</div>
+                </div>
+                <div class="milestone-item">
+                    <div class="milestone-date">June 2024</div>
+                    <div><strong>Completion:</strong> All 20 chapters, appendices, and about page finished.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE TECHNOLOGY -->
+        <div class="section">
+            <h2><i>⚙️</i> Built With</h2>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">📄</div>
+                    <div class="tech-name">HTML5</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🎨</div>
+                    <div class="tech-name">CSS3</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">⚡</div>
+                    <div class="tech-name">JavaScript</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">📱</div>
+                    <div class="tech-name">Mobile-First</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🌓</div>
+                    <div class="tech-name">Dark/Light Mode</div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🔍</div>
+                    <div class="tech-name">SEO Optimized</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1rem;">Built with ❤️ from scratch, chapter by chapter.</p>
+        </div>
+
+        <!-- ACKNOWLEDGMENTS -->
+        <div class="section">
+            <h2><i>🙏</i> Acknowledgments</h2>
+            <p>This project would not exist without the contributions of countless researchers, psychologists, and survivors who have documented manipulation and shared their stories. Special thanks to the pioneers of dark psychology research whose work informed every chapter.</p>
+            <p>And most importantly, thank you to every reader who embarks on this journey of awareness. Your commitment to understanding and protecting yourself makes this work meaningful.</p>
+        </div>
+
+        <!-- CONNECT SECTION -->
+        <div class="section">
+            <h2><i>📬</i> Connect & Share</h2>
+            <p>If this book helped you, share it with someone who needs it. Knowledge multiplies when it's shared.</p>
+            
+            <div class="social-grid">
+                <a href="#" class="social-link">
+                    <span class="social-icon">📧</span>
+                    <span>Email</span>
+                </a>
+                <a href="#" class="social-link">
+                    <span class="social-icon">🐦</span>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="social-link">
+                    <span class="social-icon">📘</span>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-link">
+                    <span class="social-icon">💼</span>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- FINAL CREDIT SECTION -->
+        <div class="section" style="text-align: center;">
+            <h2><i>👑</i> Created By</h2>
+            <p style="font-size: 2rem; font-weight: 800; color: var(--accent-primary); margin: 1rem 0;">YOUR NAME HERE</p>
+            <p style="font-size: 1.2rem; color: var(--text-secondary);">Dark Psychology Mastery Project</p>
+            <p style="margin-top: 2rem; font-style: italic;">"Knowledge is the best defense. Awareness is freedom."</p>
+        </div>
+
+        <!-- DISCLAIMER -->
+        <div class="section" style="background: var(--bg-primary); border: 1px solid var(--warning-color);">
+            <h2 style="color: var(--warning-color);"><i>⚠️</i> Important Disclaimer</h2>
+            <p>This book is for educational and self-defense purposes only. The techniques described are explained so they can be recognized and resisted, not so they can be used to harm others. The author does not endorse or encourage the use of manipulation for unethical purposes. Knowledge is power - use it responsibly.</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="chapter-nav">
+            <a href="chapter20.html" class="nav-btn">
+                <span>←</span> Chapter 20: Advanced Protection
+            </a>
+            <a href="index.html" class="nav-btn">
+                <span>◈</span> Home
+            </a>
+            <a href="disclaimer.html" class="nav-btn next">
+                Disclaimer <span>→</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <a href="index.html" class="back-home">
+                <span>◈</span> Return to Home
+            </a>
+            <div class="copyright">
+                © 2024 YOUR NAME HERE. All rights reserved.<br>
+                Dark Psychology A-Z: The Complete Guide
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+    </script>
+</body>
+</html>

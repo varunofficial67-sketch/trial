@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Dark Psychology | The Complete A-Z Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Theme Variables */
+        :root {
+            /* Dark theme (default) - Modern & sleek */
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+        }
+
+        /* Light theme - Clean & professional */
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.2s ease;
+        }
+
+        /* Modern Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+
+        /* Settings Bar - Modern & Sleek */
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .settings-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--accent-glow);
+        }
+
+        .reading-progress {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .reading-progress span {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section - Modern & Impactful */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.3; }
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .hero-sub {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .disclaimer {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+            color: var(--warning-color);
+            font-weight: 500;
+            margin: 1rem 0;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Quick Action */
+        .quick-action {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .start-reading {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--accent-primary);
+            color: white;
+            text-decoration: none;
+            padding: 1.5rem 3.5rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px var(--accent-glow);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .start-reading:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: var(--accent-secondary);
+            box-shadow: 0 15px 40px var(--accent-glow);
+        }
+
+        /* Parts Container */
+        .parts-container {
+            margin: 4rem 0;
+        }
+
+        .part {
+            margin: 3rem 0;
+            background: var(--bg-secondary);
+            border-radius: 30px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .part-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .part-icon {
+            font-size: 2.5rem;
+            background: var(--bg-card);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .part-title h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .part-title p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .part-stats {
+            margin-left: auto;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .part-stat {
+            background: var(--bg-card);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .part-stat span {
+            color: var(--accent-primary);
+            font-weight: 700;
+            margin-right: 0.3rem;
+        }
+
+        /* Chapter Grid */
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .chapter-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.2rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--accent-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .chapter-card:hover {
+            transform: translateX(5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 5px 20px var(--accent-glow);
+        }
+
+        .chapter-card:hover::before {
+            opacity: 1;
+        }
+
+        .chapter-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            opacity: 0.7;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .chapter-info {
+            flex: 1;
+        }
+
+        .chapter-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .chapter-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .chapter-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .chapter-length {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .chapter-level {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.8rem;
+            background: var(--bg-secondary);
+            border-radius: 30px;
+            color: var(--accent-primary);
+            border: 1px solid var(--border-color);
+            font-weight: 600;
+        }
+
+        /* Appendices Grid */
+        .appendices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .appendix-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .appendix-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .appendix-letter {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        .appendix-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .appendix-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 5rem;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .credit {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .credit strong {
+            color: var(--accent-primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .part-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .part-stats {
+                margin-left: 0;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .settings-container {
+                flex-direction: column;
+            }
+
+            .logo-area {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <!-- Settings Bar -->
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <div class="logo">◈ DARK PSYCHOLOGY</div>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">
+                        <span>🌙</span> Dark
+                    </button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">
+                        <span>☀️</span> Light
+                    </button>
+                </div>
+            </div>
+            <div class="reading-progress">
+                <span>20</span> Chapters · <span>300+</span> Pages
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="badge">COMPLETE A-Z GUIDE</div>
+            <h1>
+                <span class="gradient-text">DARK</span> PSYCHOLOGY
+            </h1>
+            <div class="hero-sub">
+                From Fundamental Principles to Advanced Manipulation Techniques
+            </div>
+            <div class="disclaimer">
+                <span>⚠️</span> FOR EDUCATIONAL & SELF-DEFENSE PURPOSES ONLY
+            </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">20</div>
+                <div class="stat-label">COMPLETE CHAPTERS</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">MANIPULATION TECHNIQUES</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">CASE STUDIES</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">DEFENSE STRATEGIES</div>
+            </div>
+        </div>
+
+        <!-- Quick Action -->
+        <div class="quick-action">
+            <a href="chapter1.html" class="start-reading">
+                <span>📖</span> START READING <span>→</span>
+            </a>
+        </div>
+
+        <!-- Parts Container -->
+        <div class="parts-container">
+            <!-- PART 1: FOUNDATIONS -->
+            <div class="part">
+                <div class="part-header">
+                    <div class="part-icon">📚</div>
+                    <div class="part-title">
+                        <h2>PART ONE: FOUNDATIONS</h2>
+                        <p>Understanding the basics of dark psychology</p>
+                    </div>
+                    <div class="part-stats">
+                        <div class="part-stat"><span>3</span> Chapters</div>
+                        <div class="part-stat"><span>45</span> Pages</div>
+                    </div>
+                </div>
+                <div class="chapter-grid">
+                    <a href="chapter1.html" class="chapter-card">
+                        <div class="chapter-num">01</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">What is Dark Psychology?</div>
+                            <div class="chapter-desc">Understanding the shadow side of human mind</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">15 pages</span>
+                                <span class="chapter-level">BASIC</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter2.html" class="chapter-card">
+                        <div class="chapter-num">02</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">The Human Mind Primer</div>
+                            <div class="chapter-desc">How our brain processes influence and manipulation</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">18 pages</span>
+                                <span class="chapter-level">BASIC</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter3.html" class="chapter-card">
+                        <div class="chapter-num">03</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Psychology of Manipulation</div>
+                            <div class="chapter-desc">Core mechanisms and vulnerability factors</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">20 pages</span>
+                                <span class="chapter-level">BASIC</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PART 2: MANIPULATION TECHNIQUES -->
+            <div class="part">
+                <div class="part-header">
+                    <div class="part-icon">🎭</div>
+                    <div class="part-title">
+                        <h2>PART TWO: MANIPULATION TECHNIQUES</h2>
+                        <p>The complete arsenal of manipulative tactics</p>
+                    </div>
+                    <div class="part-stats">
+                        <div class="part-stat"><span>4</span> Chapters</div>
+                        <div class="part-stat"><span>65</span> Pages</div>
+                    </div>
+                </div>
+                <div class="chapter-grid">
+                    <a href="chapter4.html" class="chapter-card">
+                        <div class="chapter-num">04</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Verbal Manipulation</div>
+                            <div class="chapter-desc">Gaslighting, love bombing, guilt tripping, and more</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">18 pages</span>
+                                <span class="chapter-level">INTERMEDIATE</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter5.html" class="chapter-card">
+                        <div class="chapter-num">05</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Non-Verbal Manipulation</div>
+                            <div class="chapter-desc">Body language, space control, voice modulation</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">15 pages</span>
+                                <span class="chapter-level">INTERMEDIATE</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter6.html" class="chapter-card">
+                        <div class="chapter-num">06</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Emotional Manipulation</div>
+                            <div class="chapter-desc">Fear, guilt, shame, and dependency creation</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">17 pages</span>
+                                <span class="chapter-level">INTERMEDIATE</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter7.html" class="chapter-card">
+                        <div class="chapter-num">07</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Cognitive Manipulation</div>
+                            <div class="chapter-desc">Biases, framing, anchoring, and mind games</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">15 pages</span>
+                                <span class="chapter-level">INTERMEDIATE</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PART 3: ADVANCED TECHNIQUES -->
+            <div class="part">
+                <div class="part-header">
+                    <div class="part-icon">⚡</div>
+                    <div class="part-title">
+                        <h2>PART THREE: ADVANCED TECHNIQUES</h2>
+                        <p>Master-level psychological tactics</p>
+                    </div>
+                    <div class="part-stats">
+                        <div class="part-stat"><span>4</span> Chapters</div>
+                        <div class="part-stat"><span>70</span> Pages</div>
+                    </div>
+                </div>
+                <div class="chapter-grid">
+                    <a href="chapter8.html" class="chapter-card">
+                        <div class="chapter-num">08</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Neuro-Linguistic Programming</div>
+                            <div class="chapter-desc">Rapport, anchoring, language patterns, and more</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">20 pages</span>
+                                <span class="chapter-level">ADVANCED</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter9.html" class="chapter-card">
+                        <div class="chapter-num">09</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Hypnotic Techniques</div>
+                            <div class="chapter-desc">Conversational hypnosis, trance induction</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">18 pages</span>
+                                <span class="chapter-level">ADVANCED</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter10.html" class="chapter-card">
+                        <div class="chapter-num">10</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Psychological Warfare</div>
+                            <div class="chapter-desc">Information control, isolation, stress induction</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">16 pages</span>
+                                <span class="chapter-level">ADVANCED</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter11.html" class="chapter-card">
+                        <div class="chapter-num">11</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Dark Triad Personalities</div>
+                            <div class="chapter-desc">Narcissism, Machiavellianism, Psychopathy</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">16 pages</span>
+                                <span class="chapter-level">ADVANCED</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PART 4: REAL-WORLD APPLICATIONS -->
+            <div class="part">
+                <div class="part-header">
+                    <div class="part-icon">🌍</div>
+                    <div class="part-title">
+                        <h2>PART FOUR: REAL-WORLD APPLICATIONS</h2>
+                        <p>How manipulation appears in daily life</p>
+                    </div>
+                    <div class="part-stats">
+                        <div class="part-stat"><span>4</span> Chapters</div>
+                        <div class="part-stat"><span>60</span> Pages</div>
+                    </div>
+                </div>
+                <div class="chapter-grid">
+                    <a href="chapter12.html" class="chapter-card">
+                        <div class="chapter-num">12</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Manipulation in Relationships</div>
+                            <div class="chapter-desc">Toxic patterns, red flags, and awareness</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">16 pages</span>
+                                <span class="chapter-level">APPLIED</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter13.html" class="chapter-card">
+                        <div class="chapter-num">13</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Workplace Manipulation</div>
+                            <div class="chapter-desc">Office politics, corporate games, power dynamics</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">15 pages</span>
+                                <span class="chapter-level">APPLIED</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter14.html" class="chapter-card">
+                        <div class="chapter-num">14</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Marketing & Sales Manipulation</div>
+                            <div class="chapter-desc">Persuasion techniques, psychological triggers</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">15 pages</span>
+                                <span class="chapter-level">APPLIED</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter15.html" class="chapter-card">
+                        <div class="chapter-num">15</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Media & Political Manipulation</div>
+                            <div class="chapter-desc">Propaganda, framing, mass influence</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">14 pages</span>
+                                <span class="chapter-level">APPLIED</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PART 5: DEFENSE & PROTECTION -->
+            <div class="part">
+                <div class="part-header">
+                    <div class="part-icon">🛡️</div>
+                    <div class="part-title">
+                        <h2>PART FIVE: DEFENSE & PROTECTION</h2>
+                        <p>Building psychological immunity</p>
+                    </div>
+                    <div class="part-stats">
+                        <div class="part-stat"><span>3</span> Chapters</div>
+                        <div class="part-stat"><span>50</span> Pages</div>
+                    </div>
+                </div>
+                <div class="chapter-grid">
+                    <a href="chapter16.html" class="chapter-card">
+                        <div class="chapter-num">16</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Recognizing Manipulation</div>
+                            <div class="chapter-desc">50+ red flags and warning signs</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">18 pages</span>
+                                <span class="chapter-level">DEFENSE</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter17.html" class="chapter-card">
+                        <div class="chapter-num">17</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Psychological Defense Mechanisms</div>
+                            <div class="chapter-desc">Mental boundaries, gray rock, information diet</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">17 pages</span>
+                                <span class="chapter-level">DEFENSE</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter18.html" class="chapter-card">
+                        <div class="chapter-num">18</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Recovery & Healing</div>
+                            <div class="chapter-desc">Aftermath of psychological abuse</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">15 pages</span>
+                                <span class="chapter-level">DEFENSE</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- PART 6: MASTERY LEVEL -->
+            <div class="part">
+                <div class="part-header">
+                    <div class="part-icon">👑</div>
+                    <div class="part-title">
+                        <h2>PART SIX: MASTERY LEVEL</h2>
+                        <p>Complete psychological awareness</p>
+                    </div>
+                    <div class="part-stats">
+                        <div class="part-stat"><span>2</span> Chapters</div>
+                        <div class="part-stat"><span>35</span> Pages</div>
+                    </div>
+                </div>
+                <div class="chapter-grid">
+                    <a href="chapter19.html" class="chapter-card">
+                        <div class="chapter-num">19</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Ethical Use of Dark Psychology</div>
+                            <div class="chapter-desc">Knowledge with responsibility</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">17 pages</span>
+                                <span class="chapter-level">MASTERY</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="chapter20.html" class="chapter-card">
+                        <div class="chapter-num">20</div>
+                        <div class="chapter-info">
+                            <div class="chapter-name">Advanced Protection Strategies</div>
+                            <div class="chapter-desc">Complete defense system</div>
+                            <div class="chapter-meta">
+                                <span class="chapter-length">18 pages</span>
+                                <span class="chapter-level">MASTERY</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- APPENDICES -->
+            <div class="part">
+                <div class="part-header">
+                    <div class="part-icon">📑</div>
+                    <div class="part-title">
+                        <h2>APPENDICES</h2>
+                        <p>Reference materials & resources</p>
+                    </div>
+                    <div class="part-stats">
+                        <div class="part-stat"><span>3</span> Appendices</div>
+                        <div class="part-stat"><span>40</span> Pages</div>
+                    </div>
+                </div>
+                <div class="appendices-grid">
+                    <a href="appendix-a.html" class="appendix-card">
+                        <div class="appendix-letter">A</div>
+                        <div class="appendix-name">Glossary of Terms</div>
+                        <div class="appendix-desc">Complete terminology with definitions</div>
+                    </a>
+                    <a href="appendix-b.html" class="appendix-card">
+                        <div class="appendix-letter">B</div>
+                        <div class="appendix-name">100 Techniques at a Glance</div>
+                        <div class="appendix-desc">Quick reference guide</div>
+                    </a>
+                    <a href="appendix-c.html" class="appendix-card">
+                        <div class="appendix-letter">C</div>
+                        <div class="appendix-name">Self-Assessment Quizzes</div>
+                        <div class="appendix-desc">Test your awareness level</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="about.html">📖 About This Project</a>
+                <a href="disclaimer.html">⚠️ Legal Disclaimer</a>
+                <a href="contact.html">📧 Contact</a>
+                <a href="privacy.html">🔒 Privacy</a>
+            </div>
+            <div class="credit">
+                Created with <span style="color: var(--accent-primary);">❤️</span> by <strong>YOUR NAME HERE</strong><br>
+                Dark Psychology Mastery Project © 2024 | Complete A-Z Guide
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme switcher function
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            
+            // Update active button states
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Save to localStorage
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme on page load
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active state for chapter cards on mobile
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.chapter-card, .appendix-card, .start-reading').forEach(element => {
+                element.addEventListener('touchstart', function() {
+                    this.style.opacity = '0.8';
+                });
+                element.addEventListener('touchend', function() {
+                    this.style.opacity = '1';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

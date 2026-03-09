@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Appendix B: 100 Techniques | Dark Psychology A-Z</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-gradient-start: #0b0f17;
+            --bg-gradient-end: #1a1f2e;
+            --bg-primary: #0f1420;
+            --bg-secondary: #1a1f30;
+            --bg-card: #1e2440;
+            --bg-card-hover: #252b4a;
+            --text-primary: #f0f4ff;
+            --text-secondary: #b8c1e8;
+            --text-muted: #8f9bb3;
+            --border-color: #2f3760;
+            --accent-primary: #ff6b6b;
+            --accent-secondary: #ff8e8e;
+            --accent-glow: rgba(255, 107, 107, 0.3);
+            --header-bg: rgba(15, 20, 32, 0.95);
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --danger-color: #ff6b6b;
+        }
+
+        [data-theme="light"] {
+            --bg-gradient-start: #f0f5ff;
+            --bg-gradient-end: #ffffff;
+            --bg-primary: #f8faff;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f0f5ff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #dc2626;
+            --accent-secondary: #ef4444;
+            --accent-glow: rgba(220, 38, 38, 0.15);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --success-color: #059669;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-primary); border-radius: 5px; }
+
+        .settings-bar {
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.4rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-btn {
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .theme-btn.active {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--bg-card);
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-primary);
+            color: white;
+            border-color: var(--accent-primary);
+        }
+
+        .stats-banner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-banner-item {
+            background: var(--bg-card);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        .stat-banner-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .techniques-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .technique-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .technique-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 5px 15px var(--accent-glow);
+        }
+
+        .technique-number {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .technique-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 0.3rem;
+            padding-right: 30px;
+        }
+
+        .technique-category {
+            display: inline-block;
+            background: var(--bg-primary);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            margin: 0.5rem 0;
+        }
+
+        .technique-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .category-section {
+            margin: 3rem 0;
+        }
+
+        .category-header {
+            font-size: 2rem;
+            color: var(--warning-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .category-header span {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-left: 1rem;
+        }
+
+        .chapter-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; }
+            .page-title { font-size: 2.5rem; }
+            .filter-bar { border-radius: 20px; }
+            .stats-banner { grid-template-columns: repeat(2, 1fr); }
+            .chapter-nav { flex-direction: column; gap: 1rem; }
+            .nav-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <div class="settings-bar">
+        <div class="settings-container">
+            <div class="logo-area">
+                <a href="index.html" class="logo">◈ DARK PSYCHOLOGY</a>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" data-theme="dark" onclick="setTheme('dark')">🌙 Dark</button>
+                    <button class="theme-btn" data-theme="light" onclick="setTheme('light')">☀️ Light</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <div class="page-badge">REFERENCE · APPENDIX B</div>
+            <h1 class="page-title">100 Techniques at a Glance</h1>
+            <div class="page-subtitle">Complete quick-reference guide to manipulation tactics</div>
+        </div>
+
+        <div class="stats-banner">
+            <div class="stat-banner-item"><span class="stat-banner-number">20</span><br>Core Tactics</div>
+            <div class="stat-banner-item"><span class="stat-banner-number">15</span><br>Verbal</div>
+            <div class="stat-banner-item"><span class="stat-banner-number">15</span><br>Non-Verbal</div>
+            <div class="stat-banner-item"><span class="stat-banner-number">15</span><br>Emotional</div>
+            <div class="stat-banner-item"><span class="stat-banner-number">15</span><br>Cognitive</div>
+            <div class="stat-banner-item"><span class="stat-banner-number">20</span><br>Advanced</div>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTechniques('all')">All</button>
+            <button class="filter-btn" onclick="filterTechniques('core')">Core</button>
+            <button class="filter-btn" onclick="filterTechniques('verbal')">Verbal</button>
+            <button class="filter-btn" onclick="filterTechniques('nonverbal')">Non-Verbal</button>
+            <button class="filter-btn" onclick="filterTechniques('emotional')">Emotional</button>
+            <button class="filter-btn" onclick="filterTechniques('cognitive')">Cognitive</button>
+            <button class="filter-btn" onclick="filterTechniques('advanced')">Advanced</button>
+        </div>
+
+        <!-- CORE TACTICS (Ch 3-4) -->
+        <div class="category-section" data-category="core">
+            <h2 class="category-header">🎭 Core Manipulation Tactics <span>(12)</span></h2>
+            <div class="techniques-grid">
+                <div class="technique-card"><span class="technique-number">1</span><div class="technique-name">Love Bombing</div><span class="technique-category">Core</span><div class="technique-desc">Overwhelming affection early on to create dependency</div></div>
+                <div class="technique-card"><span class="technique-number">2</span><div class="technique-name">Gaslighting</div><span class="technique-category">Core</span><div class="technique-desc">Making someone question their reality and sanity</div></div>
+                <div class="technique-card"><span class="technique-number">3</span><div class="technique-name">Isolation</div><span class="technique-category">Core</span><div class="technique-desc">Cutting off from friends, family, support systems</div></div>
+                <div class="technique-card"><span class="technique-number">4</span><div class="technique-name">Intermittent Reinforcement</div><span class="technique-category">Core</span><div class="technique-desc">Unpredictable rewards/punishments that create addiction</div></div>
+                <div class="technique-card"><span class="technique-number">5</span><div class="technique-name">Boundary Violations</div><span class="technique-category">Core</span><div class="technique-desc">Gradually pushing past limits to normalize disrespect</div></div>
+                <div class="technique-card"><span class="technique-number">6</span><div class="technique-name">Projection</div><span class="technique-category">Core</span><div class="technique-desc">Accusing others of their own bad behaviors</div></div>
+                <div class="technique-card"><span class="technique-number">7</span><div class="technique-name">Guilt Tripping</div><span class="technique-category">Core</span><div class="technique-desc">Making others responsible for manipulator's feelings</div></div>
+                <div class="technique-card"><span class="technique-number">8</span><div class="technique-name">Silent Treatment</div><span class="technique-category">Core</span><div class="technique-desc">Withholding communication as punishment</div></div>
+                <div class="technique-card"><span class="technique-number">9</span><div class="technique-name">Victim Playing</div><span class="technique-category">Core</span><div class="technique-desc">Always the victim, never accountable</div></div>
+                <div class="technique-card"><span class="technique-number">10</span><div class="technique-name">Future Faking</div><span class="technique-category">Core</span><div class="technique-desc">Promising a future they won't deliver</div></div>
+                <div class="technique-card"><span class="technique-number">11</span><div class="technique-name">Triangulation</div><span class="technique-category">Core</span><div class="technique-desc">Bringing third parties into conflicts</div></div>
+                <div class="technique-card"><span class="technique-number">12</span><div class="technique-name">Moving Goalposts</div><span class="technique-category">Core</span><div class="technique-desc">Constantly changing expectations</div></div>
+            </div>
+        </div>
+
+        <!-- VERBAL TACTICS (Ch 4) -->
+        <div class="category-section" data-category="verbal">
+            <h2 class="category-header">🗣️ Verbal Manipulation <span>(15)</span></h2>
+            <div class="techniques-grid">
+                <div class="technique-card"><span class="technique-number">13</span><div class="technique-name">Gaslighting Phrases</div><span class="technique-category">Verbal</span><div class="technique-desc">"That never happened," "You're crazy," "You're too sensitive"</div></div>
+                <div class="technique-card"><span class="technique-number">14</span><div class="technique-name">Denial</div><span class="technique-category">Verbal</span><div class="technique-desc">"I never said that," "I don't remember that"</div></div>
+                <div class="technique-card"><span class="technique-number">15</span><div class="technique-name">Invalidation</div><span class="technique-category">Verbal</span><div class="technique-desc">"You're overreacting," "You're too sensitive"</div></div>
+                <div class="technique-card"><span class="technique-number">16</span><div class="technique-name">Deflection</div><span class="technique-category">Verbal</span><div class="technique-desc">"You're the one with the problem," "Look what you made me do"</div></div>
+                <div class="technique-card"><span class="technique-number">17</span><div class="technique-name">Trivializing</div><span class="technique-category">Verbal</span><div class="technique-desc">"It's not that big a deal," "You're making a mountain out of a molehill"</div></div>
+                <div class="technique-card"><span class="technique-number">18</span><div class="technique-name">Blame Shifting</div><span class="technique-category">Verbal</span><div class="technique-desc">"If you hadn't..., I wouldn't have..."</div></div>
+                <div class="technique-card"><span class="technique-number">19</span><div class="technique-name">Labeling</div><span class="technique-category">Verbal</span><div class="technique-desc">"You're crazy," "You're unstable," "You're selfish"</div></div>
+                <div class="technique-card"><span class="technique-number">20</span><div class="technique-name">Word Salad</div><span class="technique-category">Verbal</span><div class="technique-desc">Confusing language to avoid accountability</div></div>
+                <div class="technique-card"><span class="technique-number">21</span><div class="technique-name">Circular Arguments</div><span class="technique-category">Verbal</span><div class="technique-desc">Arguments that go in circles, never resolving</div></div>
+                <div class="technique-card"><span class="technique-number">22</span><div class="technique-name">Non-Sequiturs</div><span class="technique-category">Verbal</span><div class="technique-desc">Responses with no logical connection</div></div>
+                <div class="technique-card"><span class="technique-number">23</span><div class="technique-name">Whataboutism</div><span class="technique-category">Verbal</span><div class="technique-desc">Deflecting by pointing to someone else</div></div>
+                <div class="technique-card"><span class="technique-number">24</span><div class="technique-name">Jargon Bombing</div><span class="technique-category">Verbal</span><div class="technique-desc">Using complex language to confuse</div></div>
+                <div class="technique-card"><span class="technique-number">25</span><div class="technique-name">Topic Switching</div><span class="technique-category">Verbal</span><div class="technique-desc">Abruptly changing subject when cornered</div></div>
+                <div class="technique-card"><span class="technique-number">26</span><div class="technique-name">Nitpicking</div><span class="technique-category">Verbal</span><div class="technique-desc">Focusing on tiny irrelevant details</div></div>
+                <div class="technique-card"><span class="technique-number">27</span><div class="technique-name">Quoting Authority</div><span class="technique-category">Verbal</span><div class="technique-desc">Citing experts to overwhelm you</div></div>
+            </div>
+        </div>
+
+        <!-- NON-VERBAL TACTICS (Ch 5) -->
+        <div class="category-section" data-category="nonverbal">
+            <h2 class="category-header">👁️ Non-Verbal Manipulation <span>(15)</span></h2>
+            <div class="techniques-grid">
+                <div class="technique-card"><span class="technique-number">28</span><div class="technique-name">Alpha Stance</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Feet planted wide, taking up space to signal dominance</div></div>
+                <div class="technique-card"><span class="technique-number">29</span><div class="technique-name">Elevated Position</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Standing while you sit, literal looking down</div></div>
+                <div class="technique-card"><span class="technique-number">30</span><div class="technique-name">Blocking Exits</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Positioning between you and the door</div></div>
+                <div class="technique-card"><span class="technique-number">31</span><div class="technique-name">Mirroring</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Copying body language to build false rapport</div></div>
+                <div class="technique-card"><span class="technique-number">32</span><div class="technique-name">Steepling</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Fingertips touching - signals superiority</div></div>
+                <div class="technique-card"><span class="technique-number">33</span><div class="technique-name">Death Stare</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Unblinking intense eye contact to intimidate</div></div>
+                <div class="technique-card"><span class="technique-number">34</span><div class="technique-name">Invasive Gaze</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Looking at body parts in violating ways</div></div>
+                <div class="technique-card"><span class="technique-number">35</span><div class="technique-name">Eye Withhold</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Refusing eye contact - dismissive, contemptuous</div></div>
+                <div class="technique-card"><span class="technique-number">36</span><div class="technique-name">Space Invasion</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Entering intimate/personal zones uninvited</div></div>
+                <div class="technique-card"><span class="technique-number">37</span><div class="technique-name">The Lean-In</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Leaning into personal space to make you retreat</div></div>
+                <div class="technique-card"><span class="technique-number">38</span><div class="technique-name">Patronizing Pat</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Pat on head/shoulder like a child or pet</div></div>
+                <div class="technique-card"><span class="technique-number">39</span><div class="technique-name">Dominant Handshake</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Palm down, too firm, pulling off balance</div></div>
+                <div class="technique-card"><span class="technique-number">40</span><div class="technique-name">Voice Volume</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Too loud (intimidation) or too quiet (forces leaning in)</div></div>
+                <div class="technique-card"><span class="technique-number">41</span><div class="technique-name">Silence</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">Using pauses to make you uncomfortable, talk more</div></div>
+                <div class="technique-card"><span class="technique-number">42</span><div class="technique-name">Micro-expressions</div><span class="technique-category">Non-Verbal</span><div class="technique-desc">1/15 second truth leaks revealing real emotions</div></div>
+            </div>
+        </div>
+
+        <!-- EMOTIONAL TACTICS (Ch 6) -->
+        <div class="category-section" data-category="emotional">
+            <h2 class="category-header">❤️‍🔥 Emotional Manipulation <span>(15)</span></h2>
+            <div class="techniques-grid">
+                <div class="technique-card"><span class="technique-number">43</span><div class="technique-name">Fear of Abandonment</div><span class="technique-category">Emotional</span><div class="technique-desc">"If you leave me, I'll kill myself" - traps through terror</div></div>
+                <div class="technique-card"><span class="technique-number">44</span><div class="technique-name">Fear of Loss</div><span class="technique-category">Emotional</span><div class="technique-desc">"You're going to lose me" - creates desperate clinging</div></div>
+                <div class="technique-card"><span class="technique-number">45</span><div class="technique-name">Fear of Failure</div><span class="technique-category">Emotional</span><div class="technique-desc">"You'll never succeed without me" - undermines confidence</div></div>
+                <div class="technique-card"><span class="technique-number">46</span><div class="technique-name">Fear of Shame</div><span class="technique-category">Emotional</span><div class="technique-desc">Threatening to expose secrets</div></div>
+                <div class="technique-card"><span class="technique-number">47</span><div class="technique-name">Fear of Unknown</div><span class="technique-category">Emotional</span><div class="technique-desc">"You'll never find anyone else"</div></div>
+                <div class="technique-card"><span class="technique-number">48</span><div class="technique-name">Guilt - The Ledger</div><span class="technique-category">Emotional</span><div class="technique-desc">"After everything I've done for you..."</div></div>
+                <div class="technique-card"><span class="technique-number">49</span><div class="technique-name">Guilt - Comparison</div><span class="technique-category">Emotional</span><div class="technique-desc">"Your sister would never treat me this way"</div></div>
+                <div class="technique-card"><span class="technique-number">50</span><div class="technique-name">Guilt - The Martyr</div><span class="technique-category">Emotional</span><div class="technique-desc">"I'll be fine alone. Go have fun."</div></div>
+                <div class="technique-card"><span class="technique-number">51</span><div class="technique-name">Guilt - Disappointment</div><span class="technique-category">Emotional</span><div class="technique-desc">"I expected better from you"</div></div>
+                <div class="technique-card"><span class="technique-number">52</span><div class="technique-name">Shame Attacks</div><span class="technique-category">Emotional</span><div class="technique-desc">"What's wrong with you?" "You're so selfish"</div></div>
+                <div class="technique-card"><span class="technique-number">53</span><div class="technique-name">Trauma Bonding</div><span class="technique-category">Emotional</span><div class="technique-desc">Cycle of abuse and affection creates addiction</div></div>
+                <div class="technique-card"><span class="technique-number">54</span><div class="technique-name">Love Withdrawal</div><span class="technique-category">Emotional</span><div class="technique-desc">Withholding affection as control</div></div>
+                <div class="technique-card"><span class="technique-number">55</span><div class="technique-name">Hope Manipulation</div><span class="technique-category">Emotional</span><div class="technique-desc">Promising change that never comes</div></div>
+                <div class="technique-card"><span class="technique-number">56</span><div class="technique-name">Pity Plays</div><span class="technique-category">Emotional</span><div class="technique-desc">Playing victim to get sympathy and compliance</div></div>
+                <div class="technique-card"><span class="technique-number">57</span><div class="technique-name">Jealousy Induction</div><span class="technique-category">Emotional</span><div class="technique-desc">Talking about others to make you jealous</div></div>
+            </div>
+        </div>
+
+        <!-- COGNITIVE TACTICS (Ch 7) -->
+        <div class="category-section" data-category="cognitive">
+            <h2 class="category-header">🧠 Cognitive Manipulation <span>(15)</span></h2>
+            <div class="techniques-grid">
+                <div class="technique-card"><span class="technique-number">58</span><div class="technique-name">Anchoring</div><span class="technique-category">Cognitive</span><div class="technique-desc">First information influences all subsequent judgments</div></div>
+                <div class="technique-card"><span class="technique-number">59</span><div class="technique-name">Confirmation Bias</div><span class="technique-category">Cognitive</span><div class="technique-desc">Feeding you info that matches what you want to believe</div></div>
+                <div class="technique-card"><span class="technique-number">60</span><div class="technique-name">Availability Heuristic</div><span class="technique-category">Cognitive</span><div class="technique-desc">Overestimating importance of recent events</div></div>
+                <div class="technique-card"><span class="technique-number">61</span><div class="technique-name">Bandwagon Effect</div><span class="technique-category">Cognitive</span><div class="technique-desc">"Everyone is doing it" - social proof</div></div>
+                <div class="technique-card"><span class="technique-number">62</span><div class="technique-name">Authority Bias</div><span class="technique-category">Cognitive</span><div class="technique-desc">"Doctors recommend..." - trusting authority figures</div></div>
+                <div class="technique-card"><span class="technique-number">63</span><div class="technique-name">Sunk Cost Fallacy</div><span class="technique-category">Cognitive</span><div class="technique-desc">Staying because of past investment</div></div>
+                <div class="technique-card"><span class="technique-number">64</span><div class="technique-name">Halo Effect</div><span class="technique-category">Cognitive</span><div class="technique-desc">One positive trait influences perception of others</div></div>
+                <div class="technique-card"><span class="technique-number">65</span><div class="technique-name">Framing</div><span class="technique-category">Cognitive</span><div class="technique-desc">How info is presented changes decisions</div></div>
+                <div class="technique-card"><span class="technique-number">66</span><div class="technique-name">Scarcity</div><span class="technique-category">Cognitive</span><div class="technique-desc">Limited availability creates artificial value</div></div>
+                <div class="technique-card"><span class="technique-number">67</span><div class="technique-name">Reciprocity</div><span class="technique-category">Cognitive</span><div class="technique-desc">Feeling obligated to return favors</div></div>
+                <div class="technique-card"><span class="technique-number">68</span><div class="technique-name">Commitment Consistency</div><span class="technique-category">Cognitive</span><div class="technique-desc">Small yes leads to bigger yes</div></div>
+                <div class="technique-card"><span class="technique-number">69</span><div class="technique-name">Loss Aversion</div><span class="technique-category">Cognitive</span><div class="technique-desc">Fear of loss is twice as powerful as gain</div></div>
+                <div class="technique-card"><span class="technique-number">70</span><div class="technique-name">Priming</div><span class="technique-category">Cognitive</span><div class="technique-desc">Subtle cues influence behavior unconsciously</div></div>
+                <div class="technique-card"><span class="technique-number">71</span><div class="technique-name">Decoy Effect</div><span class="technique-category">Cognitive</span><div class="technique-desc">Third option makes one seem more attractive</div></div>
+                <div class="technique-card"><span class="technique-number">72</span><div class="technique-name">Information Gap</div><span class="technique-category">Cognitive</span><div class="technique-desc">Creating curiosity by revealing unknown</div></div>
+            </div>
+        </div>
+
+        <!-- ADVANCED TACTICS (Ch 8-11) -->
+        <div class="category-section" data-category="advanced">
+            <h2 class="category-header">⚡ Advanced Techniques <span>(20)</span></h2>
+            <div class="techniques-grid">
+                <div class="technique-card"><span class="technique-number">73</span><div class="technique-name">Mirroring (NLP)</div><span class="technique-category">Advanced</span><div class="technique-desc">Copying body language to build rapport</div></div>
+                <div class="technique-card"><span class="technique-number">74</span><div class="technique-name">Pacing & Leading</div><span class="technique-category">Advanced</span><div class="technique-desc">Match then guide to desired state</div></div>
+                <div class="technique-card"><span class="technique-number">75</span><div class="technique-name">Anchoring (NLP)</div><span class="technique-category">Advanced</span><div class="technique-desc">Associating stimulus with emotional state</div></div>
+                <div class="technique-card"><span class="technique-number">76</span><div class="technique-name">Milton Model</div><span class="technique-category">Advanced</span><div class="technique-desc">Artfully vague language bypassing resistance</div></div>
+                <div class="technique-card"><span class="technique-number">77</span><div class="technique-name">Meta Model</div><span class="technique-category">Advanced</span><div class="technique-desc">Precision questions to challenge distortions</div></div>
+                <div class="technique-card"><span class="technique-number">78</span><div class="technique-name">Swish Pattern</div><span class="technique-category">Advanced</span><div class="technique-desc">Replacing unwanted thoughts with desired</div></div>
+                <div class="technique-card"><span class="technique-number">79</span><div class="technique-name">Reframing</div><span class="technique-category">Advanced</span><div class="technique-desc">Changing meaning by changing context</div></div>
+                <div class="technique-card"><span class="technique-number">80</span><div class="technique-name">Handshake Interrupt</div><span class="technique-category">Advanced</span><div class="technique-desc">Rapid hypnosis induction technique</div></div>
+                <div class="technique-card"><span class="technique-number">81</span><div class="technique-name">Conversational Hypnosis</div><span class="technique-category">Advanced</span><div class="technique-desc">Inducing trance through normal conversation</div></div>
+                <div class="technique-card"><span class="technique-number">82</span><div class="technique-name">Yes Set</div><span class="technique-category">Advanced</span><div class="technique-desc">Series of questions getting "yes" answers</div></div>
+                <div class="technique-card"><span class="technique-number">83</span><div class="technique-name">Negative Commands</div><span class="technique-category">Advanced</span><div class="technique-desc">"Don't think of..." actually makes you think</div></div>
+                <div class="technique-card"><span class="technique-number">84</span><div class="technique-name">Double Binds</div><span class="technique-category">Advanced</span><div class="technique-desc">Illusion of choice, both lead to compliance</div></div>
+                <div class="technique-card"><span class="technique-number">85</span><div class="technique-name">Embedded Commands</div><span class="technique-category">Advanced</span><div class="technique-desc">Hidden commands in normal speech</div></div>
+                <div class="technique-card"><span class="technique-number">86</span><div class="technique-name">Information Control</div><span class="technique-category">Advanced</span><div class="technique-desc">Blockade, propaganda, disinformation</div></div>
+                <div class="technique-card"><span class="technique-number">87</span><div class="technique-name">Sleep Deprivation</div><span class="technique-category">Advanced</span><div class="technique-desc">Stress induction technique</div></div>
+                <div class="technique-card"><span class="technique-number">88</span><div class="technique-name">Sensory Overload</div><span class="technique-category">Advanced</span><div class="technique-desc">Overwhelming the nervous system</div></div>
+                <div class="technique-card"><span class="technique-number">89</span><div class="technique-name">Reid Technique</div><span class="technique-category">Advanced</span><div class="technique-desc">9-step interrogation method</div></div>
+                <div class="technique-card"><span class="technique-number">90</span><div class="technique-name">Love Bombing (Advanced)</div><span class="technique-category">Advanced</span><div class="technique-desc">Systematic idealization phase</div></div>
+                <div class="technique-card"><span class="technique-number">91</span><div class="technique-name">Future Pacing</div><span class="technique-category">Advanced</span><div class="technique-desc">Imagining future where they've complied</div></div>
+                <div class="technique-card"><span class="technique-number">92</span><div class="technique-name">Presuppositions</div><span class="technique-category">Advanced</span><div class="technique-desc">Assuming the desired outcome</div></div>
+                <div class="technique-card"><span class="technique-number">93</span><div class="technique-name">Gaslighting Campaigns</div><span class="technique-category">Advanced</span><div class="technique-desc">Systematic reality distortion over time</div></div>
+                <div class="technique-card"><span class="technique-number">94</span><div class="technique-name">Mobbing</div><span class="technique-category">Advanced</span><div class="technique-desc">Group targeting an individual</div></div>
+                <div class="technique-card"><span class="technique-number">95</span><div class="technique-name">Constructive Discharge</div><span class="technique-category">Advanced</span><div class="technique-desc">Making work conditions intolerable</div></div>
+                <div class="technique-card"><span class="technique-number">96</span><div class="technique-name">Astroturfing</div><span class="technique-category">Advanced</span><div class="technique-desc">Fake grassroots movements</div></div>
+                <div class="technique-card"><span class="technique-number">97</span><div class="technique-name">Dog Whistles</div><span class="technique-category">Advanced</span><div class="technique-desc">Hidden messages for target audiences</div></div>
+                <div class="technique-card"><span class="technique-number">98</span><div class="technique-name">Gish Gallop</div><span class="technique-category">Advanced</span><div class="technique-desc">Overwhelming with false claims</div></div>
+                <div class="technique-card"><span class="technique-number">99</span><div class="technique-name">Concern Trolling</div><span class="technique-category">Advanced</span><div class="technique-desc">Pretending concern to undermine</div></div>
+                <div class="technique-card"><span class="technique-number">100</span><div class="technique-name">Sea-Lioning</div><span class="technique-category">Advanced</span><div class="technique-desc">Repeated "just questions" to harass</div></div>
+            </div>
+        </div>
+
+        <div class="chapter-nav">
+            <a href="appendix-a.html" class="nav-btn"><span>←</span> Appendix A</a>
+            <a href="index.html" class="nav-btn"><span>◈</span> Index</a>
+            <a href="appendix-c.html" class="nav-btn next">Appendix C <span>→</span></a>
+        </div>
+
+        <div class="footer">
+            <a href="index.html" class="back-home"><span>◈</span> Return to Home</a>
+            <div class="copyright">© 2024 YOUR NAME HERE · 100 Techniques Reference</div>
+        </div>
+    </div>
+
+    <script>
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-theme') === theme) btn.classList.add('active');
+            });
+            localStorage.setItem('theme', theme);
+        }
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+        })();
+
+        function filterTechniques(category) {
+            const sections = document.querySelectorAll('.category-section');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            btns.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.textContent.toLowerCase().includes(category)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            if(category === 'all') {
+                sections.forEach(section => section.style.display = 'block');
+            } else {
+                sections.forEach(section => {
+                    if(section.dataset.category === category) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
